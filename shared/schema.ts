@@ -1,4 +1,6 @@
 import { z } from "zod";
+import { pgTable, text, timestamp, jsonb } from "drizzle-orm/pg-core";
+import { createInsertSchema } from "drizzle-zod";
 
 export const insertFirmInfoSchema = z.object({
   name: z.string().min(1, "Nome do escritório é obrigatório"),
@@ -50,15 +52,26 @@ export interface QuizResults {
   overallScore: number;
 }
 
-// Canvas Marketing Lead schema
-export const insertCanvasLeadSchema = z.object({
-  email: z.string().email("Email inválido"),
-  whatsapp: z.string().min(1, "WhatsApp é obrigatório").regex(/^[\d\s\+\-\(\)]+$/, "WhatsApp deve conter apenas números e símbolos"),
+// Drizzle Tables
+export const quizResponses = pgTable("quiz_responses", {
+  id: text("id").primaryKey(),
+  firmInfo: jsonb("firm_info").notNull(),
+  answers: jsonb("answers").notNull(),
+  completedAt: timestamp("completed_at").defaultNow().notNull(),
+});
+
+export const canvasLeads = pgTable("canvas_leads", {
+  id: text("id").primaryKey(),
+  email: text("email").notNull(),
+  whatsapp: text("whatsapp").notNull(),
+  requestedAt: timestamp("requested_at").defaultNow().notNull(),
+});
+
+// Zod schemas
+export const insertCanvasLeadSchema = createInsertSchema(canvasLeads).omit({ 
+  id: true, 
+  requestedAt: true 
 });
 
 export type InsertCanvasLead = z.infer<typeof insertCanvasLeadSchema>;
-
-export interface CanvasLead extends InsertCanvasLead {
-  id: string;
-  requestedAt: Date;
-}
+export type SelectCanvasLead = typeof canvasLeads.$inferSelect;
