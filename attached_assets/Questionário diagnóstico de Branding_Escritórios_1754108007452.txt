@@ -1,0 +1,1181 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diagnóstico de Branding para Escritórios de Advocacia</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* Global styles and color palette */
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #010D26 0%, #022859 100%);
+            min-height: 100vh;
+            color: #E2E8F0; /* Light text for dark background */
+        }
+        .glass-morphism {
+            background: rgba(255, 255, 255, 0.15); /* Translucent background */
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: #E2E8F0; /* Light text for glass effect */
+        }
+        .glass-morphism h1, .glass-morphism h2, .glass-morphism h3 {
+            color: #FFFFFF; /* Ensures titles are white */
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #A4C5F7 0%, #022859 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .section-hidden {
+            display: none;
+        }
+        .option-item {
+            transition: all 0.3s ease;
+            cursor: pointer;
+            color: #010D26;
+        }
+        .option-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+        .option-selected {
+            background: linear-gradient(135deg, #0367A6 0%, #F2A007 100%);
+            color: #010D26; /* Dark text for better contrast */
+        }
+        .progress-bar {
+            background: linear-gradient(90deg, #A4C5F7 0%, #0367A6 100%);
+            height: 8px;
+            border-radius: 4px;
+            transition: width 0.5s ease;
+        }
+        .archetype-card {
+            background: linear-gradient(135deg, rgba(3, 103, 166, 0.1) 0%, rgba(164, 197, 247, 0.1) 100%);
+            border: 2px solid rgba(3, 103, 166, 0.2);
+        }
+        .color-sample {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin: 5px;
+            display: inline-block;
+            border: 3px solid rgba(255, 255, 255, 0.5);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        }
+        .recommendation-card {
+            background: #F8FAFC;
+            border-left: 4px solid #0367A6;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+            color: #010D26;
+        }
+        .recommendation-card:hover {
+            transform: translateY(-3px);
+        }
+        @media print {
+            body { background: white !important; }
+            .glass-morphism { background: white !important; backdrop-filter: none !important; color: #000 !important; }
+            .glass-morphism h1, .glass-morphism h2, .glass-morphism h3 { color: #000 !important; }
+            .option-item { color: #000 !important; }
+            .recommendation-card { background: white !important; color: #000 !important; border-color: #0367A6 !important; }
+        }
+        /* Adjustments for text color and readability */
+        .text-gray-700 { color: #CBD5E0; }
+        .text-gray-600 { color: #A0AEC0; }
+        .text-gray-800 { color: #F8FAFC; }
+        .text-blue-600 { color: #0367A6; }
+        .bg-blue-100 { background-color: rgba(3, 103, 166, 0.2); }
+        .text-purple-600 { color: #A4C5F7; }
+        .bg-purple-100 { background-color: rgba(164, 197, 247, 0.2); }
+
+        /* Specific styles for inputs */
+        input[type="text"], input[type="email"], textarea {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 12px;
+            border-radius: 8px;
+            width: 100%;
+            color: #F8FAFC;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+        input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
+            outline: none;
+            border-color: #A4C5F7;
+            box-shadow: 0 0 0 3px rgba(164, 197, 247, 0.5);
+        }
+        
+        /* Adjusted text color for better contrast */
+        .text-blue-900 {
+            color: #010D26;
+        }
+
+    </style>
+</head>
+<body class="min-h-screen">
+    <div class="container mx-auto px-4 py-8">
+        <!-- Welcome Section -->
+        <div id="welcome" class="text-center mb-12">
+            <div class="glass-morphism p-6 md:p-12 max-w-4xl mx-auto">
+                <h1 class="text-3xl md:text-5xl font-bold mb-4 md:mb-6 gradient-text">
+                    <i class="fas fa-gavel mr-3"></i>
+                    Diagnóstico de Branding para Advocacia
+                </h1>
+                <p class="text-base md:text-xl text-gray-700 mb-6 md:mb-8 leading-relaxed">
+                    Uma ferramenta completa para avaliar e otimizar a estratégia de marca do seu escritório de advocacia.
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 mb-8 md:mb-10">
+                    <div class="bg-white bg-opacity-10 p-4 rounded-lg">
+                        <i class="fas fa-clock text-2xl md:text-3xl text-blue-600 mb-2 md:mb-3"></i>
+                        <h3 class="font-semibold text-base md:text-lg mb-1 md:mb-2">Tempo Estimado</h3>
+                        <p class="text-gray-600 text-sm md:text-base">10-15 minutos</p>
+                    </div>
+                    <div class="bg-white bg-opacity-10 p-4 rounded-lg">
+                        <i class="fas fa-list text-2xl md:text-3xl text-purple-600 mb-2 md:mb-3"></i>
+                        <h3 class="font-semibold text-base md:text-lg mb-1 md:mb-2">20 Questões</h3>
+                        <p class="text-gray-600 text-sm md:text-base">Estratégicas e objetivas</p>
+                    </div>
+                    <div class="bg-white bg-opacity-10 p-4 rounded-lg">
+                        <i class="fas fa-chart-line text-2xl md:text-3xl text-green-600 mb-2 md:mb-3"></i>
+                        <h3 class="font-semibold text-base md:text-lg mb-1 md:mb-2">Relatório Completo</h3>
+                        <p class="text-gray-600 text-sm md:text-base">Com recomendações personalizadas</p>
+                    </div>
+                </div>
+                <button onclick="showFirmInfo()" class="bg-gradient-to-r from-A4C5F7 to-0367A6 text-white px-8 md:px-10 py-3 md:py-4 rounded-full text-base md:text-lg font-semibold hover:from-022859 hover:to-A4C5F7 transform hover:scale-105 transition-all duration-300 shadow-lg"
+                        style="--tw-gradient-from: #A4C5F7; --tw-gradient-to: #0367A6;">
+                    <i class="fas fa-play mr-2"></i>Iniciar Diagnóstico
+                </button>
+            </div>
+        </div>
+
+        <!-- Firm Information Section -->
+        <div id="firm-info" class="section-hidden">
+            <div class="glass-morphism p-6 md:p-12 max-w-4xl mx-auto text-center">
+                <h2 class="text-2xl md:text-3xl font-bold mb-4 gradient-text">
+                    <i class="fas fa-info-circle mr-3"></i>
+                    Informações do Escritório
+                </h2>
+                <p class="text-base md:text-lg text-gray-700 mb-6">
+                    Por favor, preencha as informações abaixo para um diagnóstico mais preciso e personalizado.
+                </p>
+                <form id="firm-info-form" class="space-y-4 text-left">
+                    <div>
+                        <label for="firm-name" class="block text-gray-700 font-medium mb-2">Nome do Escritório</label>
+                        <input type="text" id="firm-name" name="firm-name" placeholder="Ex: Santos & Associados" required>
+                    </div>
+                    <div>
+                        <label for="firm-specialty" class="block text-gray-700 font-medium mb-2">Principal Área de Atuação</label>
+                        <input type="text" id="firm-specialty" name="firm-specialty" placeholder="Ex: Direito Trabalhista, Direito Tributário" required>
+                    </div>
+                    <div>
+                        <label for="firm-target" class="block text-gray-700 font-medium mb-2">Público-alvo Principal</label>
+                        <input type="text" id="firm-target" name="firm-target" placeholder="Ex: Empresas de tecnologia, Pessoas Físicas de alta renda" required>
+                    </div>
+                    <div>
+                        <label for="firm-mission" class="block text-gray-700 font-medium mb-2">Missão ou Propósito do Escritório</label>
+                        <textarea id="firm-mission" name="firm-mission" rows="3" placeholder="Ex: Oferecer soluções jurídicas inovadoras e eficientes para nossos clientes..." required></textarea>
+                    </div>
+                    <div class="text-center mt-6">
+                        <button type="submit" class="bg-gradient-to-r from-A4C5F7 to-0367A6 text-white px-8 md:px-10 py-3 md:py-4 rounded-full text-base md:text-lg font-semibold hover:from-022859 hover:to-A4C5F7 transform hover:scale-105 transition-all duration-300 shadow-lg"
+                                style="--tw-gradient-from: #A4C5F7; --tw-gradient-to: #0367A6;">
+                            <i class="fas fa-arrow-right mr-2"></i>Continuar para o Quiz
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Quiz Section -->
+        <div id="quiz" class="section-hidden">
+            <!-- Progress Bar -->
+            <div class="mb-8">
+                <div class="glass-morphism p-6 max-w-4xl mx-auto">
+                    <div class="flex justify-between items-center mb-4">
+                        <span class="text-gray-700 font-medium">Progresso do Diagnóstico</span>
+                        <span id="progress-text" class="text-gray-600">Questão 1 de 20</span>
+                    </div>
+                    <div class="w-full bg-gray-200 rounded-full h-3">
+                        <div id="progress-bar" class="progress-bar h-3 rounded-full" style="width: 5%"></div>
+                    </div>
+                    <div class="text-right mt-2">
+                        <span id="progress-percentage" class="text-sm text-gray-600">5% concluído</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Question Card -->
+            <div class="glass-morphism p-6 md:p-8 max-w-4xl mx-auto mb-8">
+                <div class="mb-4 md:mb-6">
+                    <span id="section-title" class="text-xs md:text-sm font-medium text-purple-600 bg-purple-100 px-3 py-1 rounded-full">
+                        Identidade da Marca
+                    </span>
+                </div>
+                <h2 id="question-text" class="text-xl md:text-2xl font-bold mb-6 md:mb-8 text-white">
+                    Qual é o propósito principal da sua marca?
+                </h2>
+                <div id="options-container" class="space-y-3 md:space-y-4">
+                    <!-- Options will be filled by JavaScript -->
+                </div>
+                <div class="flex justify-between mt-6 md:mt-8">
+                    <button id="prev-btn" onclick="previousQuestion()" class="px-4 py-2 md:px-6 md:py-3 bg-gray-300 text-gray-900 rounded-lg hover:bg-gray-400 transition-colors hidden" style="--tw-bg-opacity: 1;">
+                        <i class="fas fa-arrow-left mr-2"></i>Anterior
+                    </button>
+                    <div class="ml-auto">
+                        <button id="next-btn" onclick="nextQuestion()" class="px-4 py-2 md:px-6 md:py-3 bg-gradient-to-r from-A4C5F7 to-0367A6 text-white rounded-lg hover:from-022859 hover:to-A4C5F7 transition-all transform hover:scale-105"
+                                style="--tw-gradient-from: #A4C5F7; --tw-gradient-to: #0367A6;">
+                            Próxima<i class="fas fa-arrow-right ml-2"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Results Section -->
+        <div id="results" class="section-hidden">
+            <!-- Header -->
+            <div class="text-center mb-8 md:mb-12">
+                <div class="glass-morphism p-6 md:p-8 max-w-4xl mx-auto">
+                    <h1 class="text-3xl md:text-4xl font-bold mb-3 md:mb-4 gradient-text">
+                        <i class="fas fa-chart-pie mr-3"></i>
+                        Seu Relatório de Branding
+                    </h1>
+                    <p class="text-base md:text-lg text-gray-700">Análise completa com recomendações personalizadas para sua marca</p>
+                </div>
+            </div>
+
+            <!-- General Score -->
+            <div class="mb-8 md:mb-12">
+                <div class="glass-morphism p-6 md:p-8 max-w-4xl mx-auto">
+                    <h2 class="text-xl md:text-2xl font-bold mb-4 md:mb-6 text-center text-gray-800">Pontuação Geral</h2>
+                    <div class="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-8">
+                        <div class="relative">
+                            <canvas id="score-chart" width="200" height="200"></canvas>
+                            <div class="absolute inset-0 flex flex-col items-center justify-center">
+                                <span id="total-score" class="text-3xl md:text-4xl font-bold gradient-text">0</span>
+                                <span class="text-gray-600">/ 200</span>
+                            </div>
+                        </div>
+                        <div class="text-center md:text-left">
+                            <div id="score-category" class="text-2xl md:text-3xl font-bold mb-2 text-green-600">Excelente</div>
+                            <div id="score-description" class="text-base md:text-lg text-gray-700 max-w-md">
+                                Sua marca possui uma estratégia de branding muito bem estruturada e consistente.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Brand Archetype -->
+            <div id="archetype-section" class="mb-8 md:mb-12">
+                <div class="glass-morphism p-6 md:p-8 max-w-4xl mx-auto">
+                    <h2 class="text-xl md:text-2xl font-bold mb-4 md:mb-6 text-center text-gray-800">Seu Arquétipo de Marca</h2>
+                    <div class="archetype-card rounded-lg p-6 md:p-8 text-center">
+                        <div id="archetype-icon" class="text-5xl md:text-6xl mb-3 md:mb-4">🎯</div>
+                        <h3 id="archetype-name" class="text-2xl md:text-3xl font-bold mb-3 md:mb-4 gradient-text">O Herói</h3>
+                        <p id="archetype-description" class="text-base md:text-lg text-gray-700 mb-4 md:mb-6 leading-relaxed">
+                            Sua marca é corajosa e determinada, sempre buscando superar desafios e inspirar outros.
+                        </p>
+                        <div id="archetype-characteristics" class="mb-4 md:mb-6">
+                            <h4 class="font-semibold mb-2 md:mb-3 text-gray-800">Características Principais:</h4>
+                            <div class="flex flex-wrap justify-center gap-1 md:gap-2">
+                                <!-- Tags de características serão preenchidas -->
+                            </div>
+                        </div>
+                        <div id="archetype-examples" class="mb-3 md:mb-4">
+                            <h4 class="font-semibold mb-2 md:mb-3 text-gray-800">Exemplos de Marcas:</h4>
+                            <p class="text-gray-700">Nike, BMW, Duracell</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Radar Chart of Performance -->
+            <div class="mb-8 md:mb-12">
+                <div class="glass-morphism p-6 md:p-8 max-w-4xl mx-auto">
+                    <h2 class="text-xl md:text-2xl font-bold mb-4 md:mb-6 text-center text-gray-800">Performance por Dimensão</h2>
+                    <div class="relative mx-auto" style="height: 450px; width: 450px;">
+                        <canvas id="radar-chart"></canvas>
+                    </div>
+                    <div id="radar-analysis" class="mt-8">
+                        <!-- Detailed analysis of the radar chart results will be added here -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Color Palette Recommendations -->
+            <div id="color-palette-section" class="mb-8 md:mb-12">
+                <div class="glass-morphism p-6 md:p-8 max-w-4xl mx-auto">
+                    <h2 class="text-xl md:text-2xl font-bold mb-4 md:mb-6 text-center text-gray-800">
+                        <i class="fas fa-palette mr-2"></i>Paleta de Cores Recomendada
+                    </h2>
+                    <div id="color-recommendations" class="text-center">
+                        <div class="mb-4 md:mb-6">
+                            <h3 class="text-base md:text-lg font-semibold mb-2 md:mb-3 text-gray-800">Cores Principais</h3>
+                            <div id="primary-colors" class="flex justify-center flex-wrap">
+                                <!-- Color samples will be filled -->
+                            </div>
+                        </div>
+                        <div class="mb-4 md:mb-6">
+                            <h3 class="text-base md:text-lg font-semibold mb-2 md:mb-3 text-gray-800">Cores Secundárias</h3>
+                            <div id="secondary-colors" class="flex justify-center flex-wrap">
+                                <!-- Color samples will be filled -->
+                            </div>
+                        </div>
+                        <p id="color-psychology" class="text-gray-700 italic text-sm md:text-base">
+                            Essas cores foram selecionadas para transmitir os valores do seu arquétipo de marca.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Personalized Recommendations -->
+            <div class="mb-8 md:mb-12">
+                <div class="glass-morphism p-6 md:p-8 max-w-4xl mx-auto">
+                    <h2 class="text-xl md:text-2xl font-bold mb-4 md:mb-6 text-center text-gray-800">
+                        <i class="fas fa-lightbulb mr-2"></i>Recomendações Personalizadas
+                    </h2>
+                    <div id="recommendations" class="space-y-4 md:space-y-6">
+                        <!-- Recommendations will be filled based on answers and firm info -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Action Plan -->
+            <div class="mb-8 md:mb-12">
+                <div class="glass-morphism p-6 md:p-8 max-w-4xl mx-auto">
+                    <h2 class="text-xl md:text-2xl font-bold mb-4 md:mb-6 text-center text-gray-800">
+                        <i class="fas fa-tasks mr-2"></i>Plano de Ação Prioritário
+                    </h2>
+                    <div id="action-plan" class="space-y-3 md:space-y-4">
+                        <!-- Action plan items will be filled -->
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Next Steps -->
+            <div class="mb-8 md:mb-12">
+                <div class="glass-morphism p-6 md:p-8 max-w-4xl mx-auto text-center">
+                    <h2 class="text-xl md:text-2xl font-bold mb-4 md:mb-6 text-gray-800">Próximos Passos</h2>
+                    <p class="text-base md:text-lg text-gray-700 mb-6 md:mb-8">
+                        Use este relatório como base para desenvolver uma estratégia de branding mais eficaz. Considere implementar as recomendações de forma gradual, começando pelas áreas com menor pontuação.
+                    </p>
+                    <button onclick="restartQuiz()" class="bg-gradient-to-r from-A4C5F7 to-0367A6 text-white px-6 md:px-8 py-2 md:py-3 rounded-full text-base md:text-lg font-semibold hover:from-022859 hover:to-A4C5F7 transform hover:scale-105 transition-all duration-300 shadow-lg"
+                            style="--tw-gradient-from: #A4C5F7; --tw-gradient-to: #0367A6;">
+                        <i class="fas fa-redo mr-2"></i>Fazer Novo Diagnóstico
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Quiz data for Law
+        const quizData = {
+            sections: [
+                {
+                    title: "Identidade de Marca",
+                    questions: [
+                        {
+                            text: "Como você descreveria o propósito e os valores do seu escritório?",
+                            options: [
+                                "Focados na tradição e solidez do direito.",
+                                "Comprometidos com a inovação e agilidade nas soluções.",
+                                "Orientados para o cliente, com foco em relacionamento e empatia.",
+                                "Especializados em áreas de nicho e de alta complexidade.",
+                                "Acessíveis e democráticos, para um público amplo."
+                            ]
+                        },
+                        {
+                            text: "Qual é a principal área de atuação que define a identidade do seu escritório?",
+                            options: [
+                                "Direito Corporativo / Empresarial",
+                                "Direito Tributário / Fiscal",
+                                "Direito Trabalhista",
+                                "Direito da Família e Sucessões",
+                                "Direito Digital / Propriedade Intelectual",
+                                "Outro"
+                            ]
+                        },
+                        {
+                            text: "Sua marca visual (logotipo, cores, tipografia) reflete a seriedade e a modernidade que você deseja transmitir?",
+                            options: [
+                                "Não temos uma identidade visual definida.",
+                                "A identidade visual é antiga e precisa de atualização.",
+                                "É funcional, mas não se destaca no mercado.",
+                                "É moderna e consistente, mas poderia ser mais impactante.",
+                                "É única, memorável e perfeitamente alinhada com nossos valores."
+                            ]
+                        },
+                        {
+                            text: "Como você descreveria o tom de voz do seu escritório nas comunicações (escritas e orais)?",
+                            options: [
+                                "Muito formal e jurídico.",
+                                "Profissional, mas um pouco genérico.",
+                                "Profissional e acessível, com linguagem clara.",
+                                "Inspirador e confiante, posicionando-nos como líderes.",
+                                "Empático e acolhedor, focado em tranquilizar o cliente."
+                            ]
+                        }
+                    ]
+                },
+                {
+                    title: "Posicionamento e Diferencial",
+                    questions: [
+                        {
+                            text: "O que o seu escritório oferece de único em relação à concorrência?",
+                            options: [
+                                "Preços mais competitivos.",
+                                "Tradição e longa história no mercado.",
+                                "Especialização profunda em um nicho de mercado.",
+                                "Atendimento humanizado e personalizado.",
+                                "Tecnologia e inovação na prestação de serviços."
+                            ]
+                        },
+                        {
+                            text: "Seu público-alvo principal entende claramente a sua especialidade e o que você faz?",
+                            options: [
+                                "Não, somos genéricos e atendemos a todos.",
+                                "Alguns clientes entendem, mas a maioria não.",
+                                "Sim, em nossa principal área de atuação.",
+                                "Sim, somos reconhecidos como especialistas.",
+                                "Sim, e nossa marca atrai ativamente este público."
+                            ]
+                        },
+                        {
+                            text: "Como você avalia a sua presença online (site, redes sociais) em comparação com outros escritórios?",
+                            options: [
+                                "Não temos presença digital ou é muito fraca.",
+                                "Temos perfis, mas não são atualizados regularmente.",
+                                "É razoável, mas falta uma estratégia de conteúdo.",
+                                "É forte, com conteúdo relevante e engajamento.",
+                                "Somos líderes no digital, com uma marca forte e reconhecida."
+                            ]
+                        },
+                        {
+                            text: "O que o seu escritório prioriza na atração de novos clientes?",
+                            options: [
+                                "Indicações de clientes antigos e parceiros.",
+                                "Marketing de conteúdo (blog, artigos).",
+                                "Participação em eventos e palestras.",
+                                "Publicidade online e campanhas pagas.",
+                                "Networking e relacionamento pessoal."
+                            ]
+                        }
+                    ]
+                },
+                {
+                    title: "Comunicação e Conteúdo",
+                    questions: [
+                        {
+                            text: "Qual é o principal foco do conteúdo que seu escritório produz (seja em blog, redes sociais, etc.)?",
+                            options: [
+                                "Notícias e atualizações jurídicas em geral.",
+                                "Artigos técnicos e pareceres para colegas.",
+                                "Conteúdo informativo para o público leigo.",
+                                "Estudos de caso e histórias de sucesso (sem quebrar sigilo).",
+                                "Conteúdo que posiciona nossos advogados como especialistas."
+                            ]
+                        },
+                        {
+                            text: "Com que frequência você revisa a comunicação e as mensagens-chave do escritório?",
+                            options: [
+                                "Nunca.",
+                                "Quando há uma crise ou problema.",
+                                "Anualmente.",
+                                "Semestralmente, com base em feedback.",
+                                "Continuamente, adaptando-nos ao mercado."
+                            ]
+                        }
+                    ]
+                },
+                {
+                    title: "Experiência do Cliente",
+                    questions: [
+                        {
+                            text: "Como você avalia o processo de primeiro contato do cliente com o seu escritório?",
+                            options: [
+                                "É confuso e demorado.",
+                                "É um processo padrão, sem diferenciais.",
+                                "É eficiente e profissional.",
+                                "É acolhedor e personalizado.",
+                                "É uma experiência notável e memorável."
+                            ]
+                        },
+                        {
+                            text: "Qual a importância dada ao feedback e à satisfação dos clientes após o serviço?",
+                            options: [
+                                "Não solicitamos feedback ativamente.",
+                                "Coletamos feedback informalmente.",
+                                "Temos uma pesquisa de satisfação formal.",
+                                "Usamos o feedback para melhorar ativamente.",
+                                "Temos um sistema de gestão de relacionamento para garantir a satisfação."
+                            ]
+                        }
+                    ]
+                },
+                {
+                    title: "Cultura e Valores",
+                    questions: [
+                        {
+                            text: "Como a cultura interna do escritório se alinha com a marca que você quer projetar externamente?",
+                            options: [
+                                "Não há alinhamento, são coisas separadas.",
+                                "Existe algum alinhamento, mas precisa de reforço.",
+                                "Nossos valores são comunicados internamente.",
+                                "A cultura interna reflete e fortalece a nossa marca.",
+                                "A marca é uma extensão natural da nossa cultura interna forte e coesa."
+                            ]
+                        },
+                        {
+                            text: "Como você descreveria o clima organizacional do seu escritório?",
+                            options: [
+                                "Competitivo e individualista.",
+                                "Tradicional e hierárquico.",
+                                "Colaborativo e respeitoso.",
+                                "Inovador e dinâmico.",
+                                "Focado no bem-estar e crescimento dos colaboradores."
+                            ]
+                        }
+                    ]
+                }
+            ]
+        };
+        // Archetype data
+        const archetypes = {
+            "Sábio": {
+                icon: "🧠",
+                characteristics: ["Conhecimento", "Verdade", "Sabedoria", "Inteligência", "Análise"],
+                description: "Sua marca é uma autoridade intelectual e fonte de conhecimento, ajudando clientes a entenderem e navegarem por questões complexas. Escritórios deste tipo são percebidos como especialistas confiáveis.",
+                examples: ["Mattos Filho", "Pinheiro Neto"],
+                colors: {
+                    primary: ["#022859", "#A4C5F7", "#F8FAFC"],
+                    secondary: ["#D3D3D3", "#708090"]
+                },
+                messages: [
+                    "O conhecimento que transforma o seu caso em estratégia.",
+                    "A inteligência jurídica aplicada ao seu negócio.",
+                    "A verdade sempre prevalece, e nós te ajudamos a encontrá-la."
+                ],
+                positioning: [
+                    "A fonte confiável de conhecimento jurídico.",
+                    "Para quem busca expertise e análise profunda.",
+                    "Onde a sabedoria encontra a prática."
+                ]
+            },
+            "Criador": {
+                icon: "✨",
+                characteristics: ["Inovação", "Criatividade", "Visão", "Originalidade", "Solução"],
+                description: "Sua marca é inovadora e criativa, focada em encontrar soluções jurídicas únicas para problemas complexos. Transmite a imagem de um escritório que 'pensa fora da caixa' e está à frente das tendências.",
+                examples: ["Silveira & Associados", "Machado Meyer"],
+                colors: {
+                    primary: ["#010D26", "#F2A007", "#0367A6"],
+                    secondary: ["#BF5B04", "#FFFFFF"]
+                },
+                messages: [
+                    "Criamos soluções jurídicas para o seu futuro.",
+                    "Ousadia e inovação para resolver o impossível.",
+                    "Seu desafio, nossa obra-prima."
+                ],
+                positioning: [
+                    "O escritório de advocacia que pensa diferente.",
+                    "Soluções jurídicas tão únicas quanto o seu negócio.",
+                    "Inovação na ponta do seu direito."
+                ]
+            },
+            "Governante": {
+                icon: "👑",
+                characteristics: ["Poder", "Controle", "Liderança", "Responsabilidade", "Ordem"],
+                description: "Sua marca é sinônimo de liderança e controle, projetando uma imagem de autoridade e sucesso. É vista como um escritório de alto prestígio, ideal para clientes que buscam segurança e poder.",
+                examples: ["Demarest Advogados", "Lefosse"],
+                colors: {
+                    primary: ["#022859", "#A4C5F7", "#BF5B04"],
+                    secondary: ["#FFFFFF", "#010D26"]
+                },
+                messages: [
+                    "Liderança e controle para o seu sucesso jurídico.",
+                    "Onde a autoridade encontra a excelência.",
+                    "Sua segurança é a nossa maior responsabilidade."
+                ],
+                positioning: [
+                    "Para quem busca a liderança no mercado.",
+                    "A marca que impõe respeito e ordem.",
+                    "Especialistas em liderar casos complexos."
+                ]
+            },
+            "Prestativo": {
+                icon: "🤝",
+                characteristics: ["Serviço", "Apoio", "Cuidado", "Generosidade", "Relacionamento"],
+                description: "Sua marca é prestativa e confiável, focada em dar suporte e construir relacionamentos duradouros com os clientes. É percebida como um parceiro acessível e empático, que prioriza a experiência humana.",
+                examples: ["Veirano Advogados", "TozziniFreire Advogados"],
+                colors: {
+                    primary: ["#A4C5F7", "#0367A6", "#F2A007"],
+                    secondary: ["#FFFFFF", "#BF5B04"]
+                },
+                messages: [
+                    "Nosso compromisso é o seu bem-estar legal.",
+                    "Seu parceiro de confiança para todos os momentos.",
+                    "Advocacia com empatia e dedicação."
+                ],
+                positioning: [
+                    "Onde o direito encontra o cuidado com o cliente.",
+                    "Seu parceiro legal, sempre ao seu lado.",
+                    "Focados em soluções humanizadas para cada caso."
+                ]
+            }
+        };
+
+        // Quiz state and firm information
+        let firmName = '';
+        let firmSpecialty = '';
+        let firmTarget = '';
+        let firmMission = '';
+        let otherSpecialty = ''; // New state variable
+        let currentQuestionIndex = 0;
+        let answers = [];
+        let totalQuestions = 0;
+
+        // Calculate total questions
+        quizData.sections.forEach(section => {
+            totalQuestions += section.questions.length;
+        });
+
+        // Quiz Functions
+        function showFirmInfo() {
+            document.getElementById('welcome').classList.add('section-hidden');
+            document.getElementById('firm-info').classList.remove('section-hidden');
+        }
+
+        document.getElementById('firm-info-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            firmName = document.getElementById('firm-name').value;
+            firmSpecialty = document.getElementById('firm-specialty').value;
+            firmTarget = document.getElementById('firm-target').value;
+            firmMission = document.getElementById('firm-mission').value;
+
+            document.getElementById('firm-info').classList.add('section-hidden');
+            document.getElementById('quiz').classList.remove('section-hidden');
+            showQuestion();
+        });
+
+        function showQuestion() {
+            const questionData = getQuestionData(currentQuestionIndex);
+            if (!questionData) return;
+
+            // Update progress
+            const progress = ((currentQuestionIndex + 1) / totalQuestions) * 100;
+            document.getElementById('progress-bar').style.width = progress + '%';
+            document.getElementById('progress-text').textContent = `Questão ${currentQuestionIndex + 1} de ${totalQuestions}`;
+            document.getElementById('progress-percentage').textContent = `${Math.round(progress)}% concluído`;
+
+            // Update question content
+            document.getElementById('section-title').textContent = questionData.section;
+            document.getElementById('question-text').textContent = questionData.question.text;
+
+            // Generate options
+            const optionsContainer = document.getElementById('options-container');
+            optionsContainer.innerHTML = '';
+
+            questionData.question.options.forEach((option, index) => {
+                const optionDiv = document.createElement('div');
+                optionDiv.className = 'option-item bg-white p-4 rounded-lg border-2 border-gray-200 hover:border-0367A6';
+                optionDiv.innerHTML = `
+                    <label class="flex items-center cursor-pointer w-full">
+                        <input type="radio" name="question${currentQuestionIndex}" value="${index}" class="mr-4 text-0367A6 hidden">
+                        <span class="text-gray-900">${option}</span>
+                    </label>
+                `;
+
+                // Add event listener to the option div
+                optionDiv.addEventListener('click', function() {
+                    // Remove selection from all options
+                    document.querySelectorAll('.option-item').forEach(item => {
+                        item.classList.remove('option-selected');
+                        item.querySelector('input').checked = false;
+                    });
+                    // Add selection to the clicked option
+                    this.classList.add('option-selected');
+                    const radioInput = this.querySelector('input');
+                    radioInput.checked = true;
+                    // Store the answer in the global array
+                    answers[currentQuestionIndex] = parseInt(radioInput.value);
+
+                    // Show or hide the "other specialty" input field
+                    if (option === 'Outro') {
+                        showOtherSpecialtyInput();
+                    } else {
+                        hideOtherSpecialtyInput();
+                    }
+                });
+                
+                optionsContainer.appendChild(optionDiv);
+
+                // Re-select the previously answered option
+                if (answers[currentQuestionIndex] === index) {
+                    optionDiv.classList.add('option-selected');
+                    optionDiv.querySelector('input').checked = true;
+                    if (option === 'Outro') {
+                        showOtherSpecialtyInput();
+                    }
+                }
+            });
+
+            // If the current question is about 'other' specialty and an answer exists, display it
+            if (questionData.question.text.includes("área de atuação") && answers[currentQuestionIndex] === questionData.question.options.length - 1) {
+                showOtherSpecialtyInput();
+            }
+
+            // Update navigation buttons
+            const prevBtn = document.getElementById('prev-btn');
+            const nextBtn = document.getElementById('next-btn');
+
+            if (currentQuestionIndex === 0) {
+                prevBtn.classList.add('hidden');
+            } else {
+                prevBtn.classList.remove('hidden');
+            }
+
+            if (currentQuestionIndex === totalQuestions - 1) {
+                nextBtn.innerHTML = '<i class="fas fa-chart-line mr-2"></i>Ver Resultados';
+            } else {
+                nextBtn.innerHTML = 'Próxima<i class="fas fa-arrow-right ml-2"></i>';
+            }
+        }
+
+        function showOtherSpecialtyInput() {
+            const optionsContainer = document.getElementById('options-container');
+            let otherInput = document.getElementById('other-specialty-input');
+            if (!otherInput) {
+                otherInput = document.createElement('input');
+                otherInput.type = 'text';
+                otherInput.id = 'other-specialty-input';
+                otherInput.placeholder = 'Digite a área de atuação';
+                otherInput.className = 'mt-4 bg-white bg-opacity-10 border-gray-200 border-2 rounded-lg p-3 w-full text-gray-900';
+                otherInput.addEventListener('input', function() {
+                    otherSpecialty = this.value;
+                });
+                optionsContainer.appendChild(otherInput);
+            }
+            if(otherSpecialty) {
+                otherInput.value = otherSpecialty;
+            }
+            
+        }
+
+        function hideOtherSpecialtyInput() {
+            const otherInput = document.getElementById('other-specialty-input');
+            if (otherInput) {
+                otherInput.remove();
+            }
+        }
+
+        function getQuestionData(questionIndex) {
+            let currentIndex = 0;
+            for (let section of quizData.sections) {
+                for (let question of section.questions) {
+                    if (currentIndex === questionIndex) {
+                        return {
+                            section: section.title,
+                            question: question
+                        };
+                    }
+                    currentIndex++;
+                }
+            }
+            return null;
+        }
+
+        function nextQuestion() {
+            const selectedAnswer = document.querySelector(`input[name="question${currentQuestionIndex}"]:checked`);
+            if (!selectedAnswer) {
+                console.error('Por favor, selecione uma resposta antes de continuar.');
+                return;
+            }
+
+            if (selectedAnswer.value === (quizData.sections[1].questions[1].options.length -1).toString() && !otherSpecialty) {
+                alert('Por favor, digite a sua área de atuação em "Outro" antes de continuar.');
+                return;
+            }
+
+            // The answer is already stored on the option click, just advance
+            if (currentQuestionIndex < totalQuestions - 1) {
+                currentQuestionIndex++;
+                showQuestion();
+            } else {
+                showResults();
+            }
+        }
+
+        function previousQuestion() {
+            if (currentQuestionIndex > 0) {
+                hideOtherSpecialtyInput();
+                currentQuestionIndex--;
+                showQuestion();
+            }
+        }
+
+        function showResults() {
+            document.getElementById('quiz').classList.add('section-hidden');
+            document.getElementById('results').classList.remove('section-hidden');
+            
+            const results = calculateResults();
+            displayResults(results);
+        }
+
+        function calculateResults() {
+            let totalScore = 0;
+            // Each question is worth 20 points, with 5 options (1 to 5).
+            answers.forEach((answer) => {
+                totalScore += (answer + 1) * 4;
+            });
+
+            let category, categoryColor;
+            if (totalScore >= 180) {
+                category = "Excelente";
+                categoryColor = "text-0367A6";
+            } else if (totalScore >= 140) {
+                category = "Muito Bom";
+                categoryColor = "text-F2A007";
+            } else if (totalScore >= 100) {
+                category = "Bom";
+                categoryColor = "text-yellow-500";
+            } else if (totalScore >= 60) {
+                category = "Regular";
+                categoryColor = "text-BF5B04";
+            } else {
+                category = "Precisa Melhorar";
+                categoryColor = "text-red-600";
+            }
+
+            // Archetype selection based on specific answers
+            const archetypeNames = ["Sábio", "Criador", "Governante", "Prestativo"];
+            const archetypeScore = new Array(archetypeNames.length).fill(0);
+            
+            // Simplified scoring logic for archetypes
+            archetypeScore[0] += answers[0] === 0 ? 1 : 0; // Tradition and solidity
+            archetypeScore[0] += answers[1] === 0 ? 1 : 0; // Corporate law
+            archetypeScore[0] += answers[2] === 1 ? 1 : 0; // Old visual identity
+            archetypeScore[0] += answers[3] === 0 ? 1 : 0; // Formal tone
+            archetypeScore[0] += answers[4] === 1 ? 1 : 0; // Tradition
+
+            archetypeScore[1] += answers[0] === 1 ? 1 : 0; // Innovation and agility
+            archetypeScore[1] += answers[1] === 4 ? 1 : 0; // Digital law
+            archetypeScore[1] += answers[2] === 4 ? 1 : 0; // Unique identity
+            archetypeScore[1] += answers[3] === 3 ? 1 : 0; // Inspiring tone
+            archetypeScore[1] += answers[4] === 4 ? 1 : 0; // Technology and innovation
+
+            archetypeScore[2] += answers[0] === 3 ? 1 : 0; // Specialization
+            archetypeScore[2] += answers[1] === 0 ? 1 : 0; // Corporate law
+            archetypeScore[2] += answers[2] === 3 ? 1 : 0; // Modern and consistent
+            archetypeScore[2] += answers[3] === 0 ? 1 : 0; // Formal tone
+            archetypeScore[2] += answers[4] === 2 ? 1 : 0; // Niche market
+
+            archetypeScore[3] += answers[0] === 2 ? 1 : 0; // Relationship and empathy
+            archetypeScore[3] += answers[1] === 3 ? 1 : 0; // Family law
+            archetypeScore[3] += answers[2] === 2 ? 1 : 0; // Functional identity
+            archetypeScore[3] += answers[3] === 4 ? 1 : 0; // Empathetic tone
+            archetypeScore[3] += answers[4] === 3 ? 1 : 0; // Humanized service
+            
+            const maxScore = Math.max(...archetypeScore);
+            const selectedArchetype = archetypeNames[archetypeScore.indexOf(maxScore)];
+            
+            // Dimension calculation (corrected for the new number of questions)
+            const dimensions = {
+                'Identidade de Marca': Math.round((answers.slice(0, 4).reduce((a, b) => a + b + 1, 0) / 4) * 20),
+                'Posicionamento': Math.round((answers.slice(4, 8).reduce((a, b) => a + b + 1, 0) / 4) * 20),
+                'Comunicação': Math.round((answers.slice(8, 10).reduce((a, b) => a + b + 1, 0) / 2) * 20),
+                'Experiência': Math.round((answers.slice(10, 12).reduce((a, b) => a + b + 1, 0) / 2) * 20),
+                'Cultura e Valores': Math.round((answers.slice(12, 14).reduce((a, b) => a + b + 1, 0) / 2) * 20)
+            };
+
+            return {
+                totalScore,
+                category,
+                categoryColor,
+                archetype: selectedArchetype,
+                dimensions,
+                firmInfo: { firmName, firmSpecialty: otherSpecialty || firmSpecialty, firmTarget, firmMission }
+            };
+        }
+
+        function displayResults(results) {
+            // Display total score
+            document.getElementById('total-score').textContent = results.totalScore;
+            document.getElementById('score-category').textContent = results.category;
+            document.getElementById('score-category').className = `text-2xl md:text-3xl font-bold mb-2 ${results.categoryColor}`;
+
+            // Score descriptions
+            const descriptions = {
+                "Excelente": `O escritório ${results.firmInfo.firmName} possui uma estratégia de branding muito bem estruturada e consistente.`,
+                "Muito Bom": `O escritório ${results.firmInfo.firmName} tem uma boa base de branding, com alguns pontos para aprimoramento.`,
+                "Bom": `O escritório ${results.firmInfo.firmName} está no caminho certo, mas há oportunidades significativas de melhoria.`,
+                "Regular": `O escritório ${results.firmInfo.firmName} precisa de atenção em várias áreas do branding.`,
+                "Precisa Melhorar": `É fundamental revisar e reestruturar a estratégia de branding do escritório ${results.firmInfo.firmName}.`
+            };
+            document.getElementById('score-description').textContent = descriptions[results.category];
+
+            // Display archetype
+            const archetype = archetypes[results.archetype];
+            // Make sure the archetype-icon element exists in the HTML
+            const archetypeIconElement = document.getElementById('archetype-icon');
+            if (archetypeIconElement) {
+                archetypeIconElement.textContent = archetype.icon;
+            }
+            document.getElementById('archetype-name').innerHTML = `O Arquétipo do <span class="gradient-text font-extrabold">${results.archetype}</span>`;
+            document.getElementById('archetype-description').innerHTML = archetype.description;
+
+            // Characteristics
+            const characteristicsContainer = document.getElementById('archetype-characteristics').querySelector('div');
+            characteristicsContainer.innerHTML = archetype.characteristics.map(char => 
+                `<span class="bg-gradient-to-r from-0367A6 to-F2A007 text-white px-3 py-1 rounded-full text-sm font-medium" style="--tw-gradient-from: #0367A6; --tw-gradient-to: #F2A007;">${char}</span>`
+            ).join('');
+
+            // Examples
+            document.getElementById('archetype-examples').querySelector('p').textContent = archetype.examples.join(', ');
+
+            // Color palette
+            displayColorPalette(archetype.colors);
+
+            // Personalized recommendations
+            const recommendationsContainer = document.getElementById('recommendations');
+            recommendationsContainer.innerHTML = generateCustomRecommendations(results.firmInfo, results.archetype);
+
+            // Action plan
+            const actionPlanContainer = document.getElementById('action-plan');
+            actionPlanContainer.innerHTML = generateActionPlan(results.dimensions);
+
+            // Create charts
+            createScoreChart(results.totalScore);
+            createRadarChart(results.dimensions);
+            
+            // Add the radar chart analysis
+            generateRadarAnalysis(results.dimensions);
+        }
+
+        function displayColorPalette(colors) {
+            const primaryContainer = document.getElementById('primary-colors');
+            const secondaryContainer = document.getElementById('secondary-colors');
+
+            primaryContainer.innerHTML = colors.primary.map(color => 
+                `<div class="color-sample" style="background-color: ${color}" title="${color}"></div>`
+            ).join('');
+            secondaryContainer.innerHTML = colors.secondary.map(color => 
+                `<div class="color-sample" style="background-color: ${color}" title="${color}"></div>`
+            ).join('');
+        }
+
+        function generateCustomRecommendations(firmInfo, archetype) {
+            const recs = [
+                {
+                    title: "Alinhar Mensagem de Marca",
+                    description: `Com base em sua área de atuação (${firmInfo.firmSpecialty}) e público-alvo (${firmInfo.firmTarget}), recomendamos que todas as comunicações do escritório ${firmInfo.firmName} sejam revisadas para refletir a essência do arquétipo <span class="text-blue-600 font-bold">${archetype}</span>.`,
+                    priority: "Alta"
+                },
+                {
+                    title: "Otimizar a Presença Digital",
+                    description: `Sua presença digital deve ser uma vitrine para a sua especialidade. Crie conteúdo que demonstre a expertise do seu escritório em ${firmInfo.firmSpecialty} e que ressoe com o público ${firmInfo.firmTarget}.`,
+                    priority: "Média"
+                },
+                {
+                    title: "Fortalecer a Proposta de Valor",
+                    description: `Refine a sua proposta de valor única, detalhando como o propósito do seu escritório, que é "${firmInfo.firmMission}", se traduz em benefícios concretos para os clientes.`,
+                    priority: "Alta"
+                }
+            ];
+
+            return recs.map(rec => `
+                <div class="recommendation-card p-6 rounded-lg">
+                    <div class="flex justify-between items-start mb-3">
+                        <h3 class="font-bold text-lg text-gray-900">${rec.title}</h3>
+                        <span class="bg-${rec.priority === 'Alta' ? 'red' : 'yellow'}-100 text-${rec.priority === 'Alta' ? 'red' : 'yellow'}-800 px-3 py-1 rounded-full text-sm font-medium">
+                            ${rec.priority}
+                        </span>
+                    </div>
+                    <p class="text-gray-900">${rec.description}</p>
+                </div>
+            `).join('');
+        }
+
+        function generateActionPlan(dimensions) {
+            const sortedDimensions = Object.entries(dimensions).sort(([, a], [, b]) => a - b);
+            const lowScoreDimension = sortedDimensions[0][0];
+
+            const actions = [
+                `Revisar e reestruturar a sua marca visual para que reflita os valores do escritório ${firmName}.`,
+                `Definir um tom de voz e uma linguagem clara para todas as suas comunicações.`,
+                `Criar uma estratégia de conteúdo focada em ${firmSpecialty} para atrair o público ${firmTarget}.`,
+                `Mapear a jornada do cliente e identificar pontos de melhoria na experiência oferecida.`,
+                `Fortalecer a cultura interna para que ela seja um reflexo da marca externa.`
+            ];
+
+            return actions.map((action, index) => `
+                <div class="recommendation-card p-4 rounded-lg">
+                    <div class="flex items-start">
+                        <div class="bg-gradient-to-r from-A4C5F7 to-0367A6 text-white w-8 h-8 rounded-full flex items-center justify-center mr-4 font-bold text-sm"
+                             style="--tw-gradient-from: #A4C5F7; --tw-gradient-to: #0367A6;">
+                            ${index + 1}
+                        </div>
+                        <div>
+                            <p class="text-gray-900">${action}</p>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+        
+        function createScoreChart(score) {
+            const ctx = document.getElementById('score-chart').getContext('2d');
+            
+            new Chart(ctx, {
+                type: 'doughnut',
+                data: {
+                    datasets: [{
+                        data: [score, 200 - score],
+                        backgroundColor: [
+                            '#0367A6',
+                            'rgba(229, 231, 235, 0.3)'
+                        ],
+                        borderWidth: 0
+                    }]
+                },
+                options: {
+                    responsive: false,
+                    maintainAspectRatio: false,
+                    cutout: '70%',
+                    plugins: {
+                        legend: {
+                            display: false
+                        }
+                    }
+                }
+            });
+        }
+
+        function createRadarChart(dimensions) {
+            const ctx = document.getElementById('radar-chart').getContext('2d');
+            new Chart(ctx, {
+                type: 'radar',
+                data: {
+                    labels: Object.keys(dimensions),
+                    datasets: [{
+                        label: 'Pontuação (%)',
+                        data: Object.values(dimensions),
+                        fill: true,
+                        backgroundColor: 'rgba(164, 197, 247, 0.3)', // Lighter and more elegant fill
+                        borderColor: '#A4C5F7',
+                        pointBackgroundColor: '#A4C5F7',
+                        pointBorderColor: '#022859',
+                        pointHoverBackgroundColor: '#022859',
+                        pointHoverBorderColor: '#A4C5F7'
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: true,
+                    elements: {
+                        line: {
+                            borderWidth: 3
+                        },
+                        point: {
+                            radius: 5,
+                            hoverRadius: 7
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            position: 'top',
+                            labels: {
+                                color: '#E2E8F0',
+                                font: {
+                                    size: 14,
+                                    weight: 'bold'
+                                }
+                            }
+                        },
+                        tooltip: {
+                            backgroundColor: 'rgba(1, 13, 38, 0.8)',
+                            titleColor: '#F8FAFC',
+                            bodyColor: '#CBD5E0',
+                            borderWidth: 1,
+                            borderColor: 'rgba(164, 197, 247, 0.5)'
+                        }
+                    },
+                    scales: {
+                        r: {
+                            angleLines: {
+                                color: 'rgba(255, 255, 255, 0.2)'
+                            },
+                            suggestedMin: 0,
+                            suggestedMax: 100,
+                            ticks: {
+                                color: '#E2E8F0',
+                                backdropColor: 'rgba(1, 13, 38, 0.7)',
+                                font: {
+                                    size: 12
+                                }
+                            },
+                            pointLabels: {
+                                color: '#F8FAFC',
+                                font: {
+                                    size: 14,
+                                    weight: 'bold'
+                                }
+                            },
+                            grid: {
+                                color: 'rgba(255, 255, 255, 0.1)'
+                            }
+                        }
+                    }
+                }
+            });
+        }
+        
+        function generateRadarAnalysis(dimensions) {
+            const analysisContainer = document.getElementById('radar-analysis');
+            analysisContainer.innerHTML = ''; // Clear previous content
+
+            const sortedDimensions = Object.entries(dimensions).sort(([, a], [, b]) => b - a);
+
+            const highestScore = sortedDimensions[0];
+            const lowestScore = sortedDimensions[sortedDimensions.length - 1];
+
+            const analysisTitle = document.createElement('h3');
+            analysisTitle.className = 'text-lg md:text-xl font-bold mb-4 text-gray-800';
+            analysisTitle.innerHTML = 'Análise Detalhada do Gráfico de Teia';
+            analysisContainer.appendChild(analysisTitle);
+
+            const strengths = document.createElement('div');
+            strengths.className = 'bg-blue-100 p-4 rounded-lg mb-4';
+            // Adjusted text color for better contrast
+            strengths.innerHTML = `
+                <h4 class="font-semibold text-blue-900 mb-2">Pontos Fortes:</h4>
+                <p class="text-blue-900">
+                    Sua área de maior performance é <strong>${highestScore[0]}</strong> com uma pontuação de ${highestScore[1]}%. Isso indica que seu escritório já possui uma base sólida e bem desenvolvida nesta dimensão. Continue capitalizando sobre este ponto forte para se diferenciar no mercado.
+                </p>
+            `;
+            analysisContainer.appendChild(strengths);
+
+            const weaknesses = document.createElement('div');
+            weaknesses.className = 'bg-yellow-100 p-4 rounded-lg';
+            weaknesses.innerHTML = `
+                <h4 class="font-semibold text-yellow-800 mb-2">Áreas para Melhoria:</h4>
+                <p class="text-gray-900">
+                    A dimensão de <strong>${lowestScore[0]}</strong>, com uma pontuação de ${lowestScore[1]}%, representa a maior oportunidade de crescimento para o seu branding. Focar nesta área pode trazer um retorno significativo e fortalecer a sua marca de forma mais completa. As recomendações abaixo foram ajustadas para priorizar esta dimensão.
+                </p>
+            `;
+            analysisContainer.appendChild(weaknesses);
+        }
+
+        function restartQuiz() {
+            currentQuestionIndex = 0;
+            answers = [];
+            document.getElementById('results').classList.add('section-hidden');
+            document.getElementById('firm-info').classList.remove('section-hidden');
+        }
+    </script>
+</body>
+</html>
