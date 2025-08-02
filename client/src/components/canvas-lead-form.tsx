@@ -136,7 +136,7 @@ export function CanvasLeadForm({ open, onOpenChange }: CanvasLeadFormProps) {
               name="whatsapp"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel className="text-white">WhatsApp</FormLabel>
+                  <FormLabel className="text-white">WhatsApp (opcional)</FormLabel>
                   <FormControl>
                     <div className="relative">
                       <MessageCircle className="absolute left-3 top-3 h-4 w-4 text-gray-400" />
