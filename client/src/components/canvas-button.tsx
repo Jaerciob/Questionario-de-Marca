@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Download, Sparkles } from "lucide-react";
 import { CanvasLeadForm } from "./canvas-lead-form";
+import { trackEvent } from "@/lib/analytics";
 
 interface CanvasButtonProps {
   variant?: "primary" | "secondary";
@@ -15,10 +16,15 @@ export function CanvasButton({ variant = "primary", size = "default", className 
   const isPrimary = variant === "primary";
   const isLarge = size === "lg";
 
+  const handleCanvasClick = () => {
+    trackEvent('canvas_request_initiated', 'lead_generation', variant === "primary" ? 'results_page' : 'welcome_page');
+    setShowForm(true);
+  };
+
   return (
     <>
       <Button
-        onClick={() => setShowForm(true)}
+        onClick={handleCanvasClick}
         className={`
           ${isPrimary 
             ? "bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white shadow-lg shadow-orange-500/25" 

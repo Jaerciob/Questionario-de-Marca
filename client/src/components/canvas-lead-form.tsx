@@ -5,6 +5,7 @@ import { useMutation } from "@tanstack/react-query";
 import { insertCanvasLeadSchema, type InsertCanvasLead } from "@shared/schema";
 import { apiRequest } from "@/lib/queryClient";
 import { useToast } from "@/hooks/use-toast";
+import { trackEvent } from "@/lib/analytics";
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
@@ -48,6 +49,7 @@ export function CanvasLeadForm({ open, onOpenChange }: CanvasLeadFormProps) {
     },
     onSuccess: () => {
       setIsSubmitted(true);
+      trackEvent('canvas_lead_submitted', 'lead_generation', 'form_completed');
       toast({
         title: "Solicitação enviada!",
         description: "Você receberá o Canvas Marketing Digital em breve.",

@@ -28,7 +28,13 @@ export default function ResultsSection({ firmInfo, answers, onRestart }: Results
   }, [answers, firmInfo]);
 
   const handlePrint = () => {
+    trackEvent('print_report', 'engagement', 'results_page');
     window.print();
+  };
+
+  const handleRestart = () => {
+    trackEvent('restart_diagnosis', 'engagement', 'results_page');
+    onRestart();
   };
 
   return (
@@ -189,7 +195,7 @@ export default function ResultsSection({ firmInfo, answers, onRestart }: Results
             <i className="fas fa-print mr-2"></i>Imprimir Relatório
           </button>
           <button 
-            onClick={onRestart}
+            onClick={handleRestart}
             className="px-8 py-3 bg-gray-600 bg-opacity-50 text-gray-300 rounded-full hover:bg-opacity-70 transition-all"
           >
             <i className="fas fa-redo mr-2"></i>Novo Diagnóstico

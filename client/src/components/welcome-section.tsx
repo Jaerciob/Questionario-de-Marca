@@ -1,10 +1,16 @@
 import { CanvasButton } from "./canvas-button";
+import { trackEvent } from "@/lib/analytics";
 
 interface WelcomeSectionProps {
   onStart: () => void;
 }
 
 export default function WelcomeSection({ onStart }: WelcomeSectionProps) {
+  const handleStartDiagnosis = () => {
+    trackEvent('start_diagnosis', 'engagement', 'welcome_button');
+    onStart();
+  };
+
   return (
     <div className="text-center mb-12">
       <div className="glass-morphism p-6 md:p-12 max-w-4xl mx-auto">
@@ -73,7 +79,7 @@ export default function WelcomeSection({ onStart }: WelcomeSectionProps) {
         </div>
         
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <button onClick={onStart} className="btn-primary text-lg px-10 py-4 shadow-lg">
+          <button onClick={handleStartDiagnosis} className="btn-primary text-lg px-10 py-4 shadow-lg">
             <i className="fas fa-play mr-3"></i>Iniciar Diagnóstico
           </button>
           <CanvasButton variant="secondary" size="lg" />
