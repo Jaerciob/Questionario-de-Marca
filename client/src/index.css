@@ -149,6 +149,34 @@
   .form-input::placeholder {
     color: hsl(210, 40%, 70%);
   }
+
+  /* Select specific styles */
+  .form-input select {
+    background: hsla(0, 0%, 100%, 0.1);
+    color: hsl(210, 40%, 90%);
+  }
+
+  .form-input option {
+    background: hsl(216, 95%, 7%);
+    color: hsl(210, 40%, 90%);
+    padding: 8px 12px;
+  }
+
+  .form-input option:hover,
+  .form-input option:checked {
+    background: hsl(211, 71%, 70%);
+    color: hsl(216, 95%, 7%);
+  }
+
+  /* Ensure select dropdown options are visible */
+  select.form-input {
+    color: hsl(210, 40%, 90%) !important;
+  }
+
+  select.form-input option {
+    background-color: hsl(216, 95%, 7%) !important;
+    color: hsl(210, 40%, 90%) !important;
+  }
 }
 
 @media print {

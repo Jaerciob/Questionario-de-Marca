@@ -44,10 +44,10 @@ export default function ResultsSection({ firmInfo, answers, onRestart }: Results
 
       {/* Radar Chart */}
       <div className="mb-12">
-        <h3 className="text-2xl font-bold text-white mb-6 text-center">
+        <h3 className="text-3xl font-bold text-white mb-8 text-center">
           Pontuação por Categoria
         </h3>
-        <div className="bg-white bg-opacity-10 rounded-xl p-8">
+        <div className="bg-white bg-opacity-10 rounded-2xl p-8 border border-white border-opacity-20 backdrop-blur-sm">
           <RadarChart scores={results.scores} />
         </div>
       </div>
