@@ -1,0 +1,181 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: hsl(240, 10%, 3.9%);
+  --foreground: hsl(0, 0%, 98%);
+  --muted: hsl(240, 3.7%, 15.9%);
+  --muted-foreground: hsl(240, 5%, 64.9%);
+  --popover: hsl(240, 10%, 3.9%);
+  --popover-foreground: hsl(0, 0%, 98%);
+  --card: hsl(240, 10%, 3.9%);
+  --card-foreground: hsl(0, 0%, 98%);
+  --border: hsl(240, 3.7%, 15.9%);
+  --input: hsl(240, 3.7%, 15.9%);
+  --primary: hsl(207, 90%, 54%);
+  --primary-foreground: hsl(211, 100%, 99%);
+  --secondary: hsl(240, 3.7%, 15.9%);
+  --secondary-foreground: hsl(0, 0%, 98%);
+  --accent: hsl(240, 3.7%, 15.9%);
+  --accent-foreground: hsl(0, 0%, 98%);
+  --destructive: hsl(0, 62.8%, 30.6%);
+  --destructive-foreground: hsl(0, 0%, 98%);
+  --ring: hsl(240, 4.9%, 83.9%);
+  --radius: 0.5rem;
+
+  /* Custom Branding Colors */
+  --primary-dark: hsl(216, 95%, 7%);
+  --secondary-dark: hsl(214, 93%, 16%);
+  --primary-blue: hsl(207, 94%, 33%);
+  --light-blue: hsl(211, 71%, 70%);
+  --orange-accent: hsl(38, 92%, 50%);
+  --glass-bg: hsla(0, 0%, 100%, 0.15);
+  --glass-border: hsla(0, 0%, 100%, 0.1);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased;
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(135deg, hsl(216, 95%, 7%) 0%, hsl(214, 93%, 16%) 100%);
+    min-height: 100vh;
+    color: hsl(210, 40%, 90%);
+  }
+}
+
+@layer utilities {
+  .glass-morphism {
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    border: 1px solid var(--glass-border);
+    color: hsl(210, 40%, 90%);
+  }
+
+  .gradient-text {
+    background: linear-gradient(135deg, hsl(211, 71%, 70%) 0%, hsl(207, 94%, 33%) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .option-item {
+    @apply bg-white bg-opacity-90 text-slate-900 transition-all duration-300 cursor-pointer rounded-xl p-4 border-2 border-transparent;
+  }
+
+  .option-item:hover {
+    @apply transform -translate-y-0.5 shadow-lg;
+    border-color: hsl(211, 71%, 70%);
+    box-shadow: 0 8px 25px hsla(211, 71%, 70%, 0.3);
+  }
+
+  .option-selected {
+    background: linear-gradient(135deg, hsl(207, 94%, 33%) 0%, hsl(38, 92%, 50%) 100%);
+    @apply text-white transform -translate-y-0.5;
+    box-shadow: 0 8px 25px hsla(207, 94%, 33%, 0.4);
+  }
+
+  .progress-bar {
+    background: linear-gradient(90deg, hsl(211, 71%, 70%) 0%, hsl(207, 94%, 33%) 100%);
+    height: 8px;
+    border-radius: 4px;
+    transition: width 0.5s ease;
+  }
+
+  .recommendation-card {
+    @apply bg-white bg-opacity-95 text-slate-900 border-l-4 rounded-xl p-5 mb-4 transition-all duration-300;
+    border-left-color: hsl(207, 94%, 33%);
+  }
+
+  .recommendation-card:hover {
+    @apply transform -translate-y-1 shadow-xl;
+  }
+
+  .archetype-card {
+    background: linear-gradient(135deg, hsla(211, 71%, 70%, 0.2) 0%, hsla(207, 94%, 33%, 0.1) 100%);
+    border: 2px solid hsla(211, 71%, 70%, 0.3);
+    @apply rounded-2xl p-6 text-center transition-all duration-300;
+  }
+
+  .archetype-card:hover {
+    @apply transform scale-105;
+    border-color: hsl(211, 71%, 70%);
+  }
+
+  .color-sample {
+    @apply w-12 h-12 rounded-full m-2 inline-block border-4 transition-transform duration-300;
+    border-color: hsla(0, 0%, 100%, 0.8);
+    box-shadow: 0 4px 12px hsla(0, 0%, 0%, 0.2);
+  }
+
+  .color-sample:hover {
+    @apply transform scale-110;
+  }
+
+  .btn-primary {
+    background: linear-gradient(135deg, hsl(211, 71%, 70%) 0%, hsl(207, 94%, 33%) 100%);
+    @apply text-white px-6 py-3 rounded-full font-semibold transition-all duration-300 border-none cursor-pointer;
+  }
+
+  .btn-primary:hover {
+    background: linear-gradient(135deg, hsl(207, 94%, 33%) 0%, hsl(214, 93%, 16%) 100%);
+    @apply transform scale-105;
+    box-shadow: 0 8px 25px hsla(211, 71%, 70%, 0.4);
+  }
+
+  .btn-primary:disabled {
+    @apply opacity-50 cursor-not-allowed transform-none;
+  }
+
+  /* Form Inputs */
+  .form-input {
+    background: hsla(0, 0%, 100%, 0.1);
+    border: 1px solid hsla(0, 0%, 100%, 0.2);
+    @apply px-4 py-3 rounded-lg w-full text-slate-100 text-base transition-all duration-300;
+  }
+
+  .form-input:focus {
+    outline: none;
+    border-color: hsl(211, 71%, 70%);
+    box-shadow: 0 0 0 3px hsla(211, 71%, 70%, 0.3);
+    background: hsla(0, 0%, 100%, 0.15);
+  }
+
+  .form-input::placeholder {
+    color: hsl(210, 40%, 70%);
+  }
+}
+
+@media print {
+  body {
+    background: white !important;
+    color: black !important;
+  }
+  
+  .glass-morphism {
+    background: white !important;
+    backdrop-filter: none !important;
+    border: 1px solid #ddd !important;
+    color: black !important;
+  }
+  
+  .option-item {
+    color: black !important;
+  }
+  
+  .recommendation-card {
+    background: white !important;
+    color: black !important;
+    border-color: hsl(207, 94%, 33%) !important;
+  }
+  
+  .gradient-text {
+    -webkit-text-fill-color: hsl(207, 94%, 33%);
+    color: hsl(207, 94%, 33%);
+  }
+}
