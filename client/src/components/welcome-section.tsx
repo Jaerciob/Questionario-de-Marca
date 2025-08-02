@@ -1,3 +1,5 @@
+import { CanvasButton } from "./canvas-button";
+
 interface WelcomeSectionProps {
   onStart: () => void;
 }
@@ -70,9 +72,12 @@ export default function WelcomeSection({ onStart }: WelcomeSectionProps) {
           </div>
         </div>
         
-        <button onClick={onStart} className="btn-primary text-lg px-10 py-4 shadow-lg">
-          <i className="fas fa-play mr-3"></i>Iniciar Diagnóstico
-        </button>
+        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <button onClick={onStart} className="btn-primary text-lg px-10 py-4 shadow-lg">
+            <i className="fas fa-play mr-3"></i>Iniciar Diagnóstico
+          </button>
+          <CanvasButton variant="secondary" size="lg" />
+        </div>
       </div>
     </div>
   );

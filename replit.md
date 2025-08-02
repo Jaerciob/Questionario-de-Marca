@@ -28,7 +28,10 @@ The application is configured for **PostgreSQL** integration using **Drizzle ORM
 The project uses **Vite** as the build tool with custom configuration for development and production environments. **esbuild** handles server-side bundling for production deployment. The setup includes TypeScript compilation, CSS processing through PostCSS, and asset management optimized for both development and production workflows.
 
 ### Quiz Engine and Scoring System
-The application implements a sophisticated scoring algorithm that analyzes user responses across multiple dimensions. The quiz data structure supports categorized questions with weighted scoring, archetype determination based on response patterns, and personalized recommendation generation. Results include radar chart visualizations, color palette suggestions, and prioritized action items tailored to the law firm's profile.
+The application implements a sophisticated scoring algorithm that analyzes user responses across multiple dimensions. The quiz now features 21 questions including digital marketing channels evaluation. The data structure supports categorized questions with weighted scoring, archetype determination based on response patterns, and personalized recommendation generation. Results include radar chart visualizations, color palette suggestions, and prioritized action items tailored to the law firm's profile.
+
+### Lead Generation System
+The application includes a Canvas Marketing Digital lead capture system that appears both on the welcome screen and results page. Users can request access to a specialized marketing canvas by providing their email and WhatsApp contact information. The system stores lead data in memory storage with timestamp tracking and validation through Zod schemas.
 
 ## External Dependencies
 

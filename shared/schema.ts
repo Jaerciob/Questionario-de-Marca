@@ -49,3 +49,16 @@ export interface QuizResults {
   }>;
   overallScore: number;
 }
+
+// Canvas Marketing Lead schema
+export const insertCanvasLeadSchema = z.object({
+  email: z.string().email("Email inválido"),
+  whatsapp: z.string().min(1, "WhatsApp é obrigatório").regex(/^[\d\s\+\-\(\)]+$/, "WhatsApp deve conter apenas números e símbolos"),
+});
+
+export type InsertCanvasLead = z.infer<typeof insertCanvasLeadSchema>;
+
+export interface CanvasLead extends InsertCanvasLead {
+  id: string;
+  requestedAt: Date;
+}

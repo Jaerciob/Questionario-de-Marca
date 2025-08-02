@@ -2,6 +2,7 @@ import { useMemo } from "react";
 import type { InsertFirmInfo, QuizResults } from "@shared/schema";
 import { calculateScores, generateRecommendations, determineArchetype, generateColorPalette } from "@/utils/scoring";
 import RadarChart from "@/components/radar-chart";
+import { CanvasButton } from "./canvas-button";
 
 interface ResultsSectionProps {
   firmInfo: InsertFirmInfo;
@@ -179,16 +180,21 @@ export default function ResultsSection({ firmInfo, answers, onRestart }: Results
       </div>
 
       {/* Action Buttons */}
-      <div className="text-center space-x-4">
-        <button onClick={handlePrint} className="btn-primary px-8 py-3">
-          <i className="fas fa-print mr-2"></i>Imprimir Relatório
-        </button>
-        <button 
-          onClick={onRestart}
-          className="px-8 py-3 bg-gray-600 bg-opacity-50 text-gray-300 rounded-full hover:bg-opacity-70 transition-all"
-        >
-          <i className="fas fa-redo mr-2"></i>Novo Diagnóstico
-        </button>
+      <div className="text-center">
+        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-6">
+          <CanvasButton variant="primary" size="lg" />
+        </div>
+        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+          <button onClick={handlePrint} className="btn-primary px-8 py-3">
+            <i className="fas fa-print mr-2"></i>Imprimir Relatório
+          </button>
+          <button 
+            onClick={onRestart}
+            className="px-8 py-3 bg-gray-600 bg-opacity-50 text-gray-300 rounded-full hover:bg-opacity-70 transition-all"
+          >
+            <i className="fas fa-redo mr-2"></i>Novo Diagnóstico
+          </button>
+        </div>
       </div>
     </div>
   );

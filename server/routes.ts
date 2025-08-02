@@ -1,7 +1,7 @@
 import type { Express } from "express";
 import { createServer, type Server } from "http";
 import { storage } from "./storage";
-import { insertQuizResponseSchema } from "@shared/schema";
+import { insertQuizResponseSchema, insertCanvasLeadSchema } from "@shared/schema";
 import { z } from "zod";
 
 export async function registerRoutes(app: Express): Promise<Server> {
@@ -51,6 +51,38 @@ export async function registerRoutes(app: Express): Promise<Server> {
     try {
       const responses = await storage.getAllQuizResponses();
       res.json(responses);
+    } catch (error) {
+      res.status(500).json({ 
+        message: "Erro interno do servidor" 
+      });
+    }
+  });
+
+  // Save canvas lead
+  app.post("/api/canvas-leads", async (req, res) => {
+    try {
+      const validatedData = insertCanvasLeadSchema.parse(req.body);
+      const lead = await storage.saveCanvasLead(validatedData);
+      res.json(lead);
+    } catch (error) {
+      if (error instanceof z.ZodError) {
+        res.status(400).json({ 
+          message: "Dados inválidos", 
+          errors: error.errors 
+        });
+      } else {
+        res.status(500).json({ 
+          message: "Erro interno do servidor" 
+        });
+      }
+    }
+  });
+
+  // Get all canvas leads (for analytics/admin purposes)
+  app.get("/api/canvas-leads", async (req, res) => {
+    try {
+      const leads = await storage.getAllCanvasLeads();
+      res.json(leads);
     } catch (error) {
       res.status(500).json({ 
         message: "Erro interno do servidor" 
