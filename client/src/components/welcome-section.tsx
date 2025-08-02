@@ -28,9 +28,9 @@ export default function WelcomeSection({ onStart }: WelcomeSectionProps) {
           </div>
           <div className="bg-white bg-opacity-10 p-6 rounded-xl backdrop-blur-sm border border-white border-opacity-20">
             <i className="fas fa-list-check text-4xl text-orange-400 mb-4"></i>
-            <h3 className="font-bold text-lg mb-2 text-white">20 Questões</h3>
+            <h3 className="font-bold text-lg mb-2 text-white">21 Questões</h3>
             <p className="text-gray-300">Estratégicas e objetivas</p>
-            <p className="text-sm text-gray-400 mt-1">Baseadas em metodologia profissional</p>
+            <p className="text-sm text-gray-400 mt-1">Incluindo avaliação de canais digitais</p>
           </div>
           <div className="bg-white bg-opacity-10 p-6 rounded-xl backdrop-blur-sm border border-white border-opacity-20">
             <i className="fas fa-chart-line text-4xl text-green-400 mb-4"></i>

@@ -13,8 +13,8 @@ export function calculateScores(answers: Record<string, string>) {
   const categoryQuestions = {
     identity: [0, 1, 2, 3, 4],
     positioning: [5, 6, 7, 8, 9],
-    communication: [10, 11, 12, 13, 14],
-    experience: [15, 16, 17, 18, 19]
+    communication: [10, 11, 12, 13, 14, 15],
+    experience: [16, 17, 18, 19, 20]
   };
 
   // Scoring logic based on answer patterns
@@ -80,7 +80,12 @@ export function calculateScores(answers: Record<string, string>) {
     "emotional": 16,
     "digital": 15,
     "network": 14,
-    "formal": 13
+    "formal": 13,
+    // New digital channels question
+    "google_seo": 19,
+    "linkedin_professional": 18,
+    "social_media": 16,
+    "other_digital": 15
   };
 
   // Calculate scores for each category
@@ -96,8 +101,10 @@ export function calculateScores(answers: Record<string, string>) {
       }
     });
     
-    // Normalize to 0-100 scale (5 questions * max 20 points = 100)
-    scores[category as keyof typeof scores] = Math.min(100, Math.max(0, categoryScore));
+    // Normalize to 0-100 scale
+    const maxPossibleScore = questionIndices.length * 20;
+    const normalizedScore = (categoryScore / maxPossibleScore) * 100;
+    scores[category as keyof typeof scores] = Math.min(100, Math.max(0, normalizedScore));
   });
 
   return scores;

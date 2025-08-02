@@ -163,6 +163,16 @@ export const quizData: QuizQuestion[] = [
       { text: "Consultoria e orientação direta", value: "consulting" }
     ]
   },
+  {
+    section: "Comunicação",
+    question: "Quais são os principais canais digitais que você utiliza para atrair clientes?",
+    options: [
+      { text: "Google Ads e SEO", value: "google_seo" },
+      { text: "LinkedIn e redes profissionais", value: "linkedin_professional" },
+      { text: "Instagram e Facebook", value: "social_media" },
+      { text: "Outros canais digitais", value: "other_digital" }
+    ]
+  },
 
   // Experiência do Cliente (5 questions)
   {
