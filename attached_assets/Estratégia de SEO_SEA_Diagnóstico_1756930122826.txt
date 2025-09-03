@@ -1,0 +1,1377 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Strategy Pro - SEO e SEA Personalizados</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body class="bg-gradient-to-br from-blue-50 via-white to-purple-50 min-h-screen">
+
+<!-- Navigation -->
+<nav class="bg-white shadow-lg sticky top-0 z-50">
+    <div class="max-w-6xl mx-auto px-4 py-4">
+        <div class="flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div class="bg-gradient-to-r from-blue-600 to-purple-600 p-3 rounded-xl">
+                    <i class="fas fa-rocket text-white text-xl"></i>
+                </div>
+                <div>
+                    <h1 class="text-2xl font-bold text-gray-800">Digital Strategy Pro</h1>
+                    <p class="text-gray-600">SEO e SEA Personalizados</p>
+                </div>
+            </div>
+            <button onclick="showHome()" class="px-4 py-2 bg-blue-100 text-blue-600 rounded-lg hover:bg-blue-200 transition-all">
+                <i class="fas fa-home mr-2"></i>Início
+            </button>
+        </div>
+    </div>
+</nav>
+
+<!-- Home Section -->
+<div id="home-section" class="max-w-6xl mx-auto px-4 py-8">
+    <!-- Hero Section -->
+    <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold text-gray-800 mb-6">Escolha Sua Estratégia Digital</h2>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
+            Descubra qual estratégia de marketing digital é ideal para o seu negócio: 
+            crescimento orgânico com SEO ou resultados imediatos com SEA
+        </p>
+    </div>
+
+    <!-- SEO vs SEA Comparison -->
+    <div class="grid lg:grid-cols-2 gap-8 mb-16">
+        <!-- SEO Explanation -->
+        <div class="bg-white rounded-xl shadow-lg p-8 border-l-4 border-green-500">
+            <div class="flex items-center gap-3 mb-6">
+                <div class="bg-green-100 p-3 rounded-lg">
+                    <i class="fas fa-seedling text-green-600 text-2xl"></i>
+                </div>
+                <div>
+                    <h3 class="text-2xl font-bold text-gray-800">SEO - Search Engine Optimization</h3>
+                    <p class="text-green-600 font-semibold">Crescimento Orgânico</p>
+                </div>
+            </div>
+            
+            <div class="space-y-4">
+                <p class="text-gray-700">
+                    <strong>O que é:</strong> Estratégia para melhorar o posicionamento natural do seu site nos resultados de busca do Google, sem pagar por anúncios.
+                </p>
+                
+                <div class="bg-green-50 p-4 rounded-lg">
+                    <h4 class="font-semibold text-green-800 mb-2">✅ Vantagens:</h4>
+                    <ul class="text-sm text-green-700 space-y-1">
+                        <li>• Tráfego gratuito e sustentável</li>
+                        <li>• Maior credibilidade e confiança</li>
+                        <li>• Resultados duradouros</li>
+                        <li>• ROI crescente ao longo do tempo</li>
+                    </ul>
+                </div>
+                
+                <div class="bg-orange-50 p-4 rounded-lg">
+                    <h4 class="font-semibold text-orange-800 mb-2">⚠️ Desafios:</h4>
+                    <ul class="text-sm text-orange-700 space-y-1">
+                        <li>• Resultados a médio/longo prazo (3-6 meses)</li>
+                        <li>• Requer conhecimento técnico</li>
+                        <li>• Produção constante de conteúdo</li>
+                        <li>• Competição alta em alguns nichos</li>
+                    </ul>
+                </div>
+                
+                <div class="bg-blue-50 p-4 rounded-lg">
+                    <h4 class="font-semibold text-blue-800 mb-2">🎯 Ideal para:</h4>
+                    <ul class="text-sm text-blue-700 space-y-1">
+                        <li>• Negócios que pensam no longo prazo</li>
+                        <li>• Empresas com orçamento limitado</li>
+                        <li>• Nichos com boa demanda de busca</li>
+                        <li>• Quem pode investir em conteúdo</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <button onclick="startSEOQuiz()" class="w-full mt-6 py-4 bg-gradient-to-r from-green-500 to-green-600 text-white rounded-lg hover:shadow-lg transition-all font-semibold">
+                <i class="fas fa-chart-line mr-2"></i>Avaliar Estratégia SEO
+            </button>
+        </div>
+
+        <!-- SEA Explanation -->
+        <div class="bg-white rounded-xl shadow-lg p-8 border-l-4 border-blue-500">
+            <div class="flex items-center gap-3 mb-6">
+                <div class="bg-blue-100 p-3 rounded-lg">
+                    <i class="fas fa-rocket text-blue-600 text-2xl"></i>
+                </div>
+                <div>
+                    <h3 class="text-2xl font-bold text-gray-800">SEA - Search Engine Advertising</h3>
+                    <p class="text-blue-600 font-semibold">Anúncios Pagos</p>
+                </div>
+            </div>
+            
+            <div class="space-y-4">
+                <p class="text-gray-700">
+                    <strong>O que é:</strong> Estratégia de anúncios pagos no Google Ads, Facebook Ads e outras plataformas para gerar tráfego e vendas imediatas.
+                </p>
+                
+                <div class="bg-blue-50 p-4 rounded-lg">
+                    <h4 class="font-semibold text-blue-800 mb-2">✅ Vantagens:</h4>
+                    <ul class="text-sm text-blue-700 space-y-1">
+                        <li>• Resultados imediatos</li>
+                        <li>• Controle total do investimento</li>
+                        <li>• Segmentação precisa do público</li>
+                        <li>• Métricas detalhadas em tempo real</li>
+                    </ul>
+                </div>
+                
+                <div class="bg-orange-50 p-4 rounded-lg">
+                    <h4 class="font-semibold text-orange-800 mb-2">⚠️ Desafios:</h4>
+                    <ul class="text-sm text-orange-700 space-y-1">
+                        <li>• Requer investimento contínuo</li>
+                        <li>• Competição pode encarecer cliques</li>
+                        <li>• Necessita otimização constante</li>
+                        <li>• Resultados param quando para o investimento</li>
+                    </ul>
+                </div>
+                
+                <div class="bg-purple-50 p-4 rounded-lg">
+                    <h4 class="font-semibold text-purple-800 mb-2">🎯 Ideal para:</h4>
+                    <ul class="text-sm text-purple-700 space-y-1">
+                        <li>• Negócios que precisam de resultados rápidos</li>
+                        <li>• Lançamento de produtos/serviços</li>
+                        <li>• Empresas com orçamento para investir</li>
+                        <li>• Nichos com alta concorrência orgânica</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <button onclick="startSEAQuiz()" class="w-full mt-6 py-4 bg-gradient-to-r from-blue-500 to-blue-600 text-white rounded-lg hover:shadow-lg transition-all font-semibold">
+                <i class="fas fa-bullhorn mr-2"></i>Avaliar Estratégia SEA
+            </button>
+        </div>
+    </div>
+
+    <!-- Comparison Table -->
+    <div class="bg-white rounded-xl shadow-lg p-8 mb-16">
+        <h3 class="text-2xl font-bold text-gray-800 mb-6 text-center">Comparativo Rápido</h3>
+        <div class="overflow-x-auto">
+            <table class="w-full">
+                <thead>
+                    <tr class="border-b-2">
+                        <th class="text-left py-4 px-4 font-semibold text-gray-700">Aspecto</th>
+                        <th class="text-center py-4 px-4 font-semibold text-green-600">SEO</th>
+                        <th class="text-center py-4 px-4 font-semibold text-blue-600">SEA</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="border-b">
+                        <td class="py-4 px-4 font-medium">Tempo para Resultados</td>
+                        <td class="py-4 px-4 text-center">3-6 meses</td>
+                        <td class="py-4 px-4 text-center">Imediato</td>
+                    </tr>
+                    <tr class="border-b">
+                        <td class="py-4 px-4 font-medium">Custo Inicial</td>
+                        <td class="py-4 px-4 text-center">Baixo</td>
+                        <td class="py-4 px-4 text-center">Médio/Alto</td>
+                    </tr>
+                    <tr class="border-b">
+                        <td class="py-4 px-4 font-medium">Sustentabilidade</td>
+                        <td class="py-4 px-4 text-center">Alta</td>
+                        <td class="py-4 px-4 text-center">Depende do investimento</td>
+                    </tr>
+                    <tr class="border-b">
+                        <td class="py-4 px-4 font-medium">Credibilidade</td>
+                        <td class="py-4 px-4 text-center">Muito Alta</td>
+                        <td class="py-4 px-4 text-center">Média</td>
+                    </tr>
+                    <tr class="border-b">
+                        <td class="py-4 px-4 font-medium">Controle de Resultados</td>
+                        <td class="py-4 px-4 text-center">Limitado</td>
+                        <td class="py-4 px-4 text-center">Total</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- CTA Section -->
+    <div class="text-center bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl p-8 text-white">
+        <h3 class="text-2xl font-bold mb-4">Não Sabe Qual Escolher?</h3>
+        <p class="mb-6">Faça os dois diagnósticos e compare os resultados para tomar a melhor decisão para o seu negócio!</p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <button onclick="startSEOQuiz()" class="px-8 py-3 bg-white text-blue-600 rounded-lg hover:shadow-lg transition-all font-semibold">
+                Começar com SEO
+            </button>
+            <button onclick="startSEAQuiz()" class="px-8 py-3 bg-white text-purple-600 rounded-lg hover:shadow-lg transition-all font-semibold">
+                Começar com SEA
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- SEO Quiz Section -->
+<div id="seo-quiz-section" class="hidden max-w-4xl mx-auto px-4 py-8">
+    <div class="bg-white rounded-xl shadow-lg p-8">
+        <div class="flex items-center gap-3 mb-8">
+            <div class="bg-green-100 p-3 rounded-lg">
+                <i class="fas fa-seedling text-green-600 text-xl"></i>
+            </div>
+            <div>
+                <h2 class="text-2xl font-bold text-gray-800">Diagnóstico SEO Strategy</h2>
+                <p class="text-gray-600">Descubra sua estratégia de SEO personalizada</p>
+            </div>
+        </div>
+
+        <!-- Progress Bar -->
+        <div class="mb-8">
+            <div class="flex justify-between text-sm text-gray-600 mb-2">
+                <span>Progresso do Diagnóstico</span>
+                <span id="seo-progress-text">0/8</span>
+            </div>
+            <div class="w-full bg-gray-200 rounded-full h-2">
+                <div id="seo-progress-bar" class="bg-green-500 h-2 rounded-full transition-all duration-300" style="width: 0%"></div>
+            </div>
+        </div>
+
+        <!-- Questions -->
+        <div id="seo-question-container"></div>
+
+        <!-- Navigation Buttons -->
+        <div class="flex justify-between mt-8">
+            <button id="seo-prev-btn" onclick="previousSEOQuestion()" class="px-6 py-3 bg-gray-300 text-gray-700 rounded-lg hover:bg-gray-400 transition-all hidden">
+                <i class="fas fa-arrow-left mr-2"></i>Anterior
+            </button>
+            <button id="seo-next-btn" onclick="nextSEOQuestion()" class="px-6 py-3 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-all ml-auto">
+                Próxima <i class="fas fa-arrow-right ml-2"></i>
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- SEA Quiz Section -->
+<div id="sea-quiz-section" class="hidden max-w-4xl mx-auto px-4 py-8">
+    <div class="bg-white rounded-xl shadow-lg p-8">
+        <div class="flex items-center gap-3 mb-8">
+            <div class="bg-blue-100 p-3 rounded-lg">
+                <i class="fas fa-rocket text-blue-600 text-xl"></i>
+            </div>
+            <div>
+                <h2 class="text-2xl font-bold text-gray-800">Diagnóstico SEA Strategy</h2>
+                <p class="text-gray-600">Descubra sua estratégia de anúncios pagos personalizada</p>
+            </div>
+        </div>
+
+        <!-- Progress Bar -->
+        <div class="mb-8">
+            <div class="flex justify-between text-sm text-gray-600 mb-2">
+                <span>Progresso do Diagnóstico</span>
+                <span id="sea-progress-text">0/8</span>
+            </div>
+            <div class="w-full bg-gray-200 rounded-full h-2">
+                <div id="sea-progress-bar" class="bg-blue-500 h-2 rounded-full transition-all duration-300" style="width: 0%"></div>
+            </div>
+        </div>
+
+        <!-- Questions -->
+        <div id="sea-question-container"></div>
+
+        <!-- Navigation Buttons -->
+        <div class="flex justify-between mt-8">
+            <button id="sea-prev-btn" onclick="previousSEAQuestion()" class="px-6 py-3 bg-gray-300 text-gray-700 rounded-lg hover:bg-gray-400 transition-all hidden">
+                <i class="fas fa-arrow-left mr-2"></i>Anterior
+            </button>
+            <button id="sea-next-btn" onclick="nextSEAQuestion()" class="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-all ml-auto">
+                Próxima <i class="fas fa-arrow-right ml-2"></i>
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- SEO Results Section -->
+<div id="seo-results-section" class="hidden max-w-6xl mx-auto px-4 py-8">
+    <div class="bg-white rounded-xl shadow-lg p-8 mb-8">
+        <div class="flex items-center gap-3 mb-8">
+            <div class="bg-green-100 p-3 rounded-lg">
+                <i class="fas fa-chart-line text-green-600 text-xl"></i>
+            </div>
+            <div>
+                <h2 class="text-2xl font-bold text-gray-800">Resultado do Diagnóstico SEO</h2>
+                <p class="text-gray-600">Seu plano personalizado baseado nas respostas</p>
+            </div>
+        </div>
+
+        <div class="grid lg:grid-cols-3 gap-8">
+            <!-- Maturity Level -->
+            <div class="bg-gradient-to-r from-green-500 to-green-600 text-white rounded-xl p-6 text-center">
+                <i class="fas fa-user-graduate text-3xl mb-3"></i>
+                <h3 class="text-xl font-bold mb-2">Nível de Maturidade</h3>
+                <p id="seo-maturity-level" class="text-2xl font-bold">-</p>
+            </div>
+
+            <!-- Strategic Focus -->
+            <div class="bg-gradient-to-r from-blue-500 to-blue-600 text-white rounded-xl p-6 text-center">
+                <i class="fas fa-bullseye text-3xl mb-3"></i>
+                <h3 class="text-xl font-bold mb-2">Foco Estratégico</h3>
+                <p id="seo-strategic-focus" class="text-2xl font-bold">-</p>
+            </div>
+
+            <!-- Estimated Time -->
+            <div class="bg-gradient-to-r from-purple-500 to-purple-600 text-white rounded-xl p-6 text-center">
+                <i class="fas fa-clock text-3xl mb-3"></i>
+                <h3 class="text-xl font-bold mb-2">Tempo Estimado</h3>
+                <p id="seo-estimated-time" class="text-2xl font-bold">-</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- SEO Radar Chart -->
+    <div class="bg-white rounded-xl shadow-lg p-6 mb-8">
+        <h3 class="text-lg font-bold text-gray-800 mb-4 flex items-center gap-2">
+            <i class="fas fa-radar-chart text-green-600"></i>
+            Análise de Maturidade SEO
+        </h3>
+        <div class="flex justify-center">
+            <div style="height: 250px; width: 250px;">
+                <canvas id="seoRadarChart"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <!-- Action Plan -->
+    <div class="bg-white rounded-xl shadow-lg p-8">
+        <h3 class="text-xl font-bold text-gray-800 mb-6 flex items-center gap-2">
+            <i class="fas fa-tasks text-green-600"></i>
+            Plano de Ação
+        </h3>
+        <div id="seo-action-plan"></div>
+    </div>
+</div>
+
+<!-- SEA Results Section -->
+<div id="sea-results-section" class="hidden max-w-6xl mx-auto px-4 py-8">
+    <div class="bg-white rounded-xl shadow-lg p-8 mb-8">
+        <div class="flex items-center gap-3 mb-8">
+            <div class="bg-blue-100 p-3 rounded-lg">
+                <i class="fas fa-chart-bar text-blue-600 text-xl"></i>
+            </div>
+            <div>
+                <h2 class="text-2xl font-bold text-gray-800">Resultado do Diagnóstico SEA</h2>
+                <p class="text-gray-600">Seu plano de anúncios pagos personalizado</p>
+            </div>
+        </div>
+
+        <div class="grid lg:grid-cols-3 gap-8">
+            <!-- Experience Level -->
+            <div class="bg-gradient-to-r from-blue-500 to-blue-600 text-white rounded-xl p-6 text-center">
+                <i class="fas fa-user-tie text-3xl mb-3"></i>
+                <h3 class="text-xl font-bold mb-2">Nível de Experiência</h3>
+                <p id="sea-experience-level" class="text-2xl font-bold">-</p>
+            </div>
+
+            <!-- Platform Focus -->
+            <div class="bg-gradient-to-r from-purple-500 to-purple-600 text-white rounded-xl p-6 text-center">
+                <i class="fas fa-target text-3xl mb-3"></i>
+                <h3 class="text-xl font-bold mb-2">Plataforma Principal</h3>
+                <p id="sea-platform-focus" class="text-2xl font-bold">-</p>
+            </div>
+
+            <!-- Budget Range -->
+            <div class="bg-gradient-to-r from-green-500 to-green-600 text-white rounded-xl p-6 text-center">
+                <i class="fas fa-dollar-sign text-3xl mb-3"></i>
+                <h3 class="text-xl font-bold mb-2">Orçamento Mensal</h3>
+                <p id="sea-budget-range" class="text-2xl font-bold">-</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- SEA Analysis Chart -->
+    <div class="bg-white rounded-xl shadow-lg p-6 mb-8">
+        <h3 class="text-lg font-bold text-gray-800 mb-4 flex items-center gap-2">
+            <i class="fas fa-chart-pie text-blue-600"></i>
+            Análise de Readiness SEA
+        </h3>
+        <div class="flex justify-center">
+            <div style="height: 250px; width: 250px;">
+                <canvas id="seaRadarChart"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <!-- Action Plan -->
+    <div class="bg-white rounded-xl shadow-lg p-8">
+        <h3 class="text-xl font-bold text-gray-800 mb-6 flex items-center gap-2">
+            <i class="fas fa-rocket text-blue-600"></i>
+            Plano de Ação SEA
+        </h3>
+        <div id="sea-action-plan"></div>
+    </div>
+</div>
+
+<script>
+// Global Variables
+let currentSEOQuestion = 0;
+let currentSEAQuestion = 0;
+let seoAnswers = {};
+let seaAnswers = {};
+
+// SEO Questions
+const seoQuestions = [
+    {
+        id: 1,
+        question: "Qual o principal objetivo do seu negócio with SEO?",
+        options: [
+            { value: "traffic", text: "Aumentar visitas no site/blog", points: { content: 3, technical: 1 } },
+            { value: "leads", text: "Gerar mais leads ou contatos", points: { conversion: 3, content: 2 } },
+            { value: "sales", text: "Vender mais online", points: { conversion: 3, technical: 2 } },
+            { value: "authority", text: "Melhorar a autoridade/marca no Google", points: { authority: 3, content: 2 } },
+            { value: "local", text: "Posicionar meu negócio localmente (Google Maps)", points: { local: 3, technical: 1 } }
+        ]
+    },
+    {
+        id: 2,
+        question: "Como você avalia o nível atual da sua presença no Google?",
+        options: [
+            { value: "none", text: "Nunca fiz nada de SEO", points: { maturity: 0 } },
+            { value: "basic", text: "Tenho site, mas não aparece nas buscas", points: { maturity: 1 } },
+            { value: "some", text: "Já ranqueio em algumas palavras, mas quero melhorar", points: { maturity: 2 } },
+            { value: "good", text: "Tenho bom tráfego orgânico, quero escalar", points: { maturity: 3 } },
+            { value: "advanced", text: "Tenho equipe/agência cuidando, quero otimizar", points: { maturity: 4 } }
+        ]
+    },
+    {
+        id: 3,
+        question: "Você já produz conteúdos otimizados para SEO?",
+        options: [
+            { value: "no-content", text: "Não produzo conteúdo", points: { maturity: 0, content: 1 } },
+            { value: "no-seo", text: "Sim, mas sem foco em SEO", points: { maturity: 1, content: 2 } },
+            { value: "keywords", text: "Sim, com foco em palavras-chave específicas", points: { maturity: 2, content: 3 } },
+            { value: "calendar", text: "Tenho calendário editorial baseado em SEO", points: { maturity: 3, content: 4 } }
+        ]
+    },
+    {
+        id: 4,
+        question: "Seu site está tecnicamente preparado para SEO?",
+        options: [
+            { value: "unknown", text: "Não sei dizer", points: { maturity: 0, technical: 1 } },
+            { value: "no", text: "Acho que não", points: { maturity: 1, technical: 1 } },
+            { value: "ok", text: "Está OK, mas pode melhorar", points: { maturity: 2, technical: 2 } },
+            { value: "optimized", text: "Sim, já foi otimizado tecnicamente", points: { maturity: 3, technical: 4 } }
+        ]
+    },
+    {
+        id: 5,
+        question: "Você acompanha resultados com alguma ferramenta?",
+        options: [
+            { value: "none", text: "Não acompanho nada", points: { maturity: 0 } },
+            { value: "analytics", text: "Só vejo o Google Analytics básico", points: { maturity: 1 } },
+            { value: "both", text: "Uso Google Search Console e Analytics juntos", points: { maturity: 2 } },
+            { value: "advanced", text: "Tenho dashboards e métricas de SEO configuradas", points: { maturity: 3 } }
+        ]
+    },
+    {
+        id: 6,
+        question: "Qual é a sua maior dificuldade com SEO hoje?",
+        options: [
+            { value: "start", text: "Não sei por onde começar", points: { content: 2, technical: 2 } },
+            { value: "time", text: "Falta de tempo ou equipe", points: { content: 3, authority: 1 } },
+            { value: "understanding", text: "Não entendo o que está funcionando", points: { technical: 2, conversion: 2 } },
+            { value: "content-quality", text: "Dificuldade em produzir conteúdo bom", points: { content: 4 } },
+            { value: "competition", text: "Concorrência forte nos resultados", points: { authority: 3, content: 2 } }
+        ]
+    },
+    {
+        id: 7,
+        question: "Qual seu orçamento mensal para investir em SEO?",
+        options: [
+            { value: "none", text: "Nenhum por enquanto", points: { budget: 0 } },
+            { value: "low", text: "Até R$ 500", points: { budget: 1 } },
+            { value: "medium", text: "R$ 500 a R$ 2.000", points: { budget: 2 } },
+            { value: "high", text: "Acima de R$ 2.000", points: { budget: 3 } }
+        ]
+    },
+    {
+        id: 8,
+        question: "Quanto tempo por semana você pode dedicar ao SEO?",
+        options: [
+            { value: "minimal", text: "Menos de 2 horas", points: { time: 1 } },
+            { value: "some", text: "2 a 5 horas", points: { time: 2 } },
+            { value: "good", text: "5 a 10 horas", points: { time: 3 } },
+            { value: "dedicated", text: "Mais de 10 horas", points: { time: 4 } }
+        ]
+    }
+];
+
+// SEA Questions
+const seaQuestions = [
+    {
+        id: 1,
+        question: "Qual o principal objetivo dos seus anúncios pagos?",
+        options: [
+            { value: "awareness", text: "Aumentar conhecimento da marca", points: { awareness: 3, display: 2 } },
+            { value: "leads", text: "Gerar mais leads qualificados", points: { conversion: 3, search: 2 } },
+            { value: "sales", text: "Aumentar vendas online", points: { conversion: 4, search: 3 } },
+            { value: "traffic", text: "Direcionar tráfego para o site", points: { search: 2, social: 2 } },
+            { value: "app", text: "Instalar aplicativo ou inscrições", points: { mobile: 3, social: 2 } }
+        ]
+    },
+    {
+        id: 2,
+        question: "Qual sua experiência atual com anúncios pagos?",
+        options: [
+            { value: "none", text: "Nunca fiz anúncios pagos", points: { experience: 0 } },
+            { value: "basic", text: "Já tentei, mas sem muito sucesso", points: { experience: 1 } },
+            { value: "some", text: "Tenho alguma experiência e alguns resultados", points: { experience: 2 } },
+            { value: "good", text: "Experiência boa, quero otimizar", points: { experience: 3 } },
+            { value: "expert", text: "Muito experiente, busco estratégias avançadas", points: { experience: 4 } }
+        ]
+    },
+    {
+        id: 3,
+        question: "Qual seu orçamento mensal para anúncios pagos?",
+        options: [
+            { value: "minimal", text: "Até R$ 500", points: { budget: 1, search: 2 } },
+            { value: "small", text: "R$ 500 a R$ 2.000", points: { budget: 2, search: 3 } },
+            { value: "medium", text: "R$ 2.000 a R$ 10.000", points: { budget: 3, display: 2 } },
+            { value: "large", text: "Acima de R$ 10.000", points: { budget: 4, display: 3 } }
+        ]
+    },
+    {
+        id: 4,
+        question: "Qual plataforma de anúncios você tem maior interesse?",
+        options: [
+            { value: "google", text: "Google Ads (Busca e Display)", points: { search: 4, display: 2 } },
+            { value: "facebook", text: "Facebook e Instagram Ads", points: { social: 4, mobile: 2 } },
+            { value: "multiple", text: "Múltiplas plataformas integradas", points: { search: 2, social: 2, display: 2 } },
+            { value: "youtube", text: "YouTube Ads (Vídeo)", points: { video: 4, awareness: 2 } },
+            { value: "linkedin", text: "LinkedIn Ads (B2B)", points: { b2b: 4, social: 2 } }
+        ]
+    },
+    {
+        id: 5,
+        question: "Que tipo de negócio você tem?",
+        options: [
+            { value: "ecommerce", text: "E-commerce/Loja Virtual", points: { conversion: 3, search: 3 } },
+            { value: "service", text: "Prestação de Serviços", points: { leads: 3, local: 2 } },
+            { value: "b2b", text: "Negócio B2B", points: { b2b: 4, leads: 2 } },
+            { value: "content", text: "Blog/Conteúdo", points: { awareness: 3, display: 2 } },
+            { value: "app", text: "Aplicativo Mobile", points: { mobile: 4, social: 2 } }
+        ]
+    },
+    {
+        id: 6,
+        question: "Como você acompanha conversões atualmente?",
+        options: [
+            { value: "none", text: "Não acompanho conversões", points: { tracking: 0 } },
+            { value: "basic", text: "Analytics básico", points: { tracking: 1 } },
+            { value: "pixels", text: "Pixels do Facebook/Google configurados", points: { tracking: 2 } },
+            { value: "advanced", text: "Tracking completo com eventos personalizados", points: { tracking: 3 } }
+        ]
+    },
+    {
+        id: 7,
+        question: "Qual sua maior dificuldade com anúncios pagos?",
+        options: [
+            { value: "setup", text: "Não sei como configurar campanhas", points: { search: 2, social: 2 } },
+            { value: "optimization", text: "Otimizar campanhas para melhor ROI", points: { conversion: 3 } },
+            { value: "targeting", text: "Encontrar o público-alvo certo", points: { social: 3, display: 2 } },
+            { value: "creative", text: "Criar anúncios que convertem", points: { creative: 3, video: 2 } },
+            { value: "budget", text: "Gerenciar orçamento eficientemente", points: { budget_mgmt: 3 } }
+        ]
+    },
+    {
+        id: 8,
+        question: "Quanto tempo por semana você pode dedicar aos anúncios?",
+        options: [
+            { value: "minimal", text: "Menos de 2 horas", points: { time: 1 } },
+            { value: "some", text: "2 a 5 horas", points: { time: 2 } },
+            { value: "good", text: "5 a 10 horas", points: { time: 3 } },
+            { value: "dedicated", text: "Mais de 10 horas (dedicação total)", points: { time: 4 } }
+        ]
+    }
+];
+
+// Navigation Functions
+function showHome() {
+    document.getElementById('home-section').classList.remove('hidden');
+    document.getElementById('seo-quiz-section').classList.add('hidden');
+    document.getElementById('sea-quiz-section').classList.add('hidden');
+    document.getElementById('seo-results-section').classList.add('hidden');
+    document.getElementById('sea-results-section').classList.add('hidden');
+}
+
+function startSEOQuiz() {
+    currentSEOQuestion = 0;
+    seoAnswers = {};
+    document.getElementById('home-section').classList.add('hidden');
+    document.getElementById('seo-quiz-section').classList.remove('hidden');
+    renderSEOQuestion();
+    updateSEOProgress();
+}
+
+function startSEAQuiz() {
+    currentSEAQuestion = 0;
+    seaAnswers = {};
+    document.getElementById('home-section').classList.add('hidden');
+    document.getElementById('sea-quiz-section').classList.remove('hidden');
+    renderSEAQuestion();
+    updateSEAProgress();
+}
+
+// SEO Quiz Functions
+function renderSEOQuestion() {
+    const question = seoQuestions[currentSEOQuestion];
+    const container = document.getElementById('seo-question-container');
+    
+    container.innerHTML = `
+        <div class="mb-6">
+            <h3 class="text-xl font-semibold text-gray-800 mb-4">${question.question}</h3>
+            <div class="space-y-3">
+                ${question.options.map(option => `
+                    <label class="flex items-center p-4 bg-gray-50 rounded-lg hover:bg-green-50 cursor-pointer transition-all border-2 border-transparent hover:border-green-200">
+                        <input type="radio" name="seo-q${question.id}" value="${option.value}" class="mr-3 text-green-600">
+                        <span class="text-gray-700">${option.text}</span>
+                    </label>
+                `).join('')}
+            </div>
+        </div>
+    `;
+    
+    // Pre-select previous answer if exists
+    if (seoAnswers[question.id]) {
+        const radio = container.querySelector(`input[value="${seoAnswers[question.id]}"]`);
+        if (radio) radio.checked = true;
+    }
+}
+
+function updateSEOProgress() {
+    const progress = ((currentSEOQuestion + 1) / seoQuestions.length) * 100;
+    document.getElementById('seo-progress-bar').style.width = progress + '%';
+    document.getElementById('seo-progress-text').textContent = `${currentSEOQuestion + 1}/${seoQuestions.length}`;
+    
+    // Update navigation buttons
+    const prevBtn = document.getElementById('seo-prev-btn');
+    const nextBtn = document.getElementById('seo-next-btn');
+    
+    if (currentSEOQuestion === 0) {
+        prevBtn.classList.add('hidden');
+    } else {
+        prevBtn.classList.remove('hidden');
+    }
+    
+    if (currentSEOQuestion === seoQuestions.length - 1) {
+        nextBtn.innerHTML = 'Ver Resultado <i class="fas fa-chart-line ml-2"></i>';
+    } else {
+        nextBtn.innerHTML = 'Próxima <i class="fas fa-arrow-right ml-2"></i>';
+    }
+}
+
+function nextSEOQuestion() {
+    const selectedOption = document.querySelector(`input[name="seo-q${seoQuestions[currentSEOQuestion].id}"]:checked`);
+    
+    if (!selectedOption) {
+        alert('Por favor, selecione uma opção antes de continuar.');
+        return;
+    }
+    
+    seoAnswers[seoQuestions[currentSEOQuestion].id] = selectedOption.value;
+    
+    if (currentSEOQuestion < seoQuestions.length - 1) {
+        currentSEOQuestion++;
+        renderSEOQuestion();
+        updateSEOProgress();
+    } else {
+        showSEOResults();
+    }
+}
+
+function previousSEOQuestion() {
+    if (currentSEOQuestion > 0) {
+        currentSEOQuestion--;
+        renderSEOQuestion();
+        updateSEOProgress();
+    }
+}
+
+// SEA Quiz Functions  
+function renderSEAQuestion() {
+    const question = seaQuestions[currentSEAQuestion];
+    const container = document.getElementById('sea-question-container');
+    
+    container.innerHTML = `
+        <div class="mb-6">
+            <h3 class="text-xl font-semibold text-gray-800 mb-4">${question.question}</h3>
+            <div class="space-y-3">
+                ${question.options.map(option => `
+                    <label class="flex items-center p-4 bg-gray-50 rounded-lg hover:bg-blue-50 cursor-pointer transition-all border-2 border-transparent hover:border-blue-200">
+                        <input type="radio" name="sea-q${question.id}" value="${option.value}" class="mr-3 text-blue-600">
+                        <span class="text-gray-700">${option.text}</span>
+                    </label>
+                `).join('')}
+            </div>
+        </div>
+    `;
+    
+    // Pre-select previous answer if exists
+    if (seaAnswers[question.id]) {
+        const radio = container.querySelector(`input[value="${seaAnswers[question.id]}"]`);
+        if (radio) radio.checked = true;
+    }
+}
+
+function updateSEAProgress() {
+    const progress = ((currentSEAQuestion + 1) / seaQuestions.length) * 100;
+    document.getElementById('sea-progress-bar').style.width = progress + '%';
+    document.getElementById('sea-progress-text').textContent = `${currentSEAQuestion + 1}/${seaQuestions.length}`;
+    
+    // Update navigation buttons
+    const prevBtn = document.getElementById('sea-prev-btn');
+    const nextBtn = document.getElementById('sea-next-btn');
+    
+    if (currentSEAQuestion === 0) {
+        prevBtn.classList.add('hidden');
+    } else {
+        prevBtn.classList.remove('hidden');
+    }
+    
+    if (currentSEAQuestion === seaQuestions.length - 1) {
+        nextBtn.innerHTML = 'Ver Resultado <i class="fas fa-chart-bar ml-2"></i>';
+    } else {
+        nextBtn.innerHTML = 'Próxima <i class="fas fa-arrow-right ml-2"></i>';
+    }
+}
+
+function nextSEAQuestion() {
+    const selectedOption = document.querySelector(`input[name="sea-q${seaQuestions[currentSEAQuestion].id}"]:checked`);
+    
+    if (!selectedOption) {
+        alert('Por favor, selecione uma opção antes de continuar.');
+        return;
+    }
+    
+    seaAnswers[seaQuestions[currentSEAQuestion].id] = selectedOption.value;
+    
+    if (currentSEAQuestion < seaQuestions.length - 1) {
+        currentSEAQuestion++;
+        renderSEAQuestion();
+        updateSEAProgress();
+    } else {
+        showSEAResults();
+    }
+}
+
+function previousSEAQuestion() {
+    if (currentSEAQuestion > 0) {
+        currentSEAQuestion--;
+        renderSEAQuestion();
+        updateSEAProgress();
+    }
+}
+
+// Results Analysis Functions
+function analyzeSEOAnswers() {
+    const scores = {
+        maturity: 0,
+        content: 0,
+        technical: 0,
+        authority: 0,
+        conversion: 0,
+        local: 0,
+        budget: 0,
+        time: 0
+    };
+    
+    // Calculate scores based on answers
+    seoQuestions.forEach((question, index) => {
+        const answer = seoAnswers[question.id];
+        const selectedOption = question.options.find(opt => opt.value === answer);
+        
+        if (selectedOption && selectedOption.points) {
+            Object.keys(selectedOption.points).forEach(key => {
+                if (scores.hasOwnProperty(key)) {
+                    scores[key] += selectedOption.points[key];
+                }
+            });
+        }
+    });
+    
+    // Determine maturity level
+    let maturityLevel = 'Iniciante';
+    if (scores.maturity >= 8) maturityLevel = 'Avançado';
+    else if (scores.maturity >= 4) maturityLevel = 'Emergente';
+    
+    // Determine strategic focus
+    const focusAreas = ['content', 'technical', 'authority', 'conversion', 'local'];
+    let strategicFocus = focusAreas.reduce((a, b) => scores[a] > scores[b] ? a : b);
+    
+    const focusMap = {
+        content: 'Conteúdo',
+        technical: 'Técnico',
+        authority: 'Autoridade',
+        conversion: 'Conversão',
+        local: 'Local SEO'
+    };
+    
+    // Estimate timeline
+    let estimatedTime = '3-6 meses';
+    if (scores.maturity >= 6 && scores.budget >= 2) estimatedTime = '2-4 meses';
+    else if (scores.maturity <= 2) estimatedTime = '6-12 meses';
+    
+    return {
+        maturityLevel,
+        strategicFocus: focusMap[strategicFocus],
+        estimatedTime,
+        scores
+    };
+}
+
+function analyzeSEAAnswers() {
+    const scores = {
+        experience: 0,
+        budget: 0,
+        search: 0,
+        social: 0,
+        display: 0,
+        video: 0,
+        mobile: 0,
+        b2b: 0,
+        tracking: 0,
+        time: 0
+    };
+    
+    // Calculate scores based on answers
+    seaQuestions.forEach((question, index) => {
+        const answer = seaAnswers[question.id];
+        const selectedOption = question.options.find(opt => opt.value === answer);
+        
+        if (selectedOption && selectedOption.points) {
+            Object.keys(selectedOption.points).forEach(key => {
+                if (scores.hasOwnProperty(key)) {
+                    scores[key] += selectedOption.points[key];
+                }
+            });
+        }
+    });
+    
+    // Determine experience level
+    let experienceLevel = 'Iniciante';
+    if (scores.experience >= 10) experienceLevel = 'Avançado';
+    else if (scores.experience >= 5) experienceLevel = 'Intermediário';
+    
+    // Determine platform focus
+    const platforms = ['search', 'social', 'display', 'video'];
+    let platformFocus = platforms.reduce((a, b) => scores[a] > scores[b] ? a : b);
+    
+    const platformMap = {
+        search: 'Google Ads',
+        social: 'Social Media',
+        display: 'Display Ads',
+        video: 'YouTube Ads'
+    };
+    
+    // Budget range
+    let budgetRange = 'Até R$ 500';
+    if (scores.budget >= 10) budgetRange = 'R$ 10.000+';
+    else if (scores.budget >= 6) budgetRange = 'R$ 2.000-10.000';
+    else if (scores.budget >= 4) budgetRange = 'R$ 500-2.000';
+    
+    return {
+        experienceLevel,
+        platformFocus: platformMap[platformFocus],
+        budgetRange,
+        scores
+    };
+}
+
+// SEO Results Display
+function showSEOResults() {
+    const analysis = analyzeSEOAnswers();
+    
+    document.getElementById('seo-quiz-section').classList.add('hidden');
+    document.getElementById('seo-results-section').classList.remove('hidden');
+    
+    // Update result cards
+    document.getElementById('seo-maturity-level').textContent = analysis.maturityLevel;
+    document.getElementById('seo-strategic-focus').textContent = analysis.strategicFocus;
+    document.getElementById('seo-estimated-time').textContent = analysis.estimatedTime;
+    
+    // Create radar chart
+    createSEORadarChart(analysis.scores);
+    
+    // Generate action plan
+    generateSEOActionPlan(analysis);
+}
+
+// SEA Results Display
+function showSEAResults() {
+    const analysis = analyzeSEAAnswers();
+    
+    document.getElementById('sea-quiz-section').classList.add('hidden');
+    document.getElementById('sea-results-section').classList.remove('hidden');
+    
+    // Update result cards
+    document.getElementById('sea-experience-level').textContent = analysis.experienceLevel;
+    document.getElementById('sea-platform-focus').textContent = analysis.platformFocus;
+    document.getElementById('sea-budget-range').textContent = analysis.budgetRange;
+    
+    // Create radar chart
+    createSEARadarChart(analysis.scores);
+    
+    // Generate action plan
+    generateSEAActionPlan(analysis);
+}
+
+// Radar Charts
+function createSEORadarChart(scores) {
+    const ctx = document.getElementById('seoRadarChart').getContext('2d');
+    
+    new Chart(ctx, {
+        type: 'radar',
+        data: {
+            labels: ['Maturidade', 'Conteúdo', 'Técnico', 'Autoridade', 'Conversão'],
+            datasets: [{
+                label: 'Pontuação SEO',
+                data: [scores.maturity, scores.content, scores.technical, scores.authority, scores.conversion],
+                backgroundColor: 'rgba(34, 197, 94, 0.2)',
+                borderColor: 'rgba(34, 197, 94, 1)',
+                pointBackgroundColor: 'rgba(34, 197, 94, 1)',
+                pointBorderColor: '#fff',
+                pointHoverBackgroundColor: '#fff',
+                pointHoverBorderColor: 'rgba(34, 197, 94, 1)'
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            scales: {
+                r: {
+                    angleLines: {
+                        display: false
+                    },
+                    suggestedMin: 0,
+                    suggestedMax: 10
+                }
+            }
+        }
+    });
+}
+
+function createSEARadarChart(scores) {
+    const ctx = document.getElementById('seaRadarChart').getContext('2d');
+    
+    new Chart(ctx, {
+        type: 'radar',
+        data: {
+            labels: ['Experiência', 'Orçamento', 'Search', 'Social', 'Tracking'],
+            datasets: [{
+                label: 'Pontuação SEA',
+                data: [scores.experience, scores.budget, scores.search, scores.social, scores.tracking],
+                backgroundColor: 'rgba(59, 130, 246, 0.2)',
+                borderColor: 'rgba(59, 130, 246, 1)',
+                pointBackgroundColor: 'rgba(59, 130, 246, 1)',
+                pointBorderColor: '#fff',
+                pointHoverBackgroundColor: '#fff',
+                pointHoverBorderColor: 'rgba(59, 130, 246, 1)'
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            scales: {
+                r: {
+                    angleLines: {
+                        display: false
+                    },
+                    suggestedMin: 0,
+                    suggestedMax: 10
+                }
+            }
+        }
+    });
+}
+
+// Action Plan Generators
+function generateSEOActionPlan(analysis) {
+    const container = document.getElementById('seo-action-plan');
+    
+    const plans = {
+        'Iniciante': {
+            steps: [
+                {
+                    title: 'Configuração Básica e Auditoria',
+                    time: '2 semanas',
+                    priority: 'Alta',
+                    description: 'Instalar ferramentas essenciais e fazer diagnóstico técnico inicial.',
+                    example: 'Configure Google Analytics, Search Console, instale Yoast SEO (WordPress)',
+                    links: ['https://analytics.google.com', 'https://search.google.com/search-console']
+                },
+                {
+                    title: 'Pesquisa de Palavras-chave',
+                    time: '1 semana',
+                    priority: 'Alta',
+                    description: 'Identificar palavras-chave relevantes com baixa competição.',
+                    example: 'Use "como fazer SEO para dentistas" ao invés de apenas "SEO"',
+                    links: ['https://ads.google.com/keyword-planner', 'https://answerthepublic.com']
+                },
+                {
+                    title: 'Otimização On-Page Básica',
+                    time: '3 semanas',
+                    priority: 'Alta',
+                    description: 'Otimizar títulos, meta descriptions e estrutura de headings.',
+                    example: 'Título: "Guia Completo de SEO para Iniciantes [2024]"',
+                    links: ['https://developers.google.com/search/docs']
+                },
+                {
+                    title: 'Criação de Conteúdo Inicial',
+                    time: '4 semanas',
+                    priority: 'Média',
+                    description: 'Produzir 8-12 artigos otimizados focados nas palavras-chave selecionadas.',
+                    example: 'Blog posts de 1000+ palavras respondendo dúvidas do seu público',
+                    links: ['https://buzzsumo.com', 'https://coschedule.com']
+                }
+            ],
+            risks: ['Falta de conhecimento técnico', 'Tempo limitado para produção de conteúdo'],
+            alternatives: ['Contratar freelancer SEO', 'Usar templates de conteúdo', 'Focar em long tail keywords']
+        },
+        'Emergente': {
+            steps: [
+                {
+                    title: 'Auditoria Técnica Completa',
+                    time: '2 semanas',
+                    priority: 'Alta',
+                    description: 'Identificar e corrigir problemas técnicos que impedem o crescimento.',
+                    example: 'Melhorar Core Web Vitals, corrigir erros 404, implementar schema markup',
+                    links: ['https://pagespeed.web.dev', 'https://www.screaming-frog.co.uk']
+                },
+                {
+                    title: 'Estratégia de Content Clusters',
+                    time: '3 semanas',
+                    priority: 'Alta',
+                    description: 'Criar clusters de conteúdo interligado para construir autoridade topical.',
+                    example: 'Página pilar "Marketing Digital" + 10 subtópicos relacionados',
+                    links: ['https://blog.hubspot.com/marketing/topic-clusters-seo']
+                },
+                {
+                    title: 'Otimização para Conversão',
+                    time: '2 semanas',
+                    priority: 'Média',
+                    description: 'Implementar CTAs, landing pages e funis de conversão.',
+                    example: 'Adicionar formulários de lead magnet em posts de alta performance',
+                    links: ['https://unbounce.com', 'https://www.hotjar.com']
+                },
+                {
+                    title: 'Link Building Inicial',
+                    time: '4 semanas',
+                    priority: 'Média',
+                    description: 'Começar estratégia de construção de backlinks de qualidade.',
+                    example: 'Guest posts em blogs do nicho, parcerias e menções',
+                    links: ['https://www.helpareporter.com', 'https://ahrefs.com']
+                }
+            ],
+            risks: ['Competição crescente', 'Necessidade de investimento em ferramentas'],
+            alternatives: ['Automatizar parte da produção', 'Parcerias estratégicas', 'Foco em nichos específicos']
+        },
+        'Avançado': {
+            steps: [
+                {
+                    title: 'Otimização Técnica Avançada',
+                    time: '3 semanas',
+                    priority: 'Alta',
+                    description: 'Implementar técnicas avançadas de SEO técnico e performance.',
+                    example: 'Core Web Vitals otimizados, JavaScript SEO, estrutura de dados avançada',
+                    links: ['https://web.dev', 'https://developers.google.com/search']
+                },
+                {
+                    title: 'Estratégia de Autoridade',
+                    time: '6 semanas',
+                    priority: 'Alta',
+                    description: 'Escalar link building e construir autoridade de domínio.',
+                    example: 'Campanhas de RP digital, colaborações com influenciadores',
+                    links: ['https://majestic.com', 'https://moz.com/link-explorer']
+                },
+                {
+                    title: 'SEO Internacional/Multilíngue',
+                    time: '4 semanas',
+                    priority: 'Média',
+                    description: 'Expandir para novos mercados e idiomas.',
+                    example: 'Implementar hreflang, adaptar conteúdo para diferentes regiões',
+                    links: ['https://support.google.com/webmasters/answer/189077']
+                },
+                {
+                    title: 'Automação e Escalabilidade',
+                    time: '3 semanas',
+                    priority: 'Média',
+                    description: 'Implementar ferramentas e processos para escalar operações.',
+                    example: 'APIs para monitoramento, automação de relatórios, IA para conteúdo',
+                    links: ['https://serpapi.com', 'https://www.semrush.com/api']
+                }
+            ],
+            risks: ['Saturação do mercado', 'Mudanças de algoritmo'],
+            alternatives: ['Diversificar canais', 'Investir em novas tecnologias', 'Expandir equipe']
+        }
+    };
+    
+    const plan = plans[analysis.maturityLevel];
+    
+    let html = '';
+    
+    plan.steps.forEach((step, index) => {
+        html += `
+            <div class="border border-gray-200 rounded-lg p-6 mb-4">
+                <div class="flex items-start gap-4">
+                    <div class="bg-green-100 text-green-600 rounded-full w-8 h-8 flex items-center justify-center font-bold text-sm">
+                        ${index + 1}
+                    </div>
+                    <div class="flex-1">
+                        <div class="flex items-center gap-3 mb-2">
+                            <h4 class="text-lg font-semibold text-gray-800">${step.title}</h4>
+                            <span class="px-2 py-1 text-xs font-medium rounded-full ${step.priority === 'Alta' ? 'bg-red-100 text-red-800' : 'bg-yellow-100 text-yellow-800'}">
+                                ${step.priority}
+                            </span>
+                            <span class="text-sm text-gray-600">
+                                <i class="fas fa-clock mr-1"></i>${step.time}
+                            </span>
+                        </div>
+                        <p class="text-gray-700 mb-3">${step.description}</p>
+                        <div class="bg-blue-50 p-3 rounded-lg mb-3">
+                            <p class="text-sm text-blue-800">
+                                <strong>Exemplo prático:</strong> ${step.example}
+                            </p>
+                        </div>
+                        <div class="flex flex-wrap gap-2">
+                            ${step.links.map(link => `
+                                <a href="${link}" target="_blank" class="text-xs px-3 py-1 bg-green-100 text-green-700 rounded-full hover:bg-green-200 transition-all">
+                                    <i class="fas fa-external-link-alt mr-1"></i>Ferramenta
+                                </a>
+                            `).join('')}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        `;
+    });
+    
+    // Add risks and alternatives
+    html += `
+        <div class="grid md:grid-cols-2 gap-6 mt-8">
+            <div class="bg-orange-50 border border-orange-200 rounded-lg p-6">
+                <h4 class="font-semibold text-orange-800 mb-3 flex items-center gap-2">
+                    <i class="fas fa-exclamation-triangle"></i>Riscos Identificados
+                </h4>
+                <ul class="space-y-2">
+                    ${plan.risks.map(risk => `
+                        <li class="text-sm text-orange-700">• ${risk}</li>
+                    `).join('')}
+                </ul>
+            </div>
+            <div class="bg-blue-50 border border-blue-200 rounded-lg p-6">
+                <h4 class="font-semibold text-blue-800 mb-3 flex items-center gap-2">
+                    <i class="fas fa-lightbulb"></i>Alternativas Recomendadas
+                </h4>
+                <ul class="space-y-2">
+                    ${plan.alternatives.map(alt => `
+                        <li class="text-sm text-blue-700">• ${alt}</li>
+                    `).join('')}
+                </ul>
+            </div>
+        </div>
+    `;
+    
+    container.innerHTML = html;
+}
+
+function generateSEAActionPlan(analysis) {
+    const container = document.getElementById('sea-action-plan');
+    
+    const plans = {
+        'Iniciante': {
+            steps: [
+                {
+                    title: 'Configuração de Contas e Pixels',
+                    time: '1 semana',
+                    priority: 'Alta',
+                    description: 'Configurar contas nas plataformas e implementar tracking básico.',
+                    example: 'Criar conta Google Ads, instalar Google Tag Manager e Facebook Pixel',
+                    links: ['https://ads.google.com', 'https://tagmanager.google.com', 'https://business.facebook.com']
+                },
+                {
+                    title: 'Pesquisa de Público-Alvo',
+                    time: '1 semana',
+                    priority: 'Alta',
+                    description: 'Definir personas e segmentações para as campanhas.',
+                    example: 'Mulheres 25-45 anos interessadas em fitness e alimentação saudável',
+                    links: ['https://www.facebook.com/business/insights/audience', 'https://ads.google.com/audience-manager']
+                },
+                {
+                    title: 'Primeira Campanha de Teste',
+                    time: '2 semanas',
+                    priority: 'Alta',
+                    description: 'Lançar campanha com orçamento controlado para validar estratégia.',
+                    example: 'Campanha de busca com R$ 20/dia focada em 5-10 palavras-chave',
+                    links: ['https://support.google.com/google-ads']
+                },
+                {
+                    title: 'Otimização Baseada em Dados',
+                    time: '3 semanas',
+                    priority: 'Média',
+                    description: 'Analisar resultados e otimizar campanhas com base nos dados.',
+                    example: 'Pausar keywords com CPA alto, aumentar budget em anúncios com melhor ROI',
+                    links: ['https://analytics.google.com', 'https://www.facebook.com/business/help']
+                }
+            ],
+            risks: ['Orçamento limitado queimado rapidamente', 'Falta de experiência em otimização'],
+            alternatives: ['Começar com campanhas automáticas', 'Contratar consultor freelancer', 'Usar templates prontos']
+        },
+        'Intermediário': {
+            steps: [
+                {
+                    title: 'Auditoria e Reestruturação',
+                    time: '2 semanas',
+                    priority: 'Alta',
+                    description: 'Analisar campanhas existentes e reestruturar para melhor performance.',
+                    example: 'Segregar campanhas por produto/serviço, implementar estrutura SKAG',
+                    links: ['https://www.wordstream.com/skags']
+                },
+                {
+                    title: 'Implementação de Conversões Avançadas',
+                    time: '1 semana',
+                    priority: 'Alta',
+                    description: 'Configurar tracking de conversões detalhado e eventos personalizados.',
+                    example: 'Rastrear micro-conversões: tempo no site, páginas visitadas, downloads',
+                    links: ['https://support.google.com/google-ads/answer/1722054']
+                },
+                {
+                    title: 'Estratégias de Remarketing',
+                    time: '3 semanas',
+                    priority: 'Média',
+                    description: 'Criar campanhas para re-engajar visitantes e clientes anteriores.',
+                    example: 'Remarketing para carrinho abandonado com desconto especial',
+                    links: ['https://support.google.com/google-ads/answer/2453998']
+                },
+                {
+                    title: 'Expansão Multicanal',
+                    time: '4 semanas',
+                    priority: 'Média',
+                    description: 'Expandir para novas plataformas e formatos de anúncios.',
+                    example: 'YouTube Ads para vídeos, LinkedIn para B2B, Shopping Ads para e-commerce',
+                    links: ['https://ads.youtube.com', 'https://business.linkedin.com/marketing-solutions']
+                }
+            ],
+            risks: ['Complexidade crescente das campanhas', 'Competição aumentando custos'],
+            alternatives: ['Focar em nichos específicos', 'Automatizar otimizações', 'Testar novos formatos creativos']
+        },
+        'Avançado': {
+            steps: [
+                {
+                    title: 'Automação e Machine Learning',
+                    time: '3 semanas',
+                    priority: 'Alta',
+                    description: 'Implementar estratégias automatizadas e usar IA para otimização.',
+                    example: 'Smart Bidding, Dynamic Search Ads, Automated Extensions',
+                    links: ['https://support.google.com/google-ads/answer/2979071']
+                },
+                {
+                    title: 'Atribuição Avançada',
+                    time: '2 semanas',
+                    priority: 'Alta',
+                    description: 'Implementar modelos de atribuição personalizados.',
+                    example: 'Modelo de atribuição baseado em dados, cross-device tracking',
+                    links: ['https://support.google.com/analytics/answer/1662518']
+                },
+                {
+                    title: 'Estratégias de Brand Awareness',
+                    time: '4 semanas',
+                    priority: 'Média',
+                    description: 'Campanhas focadas em construção de marca e recall.',
+                    example: 'Video campaigns no YouTube, Display campaigns em sites premium',
+                    links: ['https://www.thinkwithgoogle.com']
+                },
+                {
+                    title: 'Integração com Ferramentas Avançadas',
+                    time: '3 semanas',
+                    priority: 'Média',
+                    description: 'Conectar campanhas com CRM, BI e outras ferramentas empresariais.',
+                    example: 'Integração com Salesforce, dashboards personalizados, APIs',
+                    links: ['https://developers.google.com/google-ads/api']
+                }
+            ],
+            risks: ['Mudanças constantes nas plataformas', 'Necessidade de orçamentos altos'],
+            alternatives: ['Diversificar plataformas', 'Investir em equipe especializada', 'Automatizar processos']
+        }
+    };
+    
+    const plan = plans[analysis.experienceLevel];
+    
+    let html = '';
+    
+    plan.steps.forEach((step, index) => {
+        html += `
+            <div class="border border-gray-200 rounded-lg p-6 mb-4">
+                <div class="flex items-start gap-4">
+                    <div class="bg-blue-100 text-blue-600 rounded-full w-8 h-8 flex items-center justify-center font-bold text-sm">
+                        ${index + 1}
+                    </div>
+                    <div class="flex-1">
+                        <div class="flex items-center gap-3 mb-2">
+                            <h4 class="text-lg font-semibold text-gray-800">${step.title}</h4>
+                            <span class="px-2 py-1 text-xs font-medium rounded-full ${step.priority === 'Alta' ? 'bg-red-100 text-red-800' : 'bg-yellow-100 text-yellow-800'}">
+                                ${step.priority}
+                            </span>
+                            <span class="text-sm text-gray-600">
+                                <i class="fas fa-clock mr-1"></i>${step.time}
+                            </span>
+                        </div>
+                        <p class="text-gray-700 mb-3">${step.description}</p>
+                        <div class="bg-purple-50 p-3 rounded-lg mb-3">
+                            <p class="text-sm text-purple-800">
+                                <strong>Exemplo prático:</strong> ${step.example}
+                            </p>
+                        </div>
+                        <div class="flex flex-wrap gap-2">
+                            ${step.links.map(link => `
+                                <a href="${link}" target="_blank" class="text-xs px-3 py-1 bg-blue-100 text-blue-700 rounded-full hover:bg-blue-200 transition-all">
+                                    <i class="fas fa-external-link-alt mr-1"></i>Recurso
+                                </a>
+                            `).join('')}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        `;
+    });
+    
+    // Add risks and alternatives
+    html += `
+        <div class="grid md:grid-cols-2 gap-6 mt-8">
+            <div class="bg-orange-50 border border-orange-200 rounded-lg p-6">
+                <h4 class="font-semibold text-orange-800 mb-3 flex items-center gap-2">
+                    <i class="fas fa-exclamation-triangle"></i>Riscos Identificados
+                </h4>
+                <ul class="space-y-2">
+                    ${plan.risks.map(risk => `
+                        <li class="text-sm text-orange-700">• ${risk}</li>
+                    `).join('')}
+                </ul>
+            </div>
+            <div class="bg-purple-50 border border-purple-200 rounded-lg p-6">
+                <h4 class="font-semibold text-purple-800 mb-3 flex items-center gap-2">
+                    <i class="fas fa-lightbulb"></i>Alternativas Recomendadas
+                </h4>
+                <ul class="space-y-2">
+                    ${plan.alternatives.map(alt => `
+                        <li class="text-sm text-purple-700">• ${alt}</li>
+                    `).join('')}
+                </ul>
+            </div>
+        </div>
+    `;
+    
+    container.innerHTML = html;
+}
+
+// Initialize app
+document.addEventListener('DOMContentLoaded', function() {
+    showHome();
+});
+</script>
+
+</body>
+</html>

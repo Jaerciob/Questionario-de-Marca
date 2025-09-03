@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { pgTable, text, timestamp, jsonb } from "drizzle-orm/pg-core";
+import { pgTable, text, timestamp, jsonb, integer } from "drizzle-orm/pg-core";
 import { createInsertSchema } from "drizzle-zod";
 
 export const insertFirmInfoSchema = z.object({
@@ -75,3 +75,74 @@ export const insertCanvasLeadSchema = createInsertSchema(canvasLeads).omit({
 
 export type InsertCanvasLead = z.infer<typeof insertCanvasLeadSchema>;
 export type SelectCanvasLead = typeof canvasLeads.$inferSelect;
+
+// SEO/SEA Schemas
+export const seoQuizAnswerSchema = z.record(z.string(), z.string());
+export const seaQuizAnswerSchema = z.record(z.string(), z.string());
+
+export const seoResultsSchema = z.object({
+  maturityLevel: z.enum(["Iniciante", "Emergente", "Avançado"]),
+  strategicFocus: z.string(),
+  estimatedTime: z.string(),
+  radarData: z.object({
+    content: z.number(),
+    technical: z.number(),
+    authority: z.number(),
+    local: z.number(),
+    conversion: z.number(),
+    maturity: z.number()
+  }),
+  actionPlan: z.array(z.object({
+    title: z.string(),
+    time: z.string(),
+    priority: z.enum(["Alta", "Média", "Baixa"]),
+    description: z.string(),
+    example: z.string(),
+    links: z.array(z.string())
+  })),
+  risks: z.array(z.string()),
+  alternatives: z.array(z.string())
+});
+
+export const seaResultsSchema = z.object({
+  experienceLevel: z.enum(["Iniciante", "Intermediário", "Avançado"]),
+  platformFocus: z.string(),
+  budgetRange: z.string(),
+  radarData: z.object({
+    planning: z.number(),
+    targeting: z.number(),
+    creative: z.number(),
+    optimization: z.number(),
+    analytics: z.number(),
+    budget: z.number()
+  }),
+  actionPlan: z.array(z.object({
+    title: z.string(),
+    time: z.string(),
+    priority: z.enum(["Alta", "Média", "Baixa"]),
+    description: z.string(),
+    example: z.string(),
+    links: z.array(z.string())
+  })),
+  risks: z.array(z.string()),
+  alternatives: z.array(z.string())
+});
+
+export const insertSeoQuizResponseSchema = z.object({
+  answers: seoQuizAnswerSchema,
+  results: seoResultsSchema,
+  completedAt: z.date().default(() => new Date()),
+});
+
+export const insertSeaQuizResponseSchema = z.object({
+  answers: seaQuizAnswerSchema,
+  results: seaResultsSchema,
+  completedAt: z.date().default(() => new Date()),
+});
+
+export type SeoQuizAnswers = z.infer<typeof seoQuizAnswerSchema>;
+export type SeaQuizAnswers = z.infer<typeof seaQuizAnswerSchema>;
+export type SeoResults = z.infer<typeof seoResultsSchema>;
+export type SeaResults = z.infer<typeof seaResultsSchema>;
+export type InsertSeoQuizResponse = z.infer<typeof insertSeoQuizResponseSchema>;
+export type InsertSeaQuizResponse = z.infer<typeof insertSeaQuizResponseSchema>;

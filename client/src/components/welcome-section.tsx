@@ -1,5 +1,7 @@
 import { CanvasButton } from "./canvas-button";
+import { Button } from "@/components/ui/button";
 import { trackEvent } from "@/lib/analytics";
+import { Link } from "wouter";
 
 interface WelcomeSectionProps {
   onStart: () => void;
@@ -80,9 +82,33 @@ export default function WelcomeSection({ onStart }: WelcomeSectionProps) {
         
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <button onClick={handleStartDiagnosis} className="btn-primary text-lg px-10 py-4 shadow-lg">
-            <i className="fas fa-play mr-3"></i>Iniciar Diagnóstico
+            <i className="fas fa-play mr-3"></i>Iniciar Diagnóstico de Branding
           </button>
           <CanvasButton variant="secondary" size="lg" />
+        </div>
+        
+        {/* SEO/SEA Diagnosis Navigation */}
+        <div className="mt-8 pt-8 border-t border-white border-opacity-20">
+          <div className="text-center mb-6">
+            <h3 className="text-2xl font-bold text-white mb-4">
+              <i className="fas fa-rocket mr-3 text-blue-300"></i>
+              Diagnósticos de Marketing Digital
+            </h3>
+            <p className="text-gray-300 mb-6">
+              Também oferecemos diagnósticos especializados em SEO e SEA para complementar sua estratégia de branding
+            </p>
+          </div>
+          
+          <Link href="/seo-sea">
+            <Button 
+              className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white px-8 py-4 text-lg font-semibold shadow-lg"
+              data-testid="button-navigate-seo-sea"
+              onClick={() => trackEvent('navigate_to_seo_sea', 'engagement', 'welcome_page')}
+            >
+              <i className="fas fa-search mr-3"></i>
+              Diagnóstico SEO & SEA
+            </Button>
+          </Link>
         </div>
       </div>
     </div>
