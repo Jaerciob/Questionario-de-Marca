@@ -404,3 +404,134 @@ export const seaActionPlans = {
     alternatives: ['Diversificar plataformas', 'Investir em equipe especializada', 'Automatizar processos']
   }
 };
+
+// SEO Results Calculation
+export function calculateSeoResults(answers: Record<number, string>) {
+  let maturity = 0;
+  let content = 0;
+  let technical = 0;
+  let authority = 0;
+  let local = 0;
+  let conversion = 0;
+
+  // Calculate scores based on answers
+  seoQuestions.forEach((question) => {
+    const answerValue = answers[question.id];
+    const selectedOption = question.options.find(opt => opt.value === answerValue);
+    
+    if (selectedOption && selectedOption.points) {
+      if (selectedOption.points.maturity !== undefined) maturity += selectedOption.points.maturity;
+      if (selectedOption.points.content !== undefined) content += selectedOption.points.content;
+      if (selectedOption.points.technical !== undefined) technical += selectedOption.points.technical;
+      if (selectedOption.points.authority !== undefined) authority += selectedOption.points.authority;
+      if (selectedOption.points.local !== undefined) local += selectedOption.points.local;
+      if (selectedOption.points.conversion !== undefined) conversion += selectedOption.points.conversion;
+    }
+  });
+
+  // Normalize scores to 0-4 scale
+  const scores = {
+    maturity: Math.min(4, Math.max(0, Math.round(maturity * 0.8))),
+    content: Math.min(4, Math.max(0, Math.round(content * 0.6))),
+    technical: Math.min(4, Math.max(0, Math.round(technical * 0.6))),
+    authority: Math.min(4, Math.max(0, Math.round(authority * 0.8))),
+    local: Math.min(4, Math.max(0, Math.round(local * 1.2))),
+    conversion: Math.min(4, Math.max(0, Math.round(conversion * 0.8)))
+  };
+
+  // Determine maturity level
+  const avgMaturity = (scores.maturity + scores.content + scores.technical) / 3;
+  let maturityLevel: "Iniciante" | "Emergente" | "Avançado";
+  let strategicFocus: string;
+  let estimatedTime: string;
+
+  if (avgMaturity <= 1) {
+    maturityLevel = "Iniciante";
+    strategicFocus = "Estruturação Básica";
+    estimatedTime = "6-12 meses";
+  } else if (avgMaturity <= 2) {
+    maturityLevel = "Emergente";
+    strategicFocus = "Conteúdo e Autoridade";
+    estimatedTime = "3-6 meses";
+  } else {
+    maturityLevel = "Avançado";
+    strategicFocus = "Otimização Avançada";
+    estimatedTime = "2-4 meses";
+  }
+
+  return {
+    maturityLevel,
+    strategicFocus,
+    estimatedTime,
+    radarData: scores,
+    actionPlan: seoActionPlans[maturityLevel] || [],
+    risks: ['Baixo orçamento para ferramentas', 'Falta de conhecimento técnico'],
+    alternatives: ['Focar em conteúdo orgânico', 'Contratar consultor especializado', 'Usar ferramentas gratuitas']
+  };
+}
+
+// SEA Results Calculation
+export function calculateSeaResults(answers: Record<number, string>) {
+  let planning = 0;
+  let targeting = 0;
+  let creative = 0;
+  let optimization = 0;
+  let analytics = 0;
+  let budget = 0;
+
+  // Calculate scores based on answers
+  seaQuestions.forEach((question) => {
+    const answerValue = answers[question.id];
+    const selectedOption = question.options.find(opt => opt.value === answerValue);
+    
+    if (selectedOption && selectedOption.points) {
+      if (selectedOption.points.planning !== undefined) planning += selectedOption.points.planning;
+      if (selectedOption.points.targeting !== undefined) targeting += selectedOption.points.targeting;
+      if (selectedOption.points.creative !== undefined) creative += selectedOption.points.creative;
+      if (selectedOption.points.optimization !== undefined) optimization += selectedOption.points.optimization;
+      if (selectedOption.points.analytics !== undefined) analytics += selectedOption.points.analytics;
+      if (selectedOption.points.budget !== undefined) budget += selectedOption.points.budget;
+    }
+  });
+
+  // Normalize scores to 0-4 scale
+  const scores = {
+    planning: Math.min(4, planning),
+    targeting: Math.min(4, targeting),
+    creative: Math.min(4, creative),
+    optimization: Math.min(4, optimization),
+    analytics: Math.min(4, analytics),
+    budget: Math.min(4, budget)
+  };
+
+  // Determine experience level
+  const avgScore = (planning + targeting + creative + optimization + analytics + budget) / 6;
+  let experienceLevel: "Iniciante" | "Intermediário" | "Avançado";
+  let platformFocus: string;
+  let budgetRange: string;
+
+  if (avgScore <= 1) {
+    experienceLevel = "Iniciante";
+    platformFocus = "Google Ads";
+    budgetRange = "R$ 1.000-3.000";
+  } else if (avgScore <= 2) {
+    experienceLevel = "Intermediário";
+    platformFocus = "Google + Facebook";
+    budgetRange = "R$ 3.000-8.000";
+  } else {
+    experienceLevel = "Avançado";
+    platformFocus = "Multiplataforma";
+    budgetRange = "R$ 8.000+";
+  }
+
+  return {
+    experienceLevel,
+    platformFocus,
+    budgetRange,
+    radarData: scores,
+    actionPlan: seaActionPlans[experienceLevel] || [],
+    risks: ['Orçamento limitado queimado rapidamente', 'Alta competição nos lances'],
+    alternatives: ['Começar com campanhas automáticas', 'Focar em nichos específicos', 'Usar remarketing']
+  };
+}
+

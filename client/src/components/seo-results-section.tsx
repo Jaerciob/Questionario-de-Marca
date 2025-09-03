@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { trackEvent } from "@/lib/analytics";
+import SeoRadarChart from "@/components/seo-radar-chart";
 import type { SeoQuizAnswers, SeoResults } from "@shared/schema";
 
 interface SeoResultsSectionProps {
@@ -70,28 +71,20 @@ export default function SeoResultsSection({ answers, results, onRestart, onBack 
         </CardContent>
       </Card>
 
-      {/* SEO Radar Chart Placeholder */}
+      {/* SEO Radar Chart */}
       <Card>
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
-            <i className="fas fa-radar-chart text-green-600"></i>
+            <i className="fas fa-chart-radar text-green-600"></i>
             Análise de Maturidade SEO
           </CardTitle>
         </CardHeader>
         <CardContent>
-          <div className="flex justify-center">
-            <div className="w-64 h-64 bg-gray-100 dark:bg-gray-800 rounded-lg flex items-center justify-center">
-              <div className="text-center">
-                <i className="fas fa-chart-radar text-4xl text-gray-400 mb-2"></i>
-                <p className="text-gray-500">Gráfico Radar</p>
-                <p className="text-sm text-gray-400">(Em desenvolvimento)</p>
-              </div>
-            </div>
-          </div>
+          <SeoRadarChart scores={results.radarData} />
         </CardContent>
       </Card>
 
-      {/* Action Plan Placeholder */}
+      {/* Detailed Action Plan */}
       <Card>
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
@@ -101,34 +94,58 @@ export default function SeoResultsSection({ answers, results, onRestart, onBack 
         </CardHeader>
         <CardContent>
           <div className="space-y-4">
-            <div className="border border-gray-200 dark:border-gray-700 rounded-lg p-6">
-              <div className="flex items-start gap-4">
-                <div className="bg-green-100 text-green-600 rounded-full w-8 h-8 flex items-center justify-center font-bold text-sm">
-                  1
-                </div>
-                <div className="flex-1">
-                  <div className="flex items-center gap-3 mb-2">
-                    <h4 className="text-lg font-semibold">Configuração Básica e Auditoria</h4>
-                    <Badge variant="destructive">Alta</Badge>
-                    <span className="text-sm text-gray-600 dark:text-gray-400">
-                      <i className="fas fa-clock mr-1"></i>2 semanas
-                    </span>
+            {results.actionPlan.map((step, index) => {
+              const priorityColor = step.priority === 'Alta' ? 'destructive' : 
+                                   step.priority === 'Média' ? 'default' : 'secondary';
+              const bgColor = index % 2 === 0 ? 'bg-green-50 dark:bg-green-900/10' : 'bg-blue-50 dark:bg-blue-900/10';
+              const textColor = index % 2 === 0 ? 'text-green-800 dark:text-green-300' : 'text-blue-800 dark:text-blue-300';
+              
+              return (
+                <div key={index} className="border border-gray-200 dark:border-gray-700 rounded-lg p-6">
+                  <div className="flex items-start gap-4">
+                    <div className="bg-green-100 text-green-600 rounded-full w-8 h-8 flex items-center justify-center font-bold text-sm">
+                      {index + 1}
+                    </div>
+                    <div className="flex-1">
+                      <div className="flex items-center gap-3 mb-2">
+                        <h4 className="text-lg font-semibold">{step.title}</h4>
+                        <Badge variant={priorityColor as any}>{step.priority}</Badge>
+                        <span className="text-sm text-gray-600 dark:text-gray-400">
+                          <i className="fas fa-clock mr-1"></i>{step.time}
+                        </span>
+                      </div>
+                      <p className="text-gray-700 dark:text-gray-300 mb-3">
+                        {step.description}
+                      </p>
+                      <div className={`${bgColor} p-3 rounded-lg`}>
+                        <p className={`text-sm ${textColor}`}>
+                          <strong>Exemplo prático:</strong> {step.example}
+                        </p>
+                      </div>
+                      {step.links && step.links.length > 0 && (
+                        <div className="mt-3">
+                          <p className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Links úteis:</p>
+                          <div className="flex flex-wrap gap-2">
+                            {step.links.map((link, linkIndex) => (
+                              <a 
+                                key={linkIndex}
+                                href={link} 
+                                target="_blank" 
+                                rel="noopener noreferrer"
+                                className="text-xs bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors"
+                              >
+                                <i className="fas fa-external-link-alt mr-1"></i>
+                                {link.replace('https://', '').split('/')[0]}
+                              </a>
+                            ))}
+                          </div>
+                        </div>
+                      )}
+                    </div>
                   </div>
-                  <p className="text-gray-700 dark:text-gray-300 mb-3">
-                    Instalar ferramentas essenciais e fazer diagnóstico técnico inicial.
-                  </p>
-                  <div className="bg-blue-50 dark:bg-blue-900/20 p-3 rounded-lg">
-                    <p className="text-sm text-blue-800 dark:text-blue-300">
-                      <strong>Exemplo prático:</strong> Configure Google Analytics, Search Console, instale Yoast SEO (WordPress)
-                    </p>
-                  </div>
                 </div>
-              </div>
-            </div>
-
-            <div className="text-center text-gray-500">
-              <p>Plano de ação completo será implementado em breve...</p>
-            </div>
+              );
+            })}
           </div>
         </CardContent>
       </Card>
