@@ -35,12 +35,12 @@ export default function SeaRadarChart({ scores }: SeaRadarChartProps) {
       {
         label: 'Pontuação SEA',
         data: [
-          scores.planning,
-          scores.targeting,
-          scores.creative,
-          scores.optimization,
-          scores.analytics,
-          scores.budget
+          Math.min(4, Math.max(0, scores.planning)),
+          Math.min(4, Math.max(0, scores.targeting)),
+          Math.min(4, Math.max(0, scores.creative)),
+          Math.min(4, Math.max(0, scores.optimization)),
+          Math.min(4, Math.max(0, scores.analytics)),
+          Math.min(4, Math.max(0, scores.budget))
         ],
         backgroundColor: 'rgba(59, 130, 246, 0.2)',
         borderColor: 'rgba(59, 130, 246, 1)',

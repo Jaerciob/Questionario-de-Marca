@@ -489,9 +489,9 @@ export function calculateSeoResults(answers: Record<number, string>) {
     strategicFocus,
     estimatedTime,
     radarData: scores,
-    actionPlan: seoActionPlans[maturityLevel] || [],
-    risks: ['Baixo orçamento para ferramentas', 'Falta de conhecimento técnico'],
-    alternatives: ['Focar em conteúdo orgânico', 'Contratar consultor especializado', 'Usar ferramentas gratuitas']
+    actionPlan: seoActionPlans[maturityLevel]?.steps || [],
+    risks: seoActionPlans[maturityLevel]?.risks || ['Baixo orçamento para ferramentas', 'Falta de conhecimento técnico'],
+    alternatives: seoActionPlans[maturityLevel]?.alternatives || ['Focar em conteúdo orgânico', 'Contratar consultor especializado', 'Usar ferramentas gratuitas']
   };
 }
 
@@ -555,9 +555,9 @@ export function calculateSeaResults(answers: Record<number, string>) {
     platformFocus,
     budgetRange,
     radarData: scores,
-    actionPlan: seaActionPlans[experienceLevel] || [],
-    risks: ['Orçamento limitado queimado rapidamente', 'Alta competição nos lances'],
-    alternatives: ['Começar com campanhas automáticas', 'Focar em nichos específicos', 'Usar remarketing']
+    actionPlan: seaActionPlans[experienceLevel]?.steps || [],
+    risks: seaActionPlans[experienceLevel]?.risks || ['Orçamento limitado queimado rapidamente', 'Alta competição nos lances'],
+    alternatives: seaActionPlans[experienceLevel]?.alternatives || ['Começar com campanhas automáticas', 'Focar em nichos específicos', 'Usar remarketing']
   };
 }
 

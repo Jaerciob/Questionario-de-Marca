@@ -35,12 +35,12 @@ export default function SeoRadarChart({ scores }: SeoRadarChartProps) {
       {
         label: 'Pontuação SEO',
         data: [
-          scores.content,
-          scores.technical,
-          scores.authority,
-          scores.local,
-          scores.conversion,
-          scores.maturity
+          Math.min(4, Math.max(0, scores.content)),
+          Math.min(4, Math.max(0, scores.technical)),
+          Math.min(4, Math.max(0, scores.authority)),
+          Math.min(4, Math.max(0, scores.local)),
+          Math.min(4, Math.max(0, scores.conversion)),
+          Math.min(4, Math.max(0, scores.maturity))
         ],
         backgroundColor: 'rgba(34, 197, 94, 0.2)',
         borderColor: 'rgba(34, 197, 94, 1)',
