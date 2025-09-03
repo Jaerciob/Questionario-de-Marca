@@ -109,7 +109,7 @@ export default function SeoQuizSection({ onComplete, onBack }: SeoQuizSectionPro
                     <RadioGroupItem value={option.value} id={option.value} />
                     <Label 
                       htmlFor={option.value} 
-                      className="flex-1 p-4 bg-gray-50 dark:bg-gray-800 rounded-lg cursor-pointer hover:bg-green-50 dark:hover:bg-green-900/20 transition-all"
+                      className="flex-1 p-4 bg-gray-50 dark:bg-gray-800 rounded-lg cursor-pointer hover:bg-green-50 dark:hover:bg-green-900/20 transition-all text-gray-900 dark:text-gray-100"
                     >
                       {option.text}
                     </Label>

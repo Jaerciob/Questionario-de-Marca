@@ -6,6 +6,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { initGA } from "@/lib/analytics";
 import { useAnalytics } from "@/hooks/use-analytics";
+import Landing from "@/pages/landing";
 import Home from "@/pages/home";
 import SeoSea from "@/pages/seo-sea";
 import NotFound from "@/pages/not-found";
@@ -16,7 +17,8 @@ function Router() {
   
   return (
     <Switch>
-      <Route path="/" component={Home} />
+      <Route path="/" component={Landing} />
+      <Route path="/branding" component={Home} />
       <Route path="/seo-sea" component={SeoSea} />
       <Route component={NotFound} />
     </Switch>
