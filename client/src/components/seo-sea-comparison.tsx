@@ -23,11 +23,11 @@ export default function SeoSeaComparison({ onStartSeo, onStartSea }: SeoSeaCompa
       {/* Hero Section */}
       <div className="text-center mb-16">
         <h1 className="text-4xl font-bold text-gray-800 dark:text-white mb-6">
-          Escolha Sua Estratégia Digital
+          Estratégia Digital para Escritórios de Advocacia
         </h1>
         <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto mb-8">
-          Descubra qual estratégia de marketing digital é ideal para o seu negócio: 
-          crescimento orgânico com SEO ou resultados imediatos com SEA
+          Descubra qual estratégia de marketing jurídico é ideal para o seu escritório: 
+          crescimento orgânico com SEO ou captação imediata de clientes com SEA
         </p>
       </div>
 
@@ -48,36 +48,36 @@ export default function SeoSeaComparison({ onStartSeo, onStartSea }: SeoSeaCompa
           </CardHeader>
           <CardContent className="space-y-4">
             <p className="text-gray-700 dark:text-gray-300">
-              <strong>O que é:</strong> Estratégia para melhorar o posicionamento natural do seu site nos resultados de busca do Google, sem pagar por anúncios.
+              <strong>O que é:</strong> Estratégia para posicionar o site do escritório nos primeiros resultados quando clientes buscam por advogados ou serviços jurídicos, sem pagar por anúncios.
             </p>
             
             <div className="bg-green-50 dark:bg-green-900/20 p-4 rounded-lg">
               <h4 className="font-semibold text-green-800 dark:text-green-300 mb-2">✅ Vantagens:</h4>
               <ul className="text-sm text-green-700 dark:text-green-300 space-y-1">
-                <li>• Tráfego gratuito e sustentável</li>
-                <li>• Maior credibilidade e confiança</li>
-                <li>• Resultados duradouros</li>
-                <li>• ROI crescente ao longo do tempo</li>
+                <li>• Clientes encontram o escritório naturalmente</li>
+                <li>• Maior confiança e credibilidade profissional</li>
+                <li>• Investimento de longo prazo duradouro</li>
+                <li>• Custo por cliente diminui com o tempo</li>
               </ul>
             </div>
             
             <div className="bg-orange-50 dark:bg-orange-900/20 p-4 rounded-lg">
               <h4 className="font-semibold text-orange-800 dark:text-orange-300 mb-2">⚠️ Desafios:</h4>
               <ul className="text-sm text-orange-700 dark:text-orange-300 space-y-1">
-                <li>• Resultados a médio/longo prazo (3-6 meses)</li>
-                <li>• Requer conhecimento técnico</li>
-                <li>• Produção constante de conteúdo</li>
-                <li>• Competição alta em alguns nichos</li>
+                <li>• Primeiros clientes chegam em 3-6 meses</li>
+                <li>• Precisa de conhecimento em SEO jurídico</li>
+                <li>• Necessita conteúdo educativo constante</li>
+                <li>• Competição com outros escritórios</li>
               </ul>
             </div>
             
             <div className="bg-blue-50 dark:bg-blue-900/20 p-4 rounded-lg">
               <h4 className="font-semibold text-blue-800 dark:text-blue-300 mb-2">🎯 Ideal para:</h4>
               <ul className="text-sm text-blue-700 dark:text-blue-300 space-y-1">
-                <li>• Negócios que pensam no longo prazo</li>
-                <li>• Empresas com orçamento limitado</li>
-                <li>• Nichos com boa demanda de busca</li>
-                <li>• Quem pode investir em conteúdo</li>
+                <li>• Escritórios com visão de crescimento sustentável</li>
+                <li>• Advogados com orçamento inicial limitado</li>
+                <li>• Áreas do direito com boa demanda online</li>
+                <li>• Profissionais que gostam de escrever</li>
               </ul>
             </div>
             
@@ -106,36 +106,36 @@ export default function SeoSeaComparison({ onStartSeo, onStartSea }: SeoSeaCompa
           </CardHeader>
           <CardContent className="space-y-4">
             <p className="text-gray-700 dark:text-gray-300">
-              <strong>O que é:</strong> Estratégia de anúncios pagos no Google Ads, Facebook Ads e outras plataformas para gerar tráfego e vendas imediatas.
+              <strong>O que é:</strong> Campanhas pagas no Google Ads, Facebook e LinkedIn para captar clientes em busca de serviços jurídicos imediatamente.
             </p>
             
             <div className="bg-blue-50 dark:bg-blue-900/20 p-4 rounded-lg">
               <h4 className="font-semibold text-blue-800 dark:text-blue-300 mb-2">✅ Vantagens:</h4>
               <ul className="text-sm text-blue-700 dark:text-blue-300 space-y-1">
-                <li>• Resultados imediatos</li>
-                <li>• Controle total do investimento</li>
-                <li>• Segmentação precisa do público</li>
-                <li>• Métricas detalhadas em tempo real</li>
+                <li>• Primeiros clientes chegam em dias</li>
+                <li>• Controle total do orçamento diário</li>
+                <li>• Mira em pessoas com problemas jurídicos específicos</li>
+                <li>• Acompanha consultas e contrações em tempo real</li>
               </ul>
             </div>
             
             <div className="bg-orange-50 dark:bg-orange-900/20 p-4 rounded-lg">
               <h4 className="font-semibold text-orange-800 dark:text-orange-300 mb-2">⚠️ Desafios:</h4>
               <ul className="text-sm text-orange-700 dark:text-orange-300 space-y-1">
-                <li>• Requer investimento contínuo</li>
-                <li>• Competição pode encarecer cliques</li>
-                <li>• Necessita otimização constante</li>
-                <li>• Resultados param quando para o investimento</li>
+                <li>• Precisa investir mensalmente para manter clientes</li>
+                <li>• Áreas concorridas (divorcio, trabalhista) custam mais</li>
+                <li>• Requer acompanhamento e ajustes frequentes</li>
+                <li>• Parou de investir, param de chegar clientes</li>
               </ul>
             </div>
             
             <div className="bg-purple-50 dark:bg-purple-900/20 p-4 rounded-lg">
               <h4 className="font-semibold text-purple-800 dark:text-purple-300 mb-2">🎯 Ideal para:</h4>
               <ul className="text-sm text-purple-700 dark:text-purple-300 space-y-1">
-                <li>• Negócios que precisam de resultados rápidos</li>
-                <li>• Lançamento de produtos/serviços</li>
-                <li>• Empresas com orçamento para investir</li>
-                <li>• Nichos com alta concorrência orgânica</li>
+                <li>• Escritórios que precisam de clientes rapidamente</li>
+                <li>• Lançamento de novo escritório ou área jurídica</li>
+                <li>• Advogados com orçamento para investimento</li>
+                <li>• Áreas muito concorridas no Google</li>
               </ul>
             </div>
             
@@ -201,7 +201,7 @@ export default function SeoSeaComparison({ onStartSeo, onStartSea }: SeoSeaCompa
       <Card className="bg-gradient-to-r from-blue-600 to-purple-600 text-white border-0">
         <CardContent className="text-center p-8">
           <h3 className="text-2xl font-bold mb-4">Não Sabe Qual Escolher?</h3>
-          <p className="mb-6">Faça os dois diagnósticos e compare os resultados para tomar a melhor decisão para o seu negócio!</p>
+          <p className="mb-6">Faça os dois diagnósticos e compare os resultados para tomar a melhor decisão para o seu escritório!</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button 
               onClick={handleStartSeo}

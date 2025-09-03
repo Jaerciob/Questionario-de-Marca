@@ -2,85 +2,85 @@
 export const seoQuestions = [
   {
     id: 1,
-    question: "Qual o principal objetivo do seu negócio com SEO?",
+    question: "Qual o principal objetivo do seu escritório de advocacia com SEO?",
     options: [
-      { value: "traffic", text: "Aumentar visitas no site/blog", points: { content: 3, technical: 1 } },
-      { value: "leads", text: "Gerar mais leads ou contatos", points: { conversion: 3, content: 2 } },
-      { value: "sales", text: "Vender mais online", points: { conversion: 3, technical: 2 } },
-      { value: "authority", text: "Melhorar a autoridade/marca no Google", points: { authority: 3, content: 2 } },
-      { value: "local", text: "Posicionar meu negócio localmente (Google Maps)", points: { local: 3, technical: 1 } }
+      { value: "traffic", text: "Atrair mais visitantes para o site do escritório", points: { content: 3, technical: 1 } },
+      { value: "leads", text: "Gerar mais consultas e contatos de potenciais clientes", points: { conversion: 3, content: 2 } },
+      { value: "cases", text: "Aumentar captação de casos jurídicos", points: { conversion: 3, technical: 2 } },
+      { value: "authority", text: "Estabelecer autoridade jurídica no Google", points: { authority: 3, content: 2 } },
+      { value: "local", text: "Aparecer em buscas locais (escritório próximo, advogado em [cidade])", points: { local: 3, technical: 1 } }
     ]
   },
   {
     id: 2,
-    question: "Como você avalia o nível atual da sua presença no Google?",
+    question: "Como você avalia a presença digital atual do seu escritório no Google?",
     options: [
-      { value: "none", text: "Nunca fiz nada de SEO", points: { maturity: 0 } },
-      { value: "basic", text: "Tenho site, mas não aparece nas buscas", points: { maturity: 1 } },
-      { value: "some", text: "Já ranqueio em algumas palavras, mas quero melhorar", points: { maturity: 2 } },
-      { value: "good", text: "Tenho bom tráfego orgânico, quero escalar", points: { maturity: 3 } },
-      { value: "advanced", text: "Tenho equipe/agência cuidando, quero otimizar", points: { maturity: 4 } }
+      { value: "none", text: "Nunca investimos em SEO jurídico", points: { maturity: 0 } },
+      { value: "basic", text: "Temos site, mas não aparece quando clientes buscam advogados", points: { maturity: 1 } },
+      { value: "some", text: "Aparecemos em algumas buscas jurídicas, mas queremos mais", points: { maturity: 2 } },
+      { value: "good", text: "Recebemos clientes pelo Google, queremos expandir", points: { maturity: 3 } },
+      { value: "advanced", text: "Temos estratégia SEO estruturada, queremos otimizar", points: { maturity: 4 } }
     ]
   },
   {
     id: 3,
-    question: "Você já produz conteúdos otimizados para SEO?",
+    question: "O escritório produz conteúdo jurídico otimizado para SEO?",
     options: [
-      { value: "no-content", text: "Não produzo conteúdo", points: { maturity: 0, content: 1 } },
-      { value: "no-seo", text: "Sim, mas sem foco em SEO", points: { maturity: 1, content: 2 } },
-      { value: "keywords", text: "Sim, com foco em palavras-chave específicas", points: { maturity: 2, content: 3 } },
-      { value: "calendar", text: "Tenho calendário editorial baseado em SEO", points: { maturity: 3, content: 4 } }
+      { value: "no-content", text: "Não produzimos artigos ou conteúdo jurídico", points: { maturity: 0, content: 1 } },
+      { value: "no-seo", text: "Escrevemos sobre direito, mas sem pensar em SEO", points: { maturity: 1, content: 2 } },
+      { value: "keywords", text: "Criamos conteúdo focado em termos jurídicos específicos", points: { maturity: 2, content: 3 } },
+      { value: "calendar", text: "Temos calendário editorial jurídico baseado em SEO", points: { maturity: 3, content: 4 } }
     ]
   },
   {
     id: 4,
-    question: "Seu site está tecnicamente preparado para SEO?",
+    question: "O site do escritório está tecnicamente preparado para SEO?",
     options: [
-      { value: "unknown", text: "Não sei dizer", points: { maturity: 0, technical: 1 } },
-      { value: "no", text: "Acho que não", points: { maturity: 1, technical: 1 } },
-      { value: "ok", text: "Está OK, mas pode melhorar", points: { maturity: 2, technical: 2 } },
-      { value: "optimized", text: "Sim, já foi otimizado tecnicamente", points: { maturity: 3, technical: 4 } }
+      { value: "unknown", text: "Não tenho conhecimento técnico para avaliar", points: { maturity: 0, technical: 1 } },
+      { value: "no", text: "Creio que precisa de melhorias técnicas", points: { maturity: 1, technical: 1 } },
+      { value: "ok", text: "Funciona bem, mas pode ter otimizações", points: { maturity: 2, technical: 2 } },
+      { value: "optimized", text: "Site já foi otimizado por profissional de SEO", points: { maturity: 3, technical: 4 } }
     ]
   },
   {
     id: 5,
-    question: "Você acompanha resultados com alguma ferramenta?",
+    question: "O escritório acompanha métricas de performance digital?",
     options: [
-      { value: "none", text: "Não acompanho nada", points: { maturity: 0 } },
-      { value: "analytics", text: "Só vejo o Google Analytics básico", points: { maturity: 1 } },
-      { value: "both", text: "Uso Google Search Console e Analytics juntos", points: { maturity: 2 } },
-      { value: "advanced", text: "Tenho dashboards e métricas de SEO configuradas", points: { maturity: 3 } }
+      { value: "none", text: "Não monitoramos resultados digitais", points: { maturity: 0 } },
+      { value: "analytics", text: "Apenas vemos visitas básicas no Google Analytics", points: { maturity: 1 } },
+      { value: "both", text: "Usamos Google Search Console e Analytics", points: { maturity: 2 } },
+      { value: "advanced", text: "Temos dashboards completos de SEO jurídico", points: { maturity: 3 } }
     ]
   },
   {
     id: 6,
-    question: "Qual é a sua maior dificuldade com SEO hoje?",
+    question: "Qual é a maior dificuldade do escritório com marketing digital?",
     options: [
-      { value: "start", text: "Não sei por onde começar", points: { content: 2, technical: 2 } },
-      { value: "time", text: "Falta de tempo ou equipe", points: { content: 3, authority: 1 } },
-      { value: "understanding", text: "Não entendo o que está funcionando", points: { technical: 2, conversion: 2 } },
-      { value: "content-quality", text: "Dificuldade em produzir conteúdo bom", points: { content: 4 } },
-      { value: "competition", text: "Concorrência forte nos resultados", points: { authority: 3, content: 2 } }
+      { value: "start", text: "Não sabemos por onde começar com SEO jurídico", points: { content: 2, technical: 2 } },
+      { value: "time", text: "Falta tempo entre os casos para cuidar do marketing", points: { content: 3, authority: 1 } },
+      { value: "understanding", text: "Não entendemos se nossa estratégia está funcionando", points: { technical: 2, conversion: 2 } },
+      { value: "content-quality", text: "Dificuldade em escrever conteúdo jurídico atrativo", points: { content: 4 } },
+      { value: "competition", text: "Muitos escritórios competindo nas mesmas buscas", points: { authority: 3, content: 2 } }
     ]
   },
   {
     id: 7,
-    question: "Quanto tempo você pode dedicar ao SEO mensalmente?",
+    question: "Quanto tempo o escritório pode dedicar ao SEO mensalmente?",
     options: [
-      { value: "minimal", text: "Menos de 5 horas (muito pouco)", points: { maturity: 0 } },
-      { value: "some", text: "5-15 horas (básico)", points: { maturity: 1 } },
-      { value: "regular", text: "15-40 horas (dedicação regular)", points: { maturity: 2 } },
-      { value: "intensive", text: "Mais de 40 horas (foco intensivo)", points: { maturity: 3 } }
+      { value: "minimal", text: "Menos de 5 horas (entre audiências e petições)", points: { maturity: 0 } },
+      { value: "some", text: "5-15 horas (dedicação básica ao marketing)", points: { maturity: 1 } },
+      { value: "regular", text: "15-40 horas (investimento regular em conteúdo)", points: { maturity: 2 } },
+      { value: "intensive", text: "Mais de 40 horas (estratégia intensiva de growth)", points: { maturity: 3 } }
     ]
   },
   {
     id: 8,
-    question: "Qual é o seu orçamento mensal disponível para SEO?",
+    question: "Qual o orçamento mensal do escritório para marketing digital?",
     options: [
-      { value: "minimal", text: "Até R$ 500 (muito baixo)", points: { maturity: 0 } },
-      { value: "basic", text: "R$ 500 - R$ 2.000 (básico)", points: { maturity: 1 } },
-      { value: "medium", text: "R$ 2.000 - R$ 8.000 (médio)", points: { maturity: 2 } },
-      { value: "high", text: "Acima de R$ 8.000 (alto)", points: { maturity: 3 } }
+      { value: "minimal", text: "Até R$ 500 (investimento inicial)", points: { maturity: 0 } },
+      { value: "basic", text: "R$ 500 - R$ 2.000 (crescimento básico)", points: { maturity: 1 } },
+      { value: "medium", text: "R$ 2.000 - R$ 8.000 (expansão consolidada)", points: { maturity: 2 } },
+      { value: "high", text: "Acima de R$ 8.000 (grande escritório)", points: { maturity: 3 } }
     ]
   }
 ];
@@ -89,82 +89,82 @@ export const seoQuestions = [
 export const seaQuestions = [
   {
     id: 1,
-    question: "Qual o principal objetivo da sua estratégia de anúncios pagos?",
+    question: "Qual o principal objetivo do escritório com anúncios pagos?",
     options: [
-      { value: "awareness", text: "Aumentar conhecimento da marca", points: { planning: 2, creative: 3 } },
-      { value: "leads", text: "Gerar leads qualificados", points: { targeting: 3, optimization: 2 } },
-      { value: "sales", text: "Vender produtos/serviços diretamente", points: { optimization: 3, analytics: 2 } },
-      { value: "traffic", text: "Direcionar tráfego para o site", points: { planning: 2, targeting: 2 } }
+      { value: "awareness", text: "Aumentar reconhecimento da marca do escritório", points: { planning: 2, creative: 3 } },
+      { value: "leads", text: "Gerar consultas jurídicas qualificadas", points: { targeting: 3, optimization: 2 } },
+      { value: "cases", text: "Captar casos e clientes diretamente", points: { optimization: 3, analytics: 2 } },
+      { value: "traffic", text: "Atrair visitantes interessados em serviços jurídicos", points: { planning: 2, targeting: 2 } }
     ]
   },
   {
     id: 2,
-    question: "Qual sua experiência atual com anúncios pagos?",
+    question: "Qual a experiência do escritório com anúncios digitais?",
     options: [
-      { value: "none", text: "Nunca fiz anúncios pagos", points: { planning: 0, targeting: 0, creative: 0, optimization: 0, analytics: 0, budget: 0 } },
-      { value: "basic", text: "Já tentei, mas sem muito sucesso", points: { planning: 1, targeting: 1, creative: 1, optimization: 0, analytics: 1, budget: 1 } },
-      { value: "some", text: "Tenho algumas campanhas rodando", points: { planning: 2, targeting: 2, creative: 2, optimization: 1, analytics: 2, budget: 2 } },
-      { value: "experienced", text: "Trabalho com anúncios há mais de 1 ano", points: { planning: 3, targeting: 3, creative: 3, optimization: 2, analytics: 3, budget: 3 } }
+      { value: "none", text: "Nunca fizemos campanhas pagas para o escritório", points: { planning: 0, targeting: 0, creative: 0, optimization: 0, analytics: 0, budget: 0 } },
+      { value: "basic", text: "Já testamos Google Ads, mas sem resultados satisfatórios", points: { planning: 1, targeting: 1, creative: 1, optimization: 0, analytics: 1, budget: 1 } },
+      { value: "some", text: "Temos campanhas ativas captando alguns clientes", points: { planning: 2, targeting: 2, creative: 2, optimization: 1, analytics: 2, budget: 2 } },
+      { value: "experienced", text: "Usamos anúncios pagos há mais de 1 ano com sucesso", points: { planning: 3, targeting: 3, creative: 3, optimization: 2, analytics: 3, budget: 3 } }
     ]
   },
   {
     id: 3,
-    question: "Você conhece bem seu público-alvo?",
+    question: "O escritório conhece bem seu público-alvo?",
     options: [
-      { value: "no", text: "Não tenho clareza sobre meu público", points: { targeting: 0, planning: 1 } },
-      { value: "basic", text: "Tenho uma ideia geral", points: { targeting: 1, planning: 2 } },
-      { value: "good", text: "Conheço bem as características demográficas", points: { targeting: 2, planning: 3 } },
-      { value: "detailed", text: "Tenho personas bem definidas com comportamentos", points: { targeting: 3, planning: 3 } }
+      { value: "no", text: "Não sabemos quem são nossos clientes ideais", points: { targeting: 0, planning: 1 } },
+      { value: "basic", text: "Sabemos o perfil geral (pessoa física/jurídica)", points: { targeting: 1, planning: 2 } },
+      { value: "good", text: "Conhecemos idade, renda e áreas de interesse dos clientes", points: { targeting: 2, planning: 3 } },
+      { value: "detailed", text: "Temos personas detalhadas com comportamento e necessidades jurídicas", points: { targeting: 3, planning: 3 } }
     ]
   },
   {
     id: 4,
-    question: "Quais plataformas pretende usar para anúncios?",
+    question: "Quais plataformas o escritório pretende usar para anúncios?",
     options: [
-      { value: "google-only", text: "Apenas Google Ads", points: { planning: 2, optimization: 2 } },
-      { value: "social-only", text: "Apenas redes sociais (Facebook, Instagram)", points: { creative: 3, targeting: 2 } },
-      { value: "multiple", text: "Google Ads + Redes Sociais", points: { planning: 3, targeting: 3 } },
-      { value: "unsure", text: "Não tenho certeza ainda", points: { planning: 0 } }
+      { value: "google-only", text: "Apenas Google Ads (buscas por advogados)", points: { planning: 2, optimization: 2 } },
+      { value: "social-only", text: "Apenas redes sociais (Facebook, Instagram, LinkedIn)", points: { creative: 3, targeting: 2 } },
+      { value: "multiple", text: "Google Ads + Redes Sociais (estratégia completa)", points: { planning: 3, targeting: 3 } },
+      { value: "unsure", text: "Não sabemos qual plataforma escolher", points: { planning: 0 } }
     ]
   },
   {
     id: 5,
-    question: "Como você acompanha os resultados dos seus investimentos?",
+    question: "Como o escritório acompanha resultados dos investimentos em anúncios?",
     options: [
-      { value: "none", text: "Não acompanho métricas", points: { analytics: 0 } },
-      { value: "basic", text: "Vejo apenas impressões e cliques", points: { analytics: 1 } },
-      { value: "intermediate", text: "Acompanho conversões e ROI básico", points: { analytics: 2, optimization: 1 } },
-      { value: "advanced", text: "Uso ferramentas avançadas de analytics", points: { analytics: 3, optimization: 2 } }
+      { value: "none", text: "Não monitoramos os resultados das campanhas", points: { analytics: 0 } },
+      { value: "basic", text: "Vemos quantas pessoas viram e clicaram nos anúncios", points: { analytics: 1 } },
+      { value: "intermediate", text: "Acompanhamos quantos contatos/consultas geramos", points: { analytics: 2, optimization: 1 } },
+      { value: "advanced", text: "Medimos ROI completo: custo por cliente vs honorários", points: { analytics: 3, optimization: 2 } }
     ]
   },
   {
     id: 6,
-    question: "Qual sua capacidade de criar conteúdos para anúncios?",
+    question: "Qual a capacidade do escritório em criar conteúdo para anúncios?",
     options: [
-      { value: "none", text: "Não sei criar materiais visuais", points: { creative: 0 } },
-      { value: "basic", text: "Consigo fazer textos, mas não imagens", points: { creative: 1 } },
-      { value: "intermediate", text: "Faço materiais simples (Canva, etc)", points: { creative: 2 } },
-      { value: "professional", text: "Tenho designer ou agência", points: { creative: 3 } }
+      { value: "none", text: "Não sabemos criar materiais para campanhas", points: { creative: 0 } },
+      { value: "basic", text: "Conseguimos escrever textos jurídicos, mas não imagens", points: { creative: 1 } },
+      { value: "intermediate", text: "Criamos materiais simples (Canva, PowerPoint)", points: { creative: 2 } },
+      { value: "professional", text: "Temos designer ou agência especializada em marketing jurídico", points: { creative: 3 } }
     ]
   },
   {
     id: 7,
-    question: "Quanto tempo pode dedicar para otimizar campanhas?",
+    question: "Quanto tempo o escritório pode dedicar para otimizar campanhas?",
     options: [
-      { value: "minimal", text: "Menos de 5 horas por mês", points: { optimization: 0 } },
-      { value: "some", text: "5-15 horas por mês", points: { optimization: 1 } },
-      { value: "regular", text: "15-40 horas por mês", points: { optimization: 2 } },
-      { value: "intensive", text: "Mais de 40 horas por mês", points: { optimization: 3 } }
+      { value: "minimal", text: "Menos de 5 horas mensais (foco nos casos)", points: { optimization: 0 } },
+      { value: "some", text: "5-15 horas mensais (acompanhamento básico)", points: { optimization: 1 } },
+      { value: "regular", text: "15-40 horas mensais (gestão ativa)", points: { optimization: 2 } },
+      { value: "intensive", text: "Mais de 40 horas mensais (dedicação total)", points: { optimization: 3 } }
     ]
   },
   {
     id: 8,
-    question: "Qual orçamento mensal você tem para anúncios pagos?",
+    question: "Qual orçamento mensal o escritório tem para anúncios pagos?",
     options: [
-      { value: "low", text: "Até R$ 1.000", points: { budget: 1 } },
-      { value: "medium", text: "R$ 1.000 - R$ 5.000", points: { budget: 2 } },
-      { value: "high", text: "R$ 5.000 - R$ 15.000", points: { budget: 3 } },
-      { value: "very-high", text: "Acima de R$ 15.000", points: { budget: 4 } }
+      { value: "low", text: "Até R$ 1.000 (escritório iniciante)", points: { budget: 1 } },
+      { value: "medium", text: "R$ 1.000 - R$ 5.000 (escritório em crescimento)", points: { budget: 2 } },
+      { value: "high", text: "R$ 5.000 - R$ 15.000 (escritório estabelecido)", points: { budget: 3 } },
+      { value: "very-high", text: "Acima de R$ 15.000 (grande escritório)", points: { budget: 4 } }
     ]
   }
 ];
