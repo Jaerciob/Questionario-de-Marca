@@ -456,12 +456,12 @@ export function calculateSeoResults(answers: Record<number, string>) {
 
   // Normalize scores to 0-4 scale
   const scores = {
-    maturity: Math.min(4, Math.max(0, Math.round(maturity * 0.8))),
-    content: Math.min(4, Math.max(0, Math.round(content * 0.6))),
-    technical: Math.min(4, Math.max(0, Math.round(technical * 0.6))),
-    authority: Math.min(4, Math.max(0, Math.round(authority * 0.8))),
-    local: Math.min(4, Math.max(0, Math.round(local * 1.2))),
-    conversion: Math.min(4, Math.max(0, Math.round(conversion * 0.8)))
+    maturity: Math.min(4, Math.max(0, Math.round(maturity * 0.6))),
+    content: Math.min(4, Math.max(0, Math.round(content * 0.5))),
+    technical: Math.min(4, Math.max(0, Math.round(technical * 0.5))),
+    authority: Math.min(4, Math.max(0, Math.round(authority * 0.6))),
+    local: Math.min(4, Math.max(0, Math.round(local * 0.8))),
+    conversion: Math.min(4, Math.max(0, Math.round(conversion * 0.6)))
   };
 
   // Determine maturity level

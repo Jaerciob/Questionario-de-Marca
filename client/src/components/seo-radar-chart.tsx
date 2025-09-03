@@ -65,7 +65,7 @@ export default function SeoRadarChart({ scores }: SeoRadarChartProps) {
       tooltip: {
         callbacks: {
           label: function(context: any) {
-            return `${context.label}: ${context.parsed.r}/4`;
+            return `${context.label}: ${Math.min(4, Math.max(0, context.parsed.r))}/4`;
           }
         }
       }
@@ -78,6 +78,9 @@ export default function SeoRadarChart({ scores }: SeoRadarChartProps) {
         ticks: {
           stepSize: 1,
           display: false,
+          callback: function(value: any) {
+            return Math.min(4, Math.max(0, value));
+          }
         },
         grid: {
           color: 'rgba(156, 163, 175, 0.3)',

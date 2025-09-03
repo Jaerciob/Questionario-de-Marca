@@ -94,7 +94,7 @@ export default function SeoResultsSection({ answers, results, onRestart, onBack 
         </CardHeader>
         <CardContent>
           <div className="space-y-4">
-            {results.actionPlan.map((step, index) => {
+            {results.actionPlan && results.actionPlan.length > 0 ? results.actionPlan.map((step, index) => {
               const priorityColor = step.priority === 'Alta' ? 'destructive' : 
                                    step.priority === 'Média' ? 'default' : 'secondary';
               const bgColor = index % 2 === 0 ? 'bg-green-50 dark:bg-green-900/10' : 'bg-blue-50 dark:bg-blue-900/10';
@@ -161,7 +161,11 @@ export default function SeoResultsSection({ answers, results, onRestart, onBack 
                   </div>
                 </div>
               );
-            })}
+            }) : (
+              <div className="text-center py-8">
+                <p className="text-gray-500">Nenhum plano de ação disponível para este nível.</p>
+              </div>
+            )}
           </div>
         </CardContent>
       </Card>
