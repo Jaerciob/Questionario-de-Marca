@@ -179,7 +179,8 @@ export const seoActionPlans = {
         priority: 'Alta' as const,
         description: 'Instalar ferramentas essenciais e fazer diagnóstico técnico inicial.',
         example: 'Configure Google Analytics, Search Console, instale Yoast SEO (WordPress)',
-        links: ['https://analytics.google.com', 'https://search.google.com/search-console']
+        links: ['https://analytics.google.com', 'https://search.google.com/search-console'],
+        tools: ['Google Analytics', 'Search Console', 'Yoast SEO', 'Ubersuggest']
       },
       {
         title: 'Pesquisa de Palavras-chave',
@@ -187,7 +188,8 @@ export const seoActionPlans = {
         priority: 'Alta' as const,
         description: 'Identificar palavras-chave relevantes com baixa competição.',
         example: 'Use "como fazer SEO para dentistas" ao invés de apenas "SEO"',
-        links: ['https://ads.google.com/keyword-planner', 'https://answerthepublic.com']
+        links: ['https://ads.google.com/keyword-planner', 'https://answerthepublic.com'],
+        tools: ['Keyword Planner', 'Answer The Public', 'Ubersuggest', 'Google Trends']
       },
       {
         title: 'Otimização On-Page Básica',
@@ -195,7 +197,8 @@ export const seoActionPlans = {
         priority: 'Alta' as const,
         description: 'Otimizar títulos, meta descriptions e estrutura de headings.',
         example: 'Título: "Guia Completo de SEO para Iniciantes [2024]"',
-        links: ['https://developers.google.com/search/docs']
+        links: ['https://developers.google.com/search/docs'],
+        tools: ['Yoast SEO', 'RankMath', 'SEOquake', 'MozBar']
       },
       {
         title: 'Criação de Conteúdo Inicial',
@@ -203,7 +206,8 @@ export const seoActionPlans = {
         priority: 'Média' as const,
         description: 'Produzir 8-12 artigos otimizados focados nas palavras-chave selecionadas.',
         example: 'Blog posts de 1000+ palavras respondendo dúvidas do seu público',
-        links: ['https://buzzsumo.com', 'https://coschedule.com']
+        links: ['https://buzzsumo.com', 'https://coschedule.com'],
+        tools: ['BuzzSumo', 'CoSchedule', 'Grammarly', 'Canva']
       }
     ],
     risks: ['Falta de conhecimento técnico', 'Tempo limitado para produção de conteúdo'],
@@ -216,16 +220,18 @@ export const seoActionPlans = {
         time: '2 semanas',
         priority: 'Alta' as const,
         description: 'Identificar e corrigir problemas técnicos que impedem o crescimento.',
-        example: 'Melhorar Core Web Vitals, corrigir erros 404, implementar schema markup',
-        links: ['https://pagespeed.web.dev', 'https://www.screaming-frog.co.uk']
+        example: 'Melhorar Core Web Vitals, corrigir erros 404, implementar schema mark-up',
+        links: ['https://pagespeed.web.dev', 'https://www.screaming-frog.co.uk'],
+        tools: ['PageSpeed Insights', 'Screaming Frog', 'GTmetrix', 'Search Console']
       },
       {
         title: 'Estratégia de Content Clusters',
         time: '3 semanas',
         priority: 'Alta' as const,
-        description: 'Criar clusters de conteúdo interligado para construir autoridade topical.',
+        description: 'Criar clusters de conteúdo inteligente para construir autoridade tópica.',
         example: 'Página pilar "Marketing Digital" + 10 subtópicos relacionados',
-        links: ['https://blog.hubspot.com/marketing/topic-clusters-seo']
+        links: ['https://blog.hubspot.com/marketing/topic-clusters-seo'],
+        tools: ['Ahrefs', 'SEMrush', 'Answer The Public', 'Google Trends']
       },
       {
         title: 'Otimização para Conversão',
@@ -233,7 +239,8 @@ export const seoActionPlans = {
         priority: 'Média' as const,
         description: 'Implementar CTAs, landing pages e funis de conversão.',
         example: 'Adicionar formulários de lead magnet em posts de alta performance',
-        links: ['https://unbounce.com', 'https://www.hotjar.com']
+        links: ['https://unbounce.com', 'https://www.hotjar.com'],
+        tools: ['Hotjar', 'Unbounce', 'Google Optimize', 'Leadpages']
       },
       {
         title: 'Link Building Inicial',
@@ -241,7 +248,8 @@ export const seoActionPlans = {
         priority: 'Média' as const,
         description: 'Começar estratégia de construção de backlinks de qualidade.',
         example: 'Guest posts em blogs do nicho, parcerias e menções',
-        links: ['https://www.helpareporter.com', 'https://ahrefs.com']
+        links: ['https://www.helpareporter.com', 'https://ahrefs.com'],
+        tools: ['HARO', 'Ahrefs', 'Pitchbox', 'BuzzStream']
       }
     ],
     risks: ['Competição crescente', 'Necessidade de investimento em ferramentas'],
@@ -255,7 +263,8 @@ export const seoActionPlans = {
         priority: 'Alta' as const,
         description: 'Implementar técnicas avançadas de SEO técnico e performance.',
         example: 'Core Web Vitals otimizados, JavaScript SEO, estrutura de dados avançada',
-        links: ['https://web.dev', 'https://developers.google.com/search']
+        links: ['https://web.dev', 'https://developers.google.com/search'],
+        tools: ['Lighthouse', 'WebPageTest', 'Schema.org Validator', 'JavaScript SEO Tools']
       },
       {
         title: 'Estratégia de Autoridade',
@@ -263,7 +272,8 @@ export const seoActionPlans = {
         priority: 'Alta' as const,
         description: 'Escalar link building e construir autoridade de domínio.',
         example: 'Campanhas de RP digital, colaborações com influenciadores',
-        links: ['https://majestic.com', 'https://moz.com/link-explorer']
+        links: ['https://majestic.com', 'https://moz.com/link-explorer'],
+        tools: ['Majestic', 'Moz Link Explorer', 'Pitchbox', 'OutreachMama']
       },
       {
         title: 'SEO Internacional/Multilíngue',
@@ -271,7 +281,8 @@ export const seoActionPlans = {
         priority: 'Média' as const,
         description: 'Expandir para novos mercados e idiomas.',
         example: 'Implementar hreflang, adaptar conteúdo para diferentes regiões',
-        links: ['https://support.google.com/webmasters/answer/189077']
+        links: ['https://support.google.com/webmasters/answer/189077'],
+        tools: ['Hreflang Tags Generator', 'DeepL', 'SEMrush International', 'Ahrefs Global']
       },
       {
         title: 'Automação e Escalabilidade',
@@ -279,7 +290,8 @@ export const seoActionPlans = {
         priority: 'Média' as const,
         description: 'Implementar ferramentas e processos para escalar operações.',
         example: 'APIs para monitoramento, automação de relatórios, IA para conteúdo',
-        links: ['https://serpapi.com', 'https://www.semrush.com/api']
+        links: ['https://serpapi.com', 'https://www.semrush.com/api'],
+        tools: ['SEMrush API', 'Ahrefs API', 'ChatGPT API', 'Zapier']
       }
     ],
     risks: ['Saturação do mercado', 'Mudanças de algoritmo'],
@@ -297,7 +309,8 @@ export const seaActionPlans = {
         priority: 'Alta' as const,
         description: 'Configurar contas nas plataformas e implementar tracking básico.',
         example: 'Criar conta Google Ads, instalar Google Tag Manager e Facebook Pixel',
-        links: ['https://ads.google.com', 'https://tagmanager.google.com', 'https://business.facebook.com']
+        links: ['https://ads.google.com', 'https://tagmanager.google.com', 'https://business.facebook.com'],
+        tools: ['Google Ads', 'Facebook Ads Manager', 'Google Tag Manager', 'Facebook Pixel']
       },
       {
         title: 'Pesquisa de Público-Alvo',
@@ -305,7 +318,8 @@ export const seaActionPlans = {
         priority: 'Alta' as const,
         description: 'Definir personas e segmentações para as campanhas.',
         example: 'Mulheres 25-45 anos interessadas em fitness e alimentação saudável',
-        links: ['https://www.facebook.com/business/insights/audience', 'https://ads.google.com/audience-manager']
+        links: ['https://www.facebook.com/business/insights/audience', 'https://ads.google.com/audience-manager'],
+        tools: ['Facebook Audience Insights', 'Google Audience Manager', 'SimilarWeb', 'Google Trends']
       },
       {
         title: 'Primeira Campanha de Teste',
@@ -313,7 +327,8 @@ export const seaActionPlans = {
         priority: 'Alta' as const,
         description: 'Lançar campanha com orçamento controlado para validar estratégia.',
         example: 'Campanha de busca com R$ 20/dia focada em 5-10 palavras-chave',
-        links: ['https://support.google.com/google-ads']
+        links: ['https://support.google.com/google-ads'],
+        tools: ['Google Ads Editor', 'Google Keyword Planner', 'Canva', 'Unsplash']
       },
       {
         title: 'Otimização Baseada em Dados',
@@ -321,7 +336,8 @@ export const seaActionPlans = {
         priority: 'Média' as const,
         description: 'Analisar resultados e otimizar campanhas com base nos dados.',
         example: 'Pausar keywords com CPA alto, aumentar budget em anúncios com melhor ROI',
-        links: ['https://analytics.google.com', 'https://www.facebook.com/business/help']
+        links: ['https://analytics.google.com', 'https://www.facebook.com/business/help'],
+        tools: ['Google Analytics', 'Facebook Analytics', 'Data Studio', 'Excel/Google Sheets']
       }
     ],
     risks: ['Orçamento limitado queimado rapidamente', 'Falta de experiência em otimização'],
@@ -335,7 +351,8 @@ export const seaActionPlans = {
         priority: 'Alta' as const,
         description: 'Analisar campanhas existentes e reestruturar para melhor performance.',
         example: 'Segregar campanhas por produto/serviço, implementar estrutura SKAG',
-        links: ['https://www.wordstream.com/skags']
+        links: ['https://www.wordstream.com/skags'],
+        tools: ['Google Ads Editor', 'Facebook Business Manager', 'Optmyzr', 'WordStream']
       },
       {
         title: 'Implementação de Conversões Avançadas',
@@ -343,7 +360,8 @@ export const seaActionPlans = {
         priority: 'Alta' as const,
         description: 'Configurar tracking de conversões detalhado e eventos personalizados.',
         example: 'Rastrear micro-conversões: tempo no site, páginas visitadas, downloads',
-        links: ['https://support.google.com/google-ads/answer/1722054']
+        links: ['https://support.google.com/google-ads/answer/1722054'],
+        tools: ['Google Tag Manager', 'Google Analytics 4', 'Facebook Conversions API', 'Hotjar']
       },
       {
         title: 'Estratégias de Remarketing',
@@ -351,7 +369,8 @@ export const seaActionPlans = {
         priority: 'Média' as const,
         description: 'Criar campanhas para re-engajar visitantes e clientes anteriores.',
         example: 'Remarketing para carrinho abandonado com desconto especial',
-        links: ['https://support.google.com/google-ads/answer/2453998']
+        links: ['https://support.google.com/google-ads/answer/2453998'],
+        tools: ['Google Ads Remarketing', 'Facebook Custom Audiences', 'Criteo', 'AdRoll']
       },
       {
         title: 'Expansão Multicanal',
@@ -359,7 +378,8 @@ export const seaActionPlans = {
         priority: 'Média' as const,
         description: 'Expandir para novas plataformas e formatos de anúncios.',
         example: 'YouTube Ads para vídeos, LinkedIn para B2B, Shopping Ads para e-commerce',
-        links: ['https://ads.youtube.com', 'https://business.linkedin.com/marketing-solutions']
+        links: ['https://ads.youtube.com', 'https://business.linkedin.com/marketing-solutions'],
+        tools: ['YouTube Studio', 'LinkedIn Campaign Manager', 'Microsoft Ads', 'Pinterest Business']
       }
     ],
     risks: ['Complexidade crescente das campanhas', 'Competição aumentando custos'],
@@ -373,7 +393,8 @@ export const seaActionPlans = {
         priority: 'Alta' as const,
         description: 'Implementar estratégias automatizadas e usar IA para otimização.',
         example: 'Smart Bidding, Dynamic Search Ads, Automated Extensions',
-        links: ['https://support.google.com/google-ads/answer/2979071']
+        links: ['https://support.google.com/google-ads/answer/2979071'],
+        tools: ['Google Ads Smart Bidding', 'Facebook Advantage+', 'Optmyzr', 'WordStream Advisor']
       },
       {
         title: 'Atribuição Avançada',
@@ -381,7 +402,8 @@ export const seaActionPlans = {
         priority: 'Alta' as const,
         description: 'Implementar modelos de atribuição personalizados.',
         example: 'Modelo de atribuição baseado em dados, cross-device tracking',
-        links: ['https://support.google.com/analytics/answer/1662518']
+        links: ['https://support.google.com/analytics/answer/1662518'],
+        tools: ['Google Analytics 4', 'Adobe Analytics', 'Mixpanel', 'Segment']
       },
       {
         title: 'Estratégias de Brand Awareness',
@@ -389,7 +411,8 @@ export const seaActionPlans = {
         priority: 'Média' as const,
         description: 'Campanhas focadas em construção de marca e recall.',
         example: 'Video campaigns no YouTube, Display campaigns em sites premium',
-        links: ['https://www.thinkwithgoogle.com']
+        links: ['https://www.thinkwithgoogle.com'],
+        tools: ['YouTube Studio', 'Google Display & Video 360', 'Facebook Brand Awareness', 'TikTok Ads']
       },
       {
         title: 'Integração com Ferramentas Avançadas',
@@ -397,7 +420,8 @@ export const seaActionPlans = {
         priority: 'Média' as const,
         description: 'Conectar campanhas com CRM, BI e outras ferramentas empresariais.',
         example: 'Integração com Salesforce, dashboards personalizados, APIs',
-        links: ['https://developers.google.com/google-ads/api']
+        links: ['https://developers.google.com/google-ads/api'],
+        tools: ['Salesforce', 'HubSpot', 'Google Data Studio', 'Zapier']
       }
     ],
     risks: ['Mudanças constantes nas plataformas', 'Necessidade de orçamentos altos'],
@@ -420,12 +444,13 @@ export function calculateSeoResults(answers: Record<number, string>) {
     const selectedOption = question.options.find(opt => opt.value === answerValue);
     
     if (selectedOption && selectedOption.points) {
-      if (selectedOption.points.maturity !== undefined) maturity += selectedOption.points.maturity;
-      if (selectedOption.points.content !== undefined) content += selectedOption.points.content;
-      if (selectedOption.points.technical !== undefined) technical += selectedOption.points.technical;
-      if (selectedOption.points.authority !== undefined) authority += selectedOption.points.authority;
-      if (selectedOption.points.local !== undefined) local += selectedOption.points.local;
-      if (selectedOption.points.conversion !== undefined) conversion += selectedOption.points.conversion;
+      const points = selectedOption.points as any;
+      if (points.maturity !== undefined) maturity += points.maturity;
+      if (points.content !== undefined) content += points.content;
+      if (points.technical !== undefined) technical += points.technical;
+      if (points.authority !== undefined) authority += points.authority;
+      if (points.local !== undefined) local += points.local;
+      if (points.conversion !== undefined) conversion += points.conversion;
     }
   });
 
@@ -485,12 +510,13 @@ export function calculateSeaResults(answers: Record<number, string>) {
     const selectedOption = question.options.find(opt => opt.value === answerValue);
     
     if (selectedOption && selectedOption.points) {
-      if (selectedOption.points.planning !== undefined) planning += selectedOption.points.planning;
-      if (selectedOption.points.targeting !== undefined) targeting += selectedOption.points.targeting;
-      if (selectedOption.points.creative !== undefined) creative += selectedOption.points.creative;
-      if (selectedOption.points.optimization !== undefined) optimization += selectedOption.points.optimization;
-      if (selectedOption.points.analytics !== undefined) analytics += selectedOption.points.analytics;
-      if (selectedOption.points.budget !== undefined) budget += selectedOption.points.budget;
+      const points = selectedOption.points as any;
+      if (points.planning !== undefined) planning += points.planning;
+      if (points.targeting !== undefined) targeting += points.targeting;
+      if (points.creative !== undefined) creative += points.creative;
+      if (points.optimization !== undefined) optimization += points.optimization;
+      if (points.analytics !== undefined) analytics += points.analytics;
+      if (points.budget !== undefined) budget += points.budget;
     }
   });
 

@@ -98,7 +98,8 @@ export const seoResultsSchema = z.object({
     priority: z.enum(["Alta", "Média", "Baixa"]),
     description: z.string(),
     example: z.string(),
-    links: z.array(z.string())
+    links: z.array(z.string()),
+    tools: z.array(z.string()).optional()
   })),
   risks: z.array(z.string()),
   alternatives: z.array(z.string())
@@ -122,7 +123,8 @@ export const seaResultsSchema = z.object({
     priority: z.enum(["Alta", "Média", "Baixa"]),
     description: z.string(),
     example: z.string(),
-    links: z.array(z.string())
+    links: z.array(z.string()),
+    tools: z.array(z.string()).optional()
   })),
   risks: z.array(z.string()),
   alternatives: z.array(z.string())

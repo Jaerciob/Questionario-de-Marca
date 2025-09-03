@@ -122,6 +122,22 @@ export default function SeoResultsSection({ answers, results, onRestart, onBack 
                           <strong>Exemplo prático:</strong> {step.example}
                         </p>
                       </div>
+                      {(step.tools && step.tools.length > 0) && (
+                        <div className="mt-3">
+                          <p className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Ferramentas:</p>
+                          <div className="flex flex-wrap gap-2">
+                            {step.tools.map((tool, toolIndex) => (
+                              <span 
+                                key={toolIndex}
+                                className="text-xs bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-2 py-1 rounded-full"
+                              >
+                                <i className="fas fa-tools mr-1"></i>
+                                {tool}
+                              </span>
+                            ))}
+                          </div>
+                        </div>
+                      )}
                       {step.links && step.links.length > 0 && (
                         <div className="mt-3">
                           <p className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Links úteis:</p>
