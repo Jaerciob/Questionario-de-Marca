@@ -1,25 +1,20 @@
 import { useState } from "react";
 import { Helmet } from "react-helmet-async";
 import SeoSeaComparison from "@/components/seo-sea-comparison";
-import SeoQuizSection from "@/components/seo-quiz-section";
-import SeaQuizSection from "@/components/sea-quiz-section";
+import IntegratedQuiz from "@/components/integrated-quiz";
 import IntegratedResults from "@/components/integrated-results";
-import type { SeoQuizAnswers, SeaQuizAnswers, SeoResults, SeaResults } from "@shared/schema";
+import type { SeoResults, SeaResults } from "@shared/schema";
 
-type AppState = "comparison" | "seo-quiz" | "sea-quiz" | "integrated-results";
+type AppState = "comparison" | "integrated-quiz" | "integrated-results";
 
 export default function SeoSea() {
   const [currentState, setCurrentState] = useState<AppState>("comparison");
   const [seoResults, setSeoResults] = useState<SeoResults | null>(null);
   const [seaResults, setSeaResults] = useState<SeaResults | null>(null);
 
-  const handleSeoQuizComplete = (answers: SeoQuizAnswers, results: SeoResults) => {
-    setSeoResults(results);
-    setCurrentState("sea-quiz");
-  };
-
-  const handleSeaQuizComplete = (answers: SeaQuizAnswers, results: SeaResults) => {
-    setSeaResults(results);
+  const handleQuizComplete = (seoResults: SeoResults, seaResults: SeaResults) => {
+    setSeoResults(seoResults);
+    setSeaResults(seaResults);
     setCurrentState("integrated-results");
   };
 
@@ -47,22 +42,15 @@ export default function SeoSea() {
         <div className="container mx-auto px-4 py-8">
           {currentState === "comparison" && (
             <SeoSeaComparison 
-              onStartSeo={() => setCurrentState("seo-quiz")}
-              onStartSea={() => setCurrentState("sea-quiz")}
+              onStartSeo={() => setCurrentState("integrated-quiz")}
+              onStartSea={() => setCurrentState("integrated-quiz")}
             />
           )}
           
-          {currentState === "seo-quiz" && (
-            <SeoQuizSection 
-              onComplete={handleSeoQuizComplete}
+          {currentState === "integrated-quiz" && (
+            <IntegratedQuiz 
+              onComplete={handleQuizComplete}
               onBack={() => setCurrentState("comparison")}
-            />
-          )}
-          
-          {currentState === "sea-quiz" && (
-            <SeaQuizSection 
-              onComplete={handleSeaQuizComplete}
-              onBack={() => setCurrentState("seo-quiz")}
             />
           )}
           
