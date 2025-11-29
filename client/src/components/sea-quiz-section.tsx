@@ -50,28 +50,8 @@ export default function SeaQuizSection({ onComplete, onBack }: SeaQuizSectionPro
   };
 
   const calculateSeaResults = (answers: SeaQuizAnswers): SeaResults => {
-    // Simplified calculation - you can implement more sophisticated logic later
-    const scores = {
-      planning: Math.floor(Math.random() * 10),
-      targeting: Math.floor(Math.random() * 10),
-      creative: Math.floor(Math.random() * 10),
-      optimization: Math.floor(Math.random() * 10),
-      analytics: Math.floor(Math.random() * 10),
-      budget: Math.floor(Math.random() * 10)
-    };
-
-    const averageScore = Object.values(scores).reduce((a, b) => a + b, 0) / 6;
-    const experienceLevel = averageScore < 3 ? "Iniciante" : averageScore < 7 ? "Intermediário" : "Avançado";
-
-    return {
-      experienceLevel,
-      platformFocus: "Google Ads",
-      budgetRange: "R$ 1.000 - R$ 5.000",
-      radarData: scores,
-      actionPlan: [],
-      risks: [],
-      alternatives: []
-    };
+    const { calculateSeaResults: calcSea } = require('@/data/seo-sea-data');
+    return calcSea(answers);
   };
 
   const currentQuestionData = seaQuestions[currentQuestion];

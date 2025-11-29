@@ -1,25 +1,37 @@
 import { useState } from "react";
 import { Helmet } from "react-helmet-async";
 import SeoSeaComparison from "@/components/seo-sea-comparison";
-import IntegratedQuiz from "@/components/integrated-quiz";
-import IntegratedResults from "@/components/integrated-results";
-import type { SeoResults, SeaResults } from "@shared/schema";
+import SeoQuizSection from "@/components/seo-quiz-section";
+import SeaQuizSection from "@/components/sea-quiz-section";
+import SeoResultsSection from "@/components/seo-results-section";
+import SeaResultsSection from "@/components/sea-results-section";
+import type { SeoQuizAnswers, SeaQuizAnswers, SeoResults, SeaResults } from "@shared/schema";
 
-type AppState = "comparison" | "integrated-quiz" | "integrated-results";
+type AppState = "comparison" | "seo-quiz" | "sea-quiz" | "seo-results" | "sea-results";
 
 export default function SeoSea() {
   const [currentState, setCurrentState] = useState<AppState>("comparison");
+  const [seoAnswers, setSeoAnswers] = useState<SeoQuizAnswers>({});
+  const [seaAnswers, setSeaAnswers] = useState<SeaQuizAnswers>({});
   const [seoResults, setSeoResults] = useState<SeoResults | null>(null);
   const [seaResults, setSeaResults] = useState<SeaResults | null>(null);
 
-  const handleQuizComplete = (seoResults: SeoResults, seaResults: SeaResults) => {
-    setSeoResults(seoResults);
-    setSeaResults(seaResults);
-    setCurrentState("integrated-results");
+  const handleSeoQuizComplete = (answers: SeoQuizAnswers, results: SeoResults) => {
+    setSeoAnswers(answers);
+    setSeoResults(results);
+    setCurrentState("seo-results");
+  };
+
+  const handleSeaQuizComplete = (answers: SeaQuizAnswers, results: SeaResults) => {
+    setSeaAnswers(answers);
+    setSeaResults(results);
+    setCurrentState("sea-results");
   };
 
   const handleRestart = () => {
     setCurrentState("comparison");
+    setSeoAnswers({});
+    setSeaAnswers({});
     setSeoResults(null);
     setSeaResults(null);
   };
@@ -42,22 +54,38 @@ export default function SeoSea() {
         <div className="container mx-auto px-4 py-8">
           {currentState === "comparison" && (
             <SeoSeaComparison 
-              onStartSeo={() => setCurrentState("integrated-quiz")}
-              onStartSea={() => setCurrentState("integrated-quiz")}
+              onStartSeo={() => setCurrentState("seo-quiz")}
+              onStartSea={() => setCurrentState("sea-quiz")}
             />
           )}
           
-          {currentState === "integrated-quiz" && (
-            <IntegratedQuiz 
-              onComplete={handleQuizComplete}
+          {currentState === "seo-quiz" && (
+            <SeoQuizSection 
+              onComplete={handleSeoQuizComplete}
               onBack={() => setCurrentState("comparison")}
             />
           )}
           
-          {currentState === "integrated-results" && seoResults && seaResults && (
-            <IntegratedResults 
-              seoResults={seoResults}
-              seaResults={seaResults}
+          {currentState === "sea-quiz" && (
+            <SeaQuizSection 
+              onComplete={handleSeaQuizComplete}
+              onBack={() => setCurrentState("comparison")}
+            />
+          )}
+          
+          {currentState === "seo-results" && seoResults && (
+            <SeoResultsSection 
+              answers={seoAnswers}
+              results={seoResults}
+              onRestart={handleRestart}
+              onBack={() => setCurrentState("comparison")}
+            />
+          )}
+          
+          {currentState === "sea-results" && seaResults && (
+            <SeaResultsSection 
+              answers={seaAnswers}
+              results={seaResults}
               onRestart={handleRestart}
               onBack={() => setCurrentState("comparison")}
             />

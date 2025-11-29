@@ -50,27 +50,8 @@ export default function SeoQuizSection({ onComplete, onBack }: SeoQuizSectionPro
   };
 
   const calculateSeoResults = (answers: SeoQuizAnswers): SeoResults => {
-    // Simplified calculation - you can implement more sophisticated logic later
-    const scores = {
-      content: Math.floor(Math.random() * 10),
-      technical: Math.floor(Math.random() * 10),
-      authority: Math.floor(Math.random() * 10),
-      local: Math.floor(Math.random() * 10),
-      conversion: Math.floor(Math.random() * 10),
-      maturity: Math.floor(Math.random() * 10)
-    };
-
-    const maturityLevel = scores.maturity < 3 ? "Iniciante" : scores.maturity < 7 ? "Emergente" : "Avançado";
-
-    return {
-      maturityLevel,
-      strategicFocus: "Conteúdo e Autoridade",
-      estimatedTime: "3-6 meses",
-      radarData: scores,
-      actionPlan: [],
-      risks: [],
-      alternatives: []
-    };
+    const { calculateSeoResults: calcSeo } = require('@/data/seo-sea-data');
+    return calcSeo(answers);
   };
 
   const currentQuestionData = seoQuestions[currentQuestion];
