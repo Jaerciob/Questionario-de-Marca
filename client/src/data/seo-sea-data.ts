@@ -484,15 +484,6 @@ export function calculateSeoResults(answers: Record<number, string>) {
     estimatedTime = "2-4 meses";
   }
 
-  // Debug logs
-  console.log('SEO Results Debug:', {
-    maturityLevel,
-    avgMaturity,
-    scores,
-    actionPlanExists: !!seoActionPlans[maturityLevel],
-    stepsCount: seoActionPlans[maturityLevel]?.steps?.length || 0
-  });
-
   return {
     maturityLevel,
     strategicFocus,
