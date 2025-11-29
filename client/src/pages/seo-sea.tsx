@@ -3,35 +3,28 @@ import { Helmet } from "react-helmet-async";
 import SeoSeaComparison from "@/components/seo-sea-comparison";
 import SeoQuizSection from "@/components/seo-quiz-section";
 import SeaQuizSection from "@/components/sea-quiz-section";
-import SeoResultsSection from "@/components/seo-results-section";
-import SeaResultsSection from "@/components/sea-results-section";
+import IntegratedResults from "@/components/integrated-results";
 import type { SeoQuizAnswers, SeaQuizAnswers, SeoResults, SeaResults } from "@shared/schema";
 
-type AppState = "comparison" | "seo-quiz" | "sea-quiz" | "seo-results" | "sea-results";
+type AppState = "comparison" | "seo-quiz" | "sea-quiz" | "integrated-results";
 
 export default function SeoSea() {
   const [currentState, setCurrentState] = useState<AppState>("comparison");
-  const [seoAnswers, setSeoAnswers] = useState<SeoQuizAnswers>({});
-  const [seaAnswers, setSeaAnswers] = useState<SeaQuizAnswers>({});
   const [seoResults, setSeoResults] = useState<SeoResults | null>(null);
   const [seaResults, setSeaResults] = useState<SeaResults | null>(null);
 
   const handleSeoQuizComplete = (answers: SeoQuizAnswers, results: SeoResults) => {
-    setSeoAnswers(answers);
     setSeoResults(results);
-    setCurrentState("seo-results");
+    setCurrentState("sea-quiz");
   };
 
   const handleSeaQuizComplete = (answers: SeaQuizAnswers, results: SeaResults) => {
-    setSeaAnswers(answers);
     setSeaResults(results);
-    setCurrentState("sea-results");
+    setCurrentState("integrated-results");
   };
 
   const handleRestart = () => {
     setCurrentState("comparison");
-    setSeoAnswers({});
-    setSeaAnswers({});
     setSeoResults(null);
     setSeaResults(null);
   };
@@ -69,23 +62,14 @@ export default function SeoSea() {
           {currentState === "sea-quiz" && (
             <SeaQuizSection 
               onComplete={handleSeaQuizComplete}
-              onBack={() => setCurrentState("comparison")}
+              onBack={() => setCurrentState("seo-quiz")}
             />
           )}
           
-          {currentState === "seo-results" && seoResults && (
-            <SeoResultsSection 
-              answers={seoAnswers}
-              results={seoResults}
-              onRestart={handleRestart}
-              onBack={() => setCurrentState("comparison")}
-            />
-          )}
-          
-          {currentState === "sea-results" && seaResults && (
-            <SeaResultsSection 
-              answers={seaAnswers}
-              results={seaResults}
+          {currentState === "integrated-results" && seoResults && seaResults && (
+            <IntegratedResults 
+              seoResults={seoResults}
+              seaResults={seaResults}
               onRestart={handleRestart}
               onBack={() => setCurrentState("comparison")}
             />
