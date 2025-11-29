@@ -4,7 +4,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Label } from "@/components/ui/label";
 import { Progress } from "@/components/ui/progress";
-import { seoQuestions } from "@/data/seo-sea-data";
+import { seoQuestions, calculateSeoResults } from "@/data/seo-sea-data";
 import { trackEvent } from "@/lib/analytics";
 import type { SeoQuizAnswers, SeoResults } from "@shared/schema";
 
@@ -49,10 +49,6 @@ export default function SeoQuizSection({ onComplete, onBack }: SeoQuizSectionPro
     }
   };
 
-  const calculateSeoResults = (answers: SeoQuizAnswers): SeoResults => {
-    const { calculateSeoResults: calcSeo } = require('@/data/seo-sea-data');
-    return calcSeo(answers);
-  };
 
   const currentQuestionData = seoQuestions[currentQuestion];
 
