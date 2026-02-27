@@ -53,10 +53,25 @@ export default function SeoSea() {
       <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50 dark:from-gray-900 dark:via-gray-900 dark:to-gray-800">
         <div className="container mx-auto px-4 py-8">
           {currentState === "comparison" && (
-            <SeoSeaComparison 
-              onStartSeo={() => setCurrentState("seo-quiz")}
-              onStartSea={() => setCurrentState("sea-quiz")}
-            />
+            <div className="space-y-8">
+              <SeoSeaComparison 
+                onStartSeo={() => setCurrentState("seo-quiz")}
+                onStartSea={() => setCurrentState("sea-quiz")}
+              />
+              <div className="flex justify-center pb-12">
+                <Button 
+                  onClick={() => {
+                    trackEvent('click_marketingjur_cta_seo_sea_main', 'engagement', 'seo_sea_page');
+                    window.open('https://www.marketingjur.com.br', '_blank');
+                  }}
+                  variant="outline"
+                  className="bg-white text-blue-600 border-2 border-blue-600 hover:bg-blue-50 font-bold px-10 py-6 text-lg shadow-xl transition-all rounded-xl"
+                >
+                  Desenvolva sua estratégia de Marketing de Resultados
+                  <i className="fas fa-external-link-alt ml-2"></i>
+                </Button>
+              </div>
+            </div>
           )}
           
           {currentState === "seo-quiz" && (

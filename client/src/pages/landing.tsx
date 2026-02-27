@@ -176,6 +176,19 @@ export default function Landing() {
                     Iniciar Diagnóstico SEO & SEA
                   </Button>
                 </Link>
+                <div className="mt-4">
+                  <Button 
+                    onClick={() => {
+                      trackEvent('click_marketingjur_cta_landing', 'engagement', 'landing_page');
+                      window.open('https://www.marketingjur.com.br', '_blank');
+                    }}
+                    variant="outline"
+                    className="w-full bg-transparent border-2 border-white text-white hover:bg-white hover:text-green-600 font-bold py-3 transition-all"
+                  >
+                    Desenvolva sua estratégia de Marketing de Resultados
+                    <i className="fas fa-external-link-alt ml-2"></i>
+                  </Button>
+                </div>
               </CardContent>
             </Card>
           </div>
