@@ -220,14 +220,14 @@ export default function SeoSeaComparison({ onStartSeo, onStartSea }: SeoSeaCompa
               Começar com SEA
             </Button>
           </div>
-          <div className="mt-6">
+          <div className="mt-8">
             <Button 
               onClick={() => {
                 trackEvent('click_marketingjur_cta', 'engagement', 'seo_sea_comparison');
                 window.open('https://www.marketingjur.com.br', '_blank');
               }}
               variant="outline"
-              className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-blue-600 font-bold px-10 py-4 transition-all"
+              className="w-full sm:w-auto bg-white text-blue-600 border-2 border-white hover:bg-blue-50 hover:text-blue-700 font-bold px-10 py-4 shadow-lg transition-all"
             >
               Desenvolva sua estratégia de Marketing de Resultados
               <i className="fas fa-external-link-alt ml-2"></i>
