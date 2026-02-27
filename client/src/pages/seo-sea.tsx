@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Helmet } from "react-helmet-async";
+import { Button } from "@/components/ui/button";
 import SeoSeaComparison from "@/components/seo-sea-comparison";
 import SeoQuizSection from "@/components/seo-quiz-section";
 import SeaQuizSection from "@/components/sea-quiz-section";
