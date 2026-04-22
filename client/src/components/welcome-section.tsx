@@ -82,26 +82,17 @@ export default function WelcomeSection({ onStart }: WelcomeSectionProps) {
           </div>
         </div>
         
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+        <div className="flex flex-col gap-4 justify-center items-center">
           <button onClick={handleStartDiagnosis} className="btn-primary text-lg px-10 py-4 shadow-lg">
             <i className="fas fa-play mr-3"></i>Iniciar Diagnóstico
           </button>
-          <div className="flex justify-center">
-            <Button
-              onClick={() => setShowCanvasButton(true)}
-              variant="outline"
-              className="btn-secondary text-lg px-10 py-4 shadow-lg"
-            >
-              Canvas de Marketing Digital
-            </Button>
-          </div>
+          <CanvasButton variant="secondary" size="lg" />
+          {showCanvasButton && (
+            <div className="mt-4 flex justify-center">
+              <CanvasButton variant="secondary" size="lg" />
+            </div>
+          )}
         </div>
-
-        {showCanvasButton && (
-          <div className="mt-4 flex justify-center">
-            <CanvasButton variant="secondary" size="lg" />
-          </div>
-        )}
 
         <div className="mt-8 flex justify-center">
           <Button 
