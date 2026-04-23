@@ -82,28 +82,26 @@ export default function WelcomeSection({ onStart }: WelcomeSectionProps) {
           </div>
         </div>
         
-        <div className="flex flex-col gap-4 justify-center items-center">
+        <div className="flex flex-col gap-4 justify-center items-center w-full">
           <button onClick={handleStartDiagnosis} className="btn-primary text-lg px-10 py-4 shadow-lg">
             <i className="fas fa-play mr-3"></i>Iniciar Diagnóstico
           </button>
-          <CanvasButton variant="secondary" size="lg" />
-          {showCanvasButton && (
-            <div className="mt-4 flex justify-center">
-              <CanvasButton variant="secondary" size="lg" />
-            </div>
-          )}
+          <div className="w-full max-w-md">
+            <CanvasButton variant="secondary" size="lg" />
+          </div>
         </div>
 
         <div className="mt-8 flex justify-center">
           <Button 
             onClick={() => {
               trackEvent('click_marketingjur_cta_welcome', 'engagement', 'welcome_section');
-              window.open('https://marketingjur.com', '_blank');
+              window.open('https://www.marketingjur.com', '_blank');
             }}
             variant="ghost"
-            className="px-10 py-4 text-md font-bold text-blue-300 hover:text-blue-200 hover:bg-white/10 border-b-2 border-blue-400/30 rounded-none transition-all"
+            className="w-full max-w-md px-6 sm:px-10 py-4 text-sm sm:text-md font-bold text-blue-300 hover:text-blue-200 hover:bg-white/10 border-b-2 border-blue-400/30 rounded-none transition-all whitespace-normal text-center"
           >
-            Aprenda a desenvolver sua estratégia de Marketing de Resultados
+            <span className="block sm:hidden">Aprenda a desenvolver Marketing de Resultados</span>
+            <span className="hidden sm:block">Aprenda a desenvolver sua estratégia de Marketing de Resultados</span>
             <i className="fas fa-external-link-alt ml-2"></i>
           </Button>
         </div>
