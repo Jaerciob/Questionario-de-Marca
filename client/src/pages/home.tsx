@@ -6,6 +6,8 @@ import QuizSection from "@/components/quiz-section";
 import ResultsSection from "@/components/results-section";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
+import { useMutation } from "@tanstack/react-query";
+import { apiRequest } from "@/lib/queryClient";
 import type { InsertFirmInfo } from "@shared/schema";
 
 type AppState = "welcome" | "firm-info" | "quiz" | "results";
@@ -15,6 +17,16 @@ export default function Home() {
   const [firmInfo, setFirmInfo] = useState<InsertFirmInfo | null>(null);
   const [quizAnswers, setQuizAnswers] = useState<Record<string, string>>({});
 
+  const saveResponseMutation = useMutation({
+    mutationFn: async (data: { firmInfo: InsertFirmInfo; answers: Record<string, string> }) => {
+      const response = await apiRequest("POST", "/api/quiz-responses", {
+        firmInfo: data.firmInfo,
+        answers: data.answers,
+      });
+      return response.json();
+    },
+  });
+
   const handleFirmInfoSubmit = (info: InsertFirmInfo) => {
     setFirmInfo(info);
     setCurrentState("quiz");
@@ -23,6 +35,9 @@ export default function Home() {
   const handleQuizComplete = (answers: Record<string, string>) => {
     setQuizAnswers(answers);
     setCurrentState("results");
+    if (firmInfo) {
+      saveResponseMutation.mutate({ firmInfo, answers });
+    }
   };
 
   const handleRestart = () => {
