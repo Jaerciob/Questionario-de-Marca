@@ -4,8 +4,6 @@ import WelcomeSection from "@/components/welcome-section";
 import FirmInfoForm from "@/components/firm-info-form";
 import QuizSection from "@/components/quiz-section";
 import ResultsSection from "@/components/results-section";
-import { Link } from "wouter";
-import { Button } from "@/components/ui/button";
 import { useMutation } from "@tanstack/react-query";
 import { apiRequest } from "@/lib/queryClient";
 import type { InsertFirmInfo } from "@shared/schema";
@@ -62,13 +60,6 @@ export default function Home() {
       
       <div className="min-h-screen">
         <div className="container mx-auto px-4 py-8">
-          <div className="mb-6 flex justify-end">
-            <Link href="/admin">
-              <Button variant="outline" className="border-slate-700 text-white bg-transparent">
-                Área administrativa
-              </Button>
-            </Link>
-          </div>
           {currentState === "welcome" && (
             <WelcomeSection onStart={() => setCurrentState("firm-info")} />
           )}
