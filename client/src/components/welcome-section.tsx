@@ -98,11 +98,10 @@ export default function WelcomeSection({ onStart }: WelcomeSectionProps) {
               window.open('https://www.marketingjur.com', '_blank');
             }}
             variant="ghost"
-            className="w-full max-w-md px-6 sm:px-10 py-4 text-sm sm:text-md font-bold text-blue-300 hover:text-blue-200 hover:bg-white/10 border-b-2 border-blue-400/30 rounded-none transition-all whitespace-normal text-center"
+            className="w-full max-w-md px-4 sm:px-10 py-4 text-sm sm:text-md font-bold text-blue-300 hover:text-blue-200 hover:bg-white/10 border-b-2 border-blue-400/30 rounded-none transition-all whitespace-normal text-center"
           >
-            <span className="block sm:hidden">Aprenda a desenvolver Marketing de Resultados</span>
-            <span className="hidden sm:block">Aprenda a desenvolver sua estratégia de Marketing de Resultados</span>
-            <i className="fas fa-external-link-alt ml-2"></i>
+            <span className="block leading-snug">Aprenda a desenvolver Marketing de resultados</span>
+            <i className="fas fa-external-link-alt ml-2 shrink-0"></i>
           </Button>
         </div>
       </div>
