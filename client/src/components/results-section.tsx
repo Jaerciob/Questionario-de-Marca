@@ -3,6 +3,7 @@ import type { InsertFirmInfo, QuizResults } from "@shared/schema";
 import { calculateScores, generateRecommendations, determineArchetype, generateColorPalette } from "@/utils/scoring";
 import RadarChart from "@/components/radar-chart";
 import { CanvasButton } from "./canvas-button";
+import { trackEvent } from "@/lib/analytics";
 
 interface ResultsSectionProps {
   firmInfo: InsertFirmInfo;
